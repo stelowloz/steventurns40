@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Steven's 40th birthday trip across Asia, June 1 to 28, 2027. See the day-by-day plan, pick a leg to join, and find where to stay and what to book.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Steven Turns 40">
+<meta property="og:description" content="Steven's 40th birthday trip across Asia, June 1 to 28, 2027. See the day-by-day plan, pick a leg to join, and find where to stay and what to book.">
+<meta property="og:url" content="https://steventurns40.com/">
+<meta property="og:image" content="https://steventurns40.com/img/tokyo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23B5174B'/%3E%3Cstop offset='1' stop-color='%23F59E1B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='15' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>:root{color-scheme:light;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Steven Turns 40</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: six stacked blocks are the itinerary. One block per destination, block height = nights there.
+   Everything else is ink on ticket stock, with each destination's two-tone colour reused wherever that place appears. */
+:root{
+  --bg:#F4F3F9; --surface:#FFFFFF; --wash:#E9E7F3; --ink:#17123A; --muted:#58537C; --line:#D7D4E6; --link:#3A2BD1; --pop:#17123A;
+  --jp:#B5174B; --jp2:#D93A34; --kr:#0A5C63; --kr2:#128079; --cn:#E3A500; --cn2:#F2C94C;
+  --hk:#5A2A9B; --hk2:#B02A8F; --sg:#123E9C; --sg2:#1C6FC4; --th:#F0652A; --th2:#F59E1B;
+  --on-dark:#17123A; --on-light:#FFFFFF;
+  --ok-bg:#DDF1E4; --ok-fg:#14663A; --est-bg:#FBEBCF; --est-fg:#7A4300;
+  --font-display:'Dela Gothic One','Arial Black',Impact,sans-serif;
+  --font-body:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font-mono:'DM Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#100D24; --surface:#1A1636; --wash:#241F49; --ink:#F2EFFF; --muted:#ABA6CE; --line:#342E60; --link:#B5ABFF; --pop:#000000;
+    --ok-bg:#12382A; --ok-fg:#7FE0A8; --est-bg:#3D2A0C; --est-fg:#FFC56B; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#100D24; --surface:#1A1636; --wash:#241F49; --ink:#F2EFFF; --muted:#ABA6CE; --line:#342E60; --link:#B5ABFF; --pop:#000000;
+  --ok-bg:#12382A; --ok-fg:#7FE0A8; --est-bg:#3D2A0C; --est-fg:#FFC56B; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.55;margin:0;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.l-jp{--c:var(--jp);--c2:var(--jp2);--on:var(--on-light)} .l-kr{--c:var(--kr);--c2:var(--kr2);--on:var(--on-light)} .l-cn{--c:var(--cn);--c2:var(--cn2);--on:var(--on-dark)}
+.l-hk{--c:var(--hk);--c2:var(--hk2);--on:var(--on-light)} .l-sg{--c:var(--sg);--c2:var(--sg2);--on:var(--on-light)} .l-th{--c:var(--th);--c2:var(--th2);--on:var(--on-dark)}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font:500 .78rem/1.4 var(--font-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0}
+.chip{display:inline-block;background:var(--c);color:var(--on);font:500 .72rem/1.5 var(--font-mono);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+.badge{display:inline-block;font:500 .72rem/1.5 var(--font-mono);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.badge.ok{background:var(--ok-bg);color:var(--ok-fg)} .badge.est{background:var(--est-bg);color:var(--est-fg)} .badge.bday{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem/1.2 var(--font-body);padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.7rem,5vw,2.7rem);line-height:1.05;margin:0 0 10px;text-wrap:balance}
+h3{margin:0;font-size:1.1rem;line-height:1.3;text-wrap:balance}
+.lede{font-size:1.08rem;color:var(--muted);max-width:62ch;margin:0}
+.sec{padding-block:44px}
+.sec-head{display:grid;gap:6px;margin-bottom:24px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-block:8px}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-size:.95rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.flagmark{flex:none;width:20px;height:20px;border-radius:50%;background:linear-gradient(140deg,var(--jp),var(--th2))}
+.brand span{display:none}
+@media (min-width:620px){.brand span{display:inline}}
+.top nav{display:flex;gap:2px}
+.top nav a{font:600 .95rem/1 var(--font-body);padding:9px 12px;border-radius:999px;color:var(--ink);text-decoration:none}
+.top nav a:hover{background:var(--wash)}
+.top nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{display:grid;gap:30px;padding-block:28px 20px}
+.hero > *{min-width:0}
+h1{font-family:var(--font-display);font-weight:400;font-size:clamp(3rem,13.5vw,6.4rem);line-height:.95;margin:10px 0 0;text-transform:uppercase;letter-spacing:-.01em}
+h1 span{display:block}
+.forty{font-size:2em;line-height:.9;width:max-content;color:transparent;-webkit-background-clip:text;background-clip:text;background-image:linear-gradient(100deg,var(--jp),var(--th2));
+  
+  }
+.spiel{margin:22px 0 0;display:grid;gap:4px;max-width:34ch}
+.spiel b{font-size:1.35rem;line-height:1.25;font-weight:700;text-wrap:balance}
+.hero-sub{margin:14px 0 0;color:var(--muted);max-width:50ch;font-size:1.05rem}
+.count{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
+.count div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 6px 8px;min-width:74px;text-align:center}
+.count b{display:block;font:500 1.9rem/1 var(--font-mono);font-variant-numeric:tabular-nums}
+.count span{font:500 .68rem/1 var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.count-note{margin:10px 0 0;font-size:.92rem;color:var(--muted);max-width:48ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.flag-cap{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap}
+.flag{display:grid;gap:5px}
+.stripe{display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:center;gap:1px 14px;min-height:calc(36px + var(--n) * 14px);padding:8px 16px;border-radius:9px;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);text-decoration:none}
+.stripe:hover .s-name::after{content:" \2192"}
+.stripe:focus-visible{outline-offset:-4px;outline-color:var(--on)}
+.s-name{font-family:var(--font-display);font-size:1.2rem;line-height:1.15}
+.s-dates{font:500 .9rem/1.3 var(--font-mono);text-align:right;align-self:center}
+.s-stops{font-size:.88rem;line-height:1.3;font-weight:500}
+.s-n{font:400 .78rem/1.3 var(--font-mono);text-align:right}
+.next{margin:14px 0 0;font-size:.95rem}
+@media (min-width:900px){
+  .hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:start;padding-block:48px 28px}
+}
+.notice{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:var(--wash);border-radius:8px;padding:12px 16px;font-size:.95rem}
+.notice p{margin:0;flex:1 1 300px;min-width:0}
+
+/* photo strip */
+.strip{display:flex;gap:12px;overflow-x:auto;padding-block:26px 18px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));scrollbar-width:thin}
+.shot{flex:none;width:min(76vw,330px);margin:0;position:relative;border-radius:10px;overflow:hidden;background:var(--wash)}
+.shot img{display:block;width:100%;height:224px;object-fit:cover}
+.shot figcaption{position:absolute;left:10px;bottom:10px;right:10px;display:flex;flex-wrap:wrap;gap:6px}
+.shot figcaption b{background:var(--c);color:var(--on);font:400 .95rem/1.5 var(--font-display);padding:1px 9px;border-radius:3px}
+.shot figcaption span{background:var(--on-dark);color:var(--on-light);font:500 .75rem/2 var(--font-mono);padding:0 8px;border-radius:3px}
+
+/* route */
+.route{display:grid;gap:28px}
+.route > *{min-width:0}
+.map{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px}
+.map svg{display:block;width:100%;height:auto}
+.map text{font-family:var(--font-mono);font-size:13px;fill:var(--ink);font-weight:500}
+.map .dt{fill:var(--muted);font-size:11px;font-weight:400}
+.map .land{fill:var(--wash);stroke:var(--line);stroke-width:1;stroke-linejoin:round}
+.map .gl{stroke:var(--line);stroke-width:1;fill:none;opacity:.7}
+.map .lead{stroke:var(--ink);stroke-width:1.2;fill:none}
+.map .gt{fill:var(--muted);font-size:10px;font-weight:400}
+.map .rt{fill:none;stroke-width:4.5;stroke-linecap:round}
+.map .dot{fill:var(--surface);stroke:var(--ink);stroke-width:3}
+.map .home{fill:none;stroke:var(--muted);stroke-width:2;stroke-dasharray:3 6;stroke-linecap:round}
+.map .plane{fill:var(--ink);stroke:var(--surface);stroke-width:1.5}
+.map-note{font-size:.82rem;color:var(--muted);margin:8px 4px 2px}
+@media (max-width:640px){.map text{font-size:20px}.map .dt,.map .gt{display:none}}
+.hops{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:hop}
+.hops li{counter-increment:hop;display:grid;grid-template-columns:28px 74px minmax(0,1fr);gap:8px;padding:9px 0;border-top:1px solid var(--line);align-items:baseline}
+.hops li::before{content:counter(hop);font:500 .8rem var(--font-mono);color:var(--muted)}
+.hops .d{font:500 .85rem var(--font-mono)}
+.hops small{display:block;color:var(--muted);font-size:.86rem}
+.clocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:20px}
+.clocks div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.clocks b{display:block;font:500 1.05rem/1.3 var(--font-mono);font-variant-numeric:tabular-nums}
+.clocks span{font-size:.8rem;color:var(--muted);line-height:1.3;display:block}
+@media (min-width:900px){.route{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:start}}
+
+/* join */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;align-items:center}
+.tag{font:600 .9rem/1 var(--font-body);padding:9px 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.tag[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.legs{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media (min-width:640px){.legs{grid-template-columns:repeat(2,minmax(0,1fr))}.leg[data-id="thai"]{grid-column:span 2}}
+@media (min-width:1000px){.legs{grid-template-columns:repeat(4,minmax(0,1fr))}.leg[data-id="thai"]{grid-column:auto}.leg[data-id="bday"]{grid-column:span 2}}
+.leg{display:grid;gap:8px;align-content:start;text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:14px 16px 16px;cursor:pointer;min-width:0}
+.leg[aria-pressed="true"]{border-color:var(--ink);box-shadow:4px 4px 0 var(--c2)}
+.leg.dim{opacity:.4}
+.leg-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.leg-in{font:500 .75rem var(--font-mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.leg[aria-pressed="true"] .leg-in{color:var(--ink)}
+.leg b{font-family:var(--font-display);font-weight:400;font-size:1.15rem;line-height:1.15}
+.leg p{margin:0;font-size:.95rem;color:var(--muted)}
+.leg small{font:400 .78rem var(--font-mono);color:var(--muted)}
+.builder{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:12px}
+.builder > *{min-width:0}
+.builder label{font:500 .78rem var(--font-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:block;margin-bottom:4px}
+.builder input,.builder textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:10px 12px}
+.builder textarea{resize:vertical;min-height:96px}
+.builder-row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.builder-row p{margin:0;font-size:.92rem;color:var(--muted);flex:1 1 220px;min-width:0}
+@media (min-width:760px){.builder{grid-template-columns:220px minmax(0,1fr)}.builder-row{grid-column:1 / -1}}
+
+/* eat list */
+.eat{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:22px 28px}
+.eat ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px}
+.eat li{font-size:.97rem;line-height:1.35}
+
+/* days */
+.cal-wrap{display:grid;gap:8px;max-width:780px}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal-h{font:500 .68rem/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center}
+.cal button{display:grid;gap:2px;align-content:center;justify-items:center;min-height:50px;padding:6px 2px;border:0;border-radius:7px;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);cursor:pointer;font:inherit;min-width:0}
+.cal button:hover{filter:brightness(1.08)}
+.cal button b{font:400 1.15rem/1 var(--font-display)}
+.cal button span{font:500 .62rem/1.2 var(--font-mono);text-transform:uppercase;letter-spacing:.03em;display:none}
+@media (min-width:620px){.cal button{min-height:66px}.cal button span{display:block}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.9rem;color:var(--muted);margin-top:14px;align-items:center}
+.chapter{display:grid;gap:10px;padding-top:44px;scroll-margin-top:60px}
+.chapter > *{min-width:0}
+.ch-rail{display:grid;gap:8px;align-content:start;padding-bottom:6px}
+.ch-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ch-meta .mono{font-size:.88rem;font-weight:500}
+.ch-title{font-family:var(--font-display);font-weight:400;font-size:clamp(1.5rem,4.2vw,1.9rem);line-height:1.08;margin:0;text-wrap:balance}
+.ch-pitch{margin:0;color:var(--muted);font-size:1rem;max-width:52ch}
+@media (min-width:900px){.chapter{grid-template-columns:250px minmax(0,1fr);gap:44px}.ch-rail{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);align-self:start}}
+.day{display:grid;gap:14px;padding-block:20px;border-top:1px solid var(--line);scroll-margin-top:66px}
+.day > *{min-width:0}
+@media (min-width:620px){.day{grid-template-columns:220px minmax(0,1fr);gap:24px;align-items:start}}
+.day-pic{margin:0;position:relative;border-radius:8px;overflow:hidden;aspect-ratio:16/9;background:var(--wash);max-width:100%}
+@media (min-width:620px){.day-pic{aspect-ratio:4/3}}
+.day-pic img{display:block;width:100%;height:100%;object-fit:cover}
+.day-pic figcaption{position:absolute;left:8px;bottom:8px;background:var(--on-dark);color:var(--on-light);font:500 .7rem/1.9 var(--font-mono);padding:0 7px;border-radius:3px}
+.day-pic.tile{display:grid;place-content:center;justify-items:center;gap:6px;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on)}
+.day-pic.tile b{font:400 1.45rem/1 var(--font-display)}
+.day-pic.tile span{font:500 .72rem/1.3 var(--font-mono);text-transform:uppercase;letter-spacing:.08em}
+.day-body{display:grid;gap:7px}
+.day-when{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:0}
+.day-when .mono{font-size:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.day-body p{margin:0;max-width:68ch}
+.eatline{font-size:.97rem}
+.eatline i{font:500 .72rem var(--font-mono);font-style:normal;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-right:6px}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.links a{font:600 .85rem/1.2 var(--font-body);padding:6px 11px;border-radius:999px;border:1.5px solid var(--line);color:var(--ink);text-decoration:none;background:var(--surface)}
+.links a:hover{border-color:var(--ink)}
+.links a.book{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.links a::after{content:" \2197";font-family:var(--font-mono);font-weight:400}
+.links a.here::after{content:" \2192"}
+
+/* stays */
+.stay{display:grid;gap:14px;padding-block:24px;border-top:1px solid var(--line)}
+.stay > *{min-width:0}
+.stay-head{display:grid;gap:6px;align-content:start}
+.stay-head .mono{font-size:.88rem;color:var(--muted)}
+.tiers{display:grid;gap:16px}
+.tier h4{margin:0 0 6px;font:500 .74rem var(--font-mono);text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.tier.cheap h4{color:var(--ok-fg)}
+.tier ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.tier li{font-size:.95rem;line-height:1.4}
+.tier li a{font-weight:700}
+.tier li span{display:block;color:var(--muted)}
+@media (min-width:760px){.stay{grid-template-columns:230px minmax(0,1fr);gap:28px}.tiers{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}}
+.save{background:var(--wash);border-radius:10px;padding:20px 22px;margin-top:8px}
+.save ol{margin:10px 0 0;padding-left:22px;display:grid;gap:8px;max-width:70ch}
+
+/* book */
+.clock{list-style:none;margin:0;padding:0}
+.clock li{display:grid;gap:6px 24px;padding-block:18px;border-top:1px solid var(--line)}
+.clock li > *{min-width:0}
+.clock .when{font:500 .9rem/1.4 var(--font-mono);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;align-content:start}
+.clock .what{display:grid;gap:6px}
+.clock p{margin:0;max-width:66ch}
+.in{font:500 .72rem/1.5 var(--font-mono);background:var(--ink);color:var(--bg);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+@media (min-width:760px){.clock li{grid-template-columns:250px minmax(0,1fr)}}
+.linkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:26px 32px}
+.linkgrid h3{margin-bottom:8px}
+.linkgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.linkgrid li{font-size:.97rem;line-height:1.4}
+.linkgrid small{color:var(--muted);display:block}
+
+/* faq */
+.faq-group{padding-top:30px}
+.faq-group > h3{font:500 .8rem var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px}
+details{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:15px 0;font-weight:700;font-size:1.08rem;line-height:1.35}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 1.3rem/1 var(--font-mono);color:var(--muted);flex:none}
+details[open] summary::after{content:"\2212"}
+.ans{padding:0 0 18px;max-width:70ch;display:grid;gap:10px}
+.ans p,.ans ul{margin:0}
+.ans ul{padding-left:20px;display:grid;gap:6px}
+.refs{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.88rem;align-items:baseline}
+.refs span{font:500 .7rem var(--font-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+footer{margin-top:56px;border-top:1px solid var(--line);padding-block:28px 40px;font-size:.85rem;color:var(--muted)}
+footer p{margin:0 0 10px;max-width:80ch}
+.credits{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:6px 24px}
+.credits li{line-height:1.4}
+@media (prefers-reduced-motion: reduce){.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#trip"><i class="flagmark" aria-hidden="true"></i><span>Steven Turns 40</span></a>
+    <nav aria-label="Pages">
+      <a href="#trip">Trip</a><a href="#days">Days</a><a href="#stays">Stays</a><a href="#book">Book</a><a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= TRIP ================= -->
+<section id="v-trip">
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">June 1 to 28, 2027 · Tokyo to Bangkok</p>
+      <h1><span>Steven</span><span>Turns</span><span class="forty">40</span></h1>
+      <p class="spiel"><span class="eyebrow">Attention, passengers</span><b>It's not a midlife crisis if there's an itinerary.</b></p>
+      <p class="hero-sub">Four weeks. Six destinations. Four Disney parks, one brand-new Disney ship, three Prides, two nights in a hot spring. You're invited to as much of it as you can get away with.</p>
+      <div class="count" role="timer" aria-label="Countdown to Steven's 40th birthday">
+        <div><b id="cd-d">0</b><span>days</span></div>
+        <div><b id="cd-h">00</b><span>hours</span></div>
+        <div><b id="cd-m">00</b><span>min</span></div>
+        <div><b id="cd-s">00</b><span>sec</span></div>
+      </div>
+      <p class="count-note" id="cd-note">Until midnight in Tokyo on June 8, 2027. Steven turns 40 there a full 16 hours before Los Angeles catches up.</p>
+      <div class="cta">
+        <button class="btn" type="button" id="go-join">Pick your leg</button>
+        <a class="btn ghost" href="#days">See it day by day</a>
+      </div>
+    </div>
+    <div>
+      <div class="flag-cap">
+        <p class="eyebrow">The whole trip, to scale</p>
+        <p class="eyebrow">Taller block = more nights</p>
+      </div>
+      <div class="flag" id="flag"></div>
+      <p class="next" id="next"></p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="notice">
+      <span class="badge est">Tentative</span>
+      <p>Dates hold until flights are booked. Tokyo Pride is <strong>confirmed</strong> for June 5 and 6. Seoul and Pattaya Pride dates are <strong>estimates</strong> until the organizers announce.</p>
+    </div>
+  </div>
+
+  <div class="strip" id="strip" tabindex="0" aria-label="Photos of every stop, in route order. Scrolls sideways."></div>
+
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">Where we'll be</p>
+      <h2>Eight flights, one direction</h2>
+      <p class="lede">The route runs north to south and never doubles back: Japan, Korea, Shanghai, Hong Kong, Singapore, Thailand. Every hop between cities is four hours or less.</p>
+    </div>
+    <div class="route">
+      <div>
+        <div class="map">
+          <svg viewBox="-70 0 710 540" role="img" aria-label="Route map over East and Southeast Asia: Tokyo and Hakone, Okinawa, Seoul, Shanghai, Hong Kong, Singapore with a three night cruise, then Bangkok and Pattaya.">
+            <path class="land" d="M415.9 498.2L420.7 494L421.5 491L427.8 488.9L428 494.7L422.5 497.5L422 499.3L426.8 501.6L427.8 503.9L430.6 505.7L418.3 502.5L417 504.7L418.2 511.5L424.2 519.5L419.1 517.2L414.3 511.4L414.6 504.8L412.3 500.8L413.2 497.9L410.8 494.3L413.5 485.5L419 481.1L417 485.7L418.6 487.3L418.7 491.9L413.5 496.3ZM273 404.6L274.7 400.4L281.9 393.8L285.1 392.5L297.3 380L300 378.5L301.2 375.9L301.1 372.3L303.8 367.7L304.5 368.1L304.1 372.6L306.3 378.2L302 380.3L299.6 383.6L294.1 385.4L293.9 387.3L289.4 393.6ZM345.8 365L348.8 364.6L350.1 365.4L349.6 366.5L353.1 365.4L352 369.6L348.3 372.1L347.9 374.2L340.2 376.7L336.9 378.9L338.9 364L336 362.2L336.4 361.4L337.9 360.9ZM353.6 395.7L350.3 395.5L349.2 392.8L345.1 390.8L342.9 386.6L343.9 384.9L349.1 383.3L348.5 378.2L350.8 373.4L354.5 372.1L357.9 373L358.7 374.7L353.2 386.1L353 389.3L355.3 393.4ZM373.2 368.2L375.6 367L378.4 369.4L378.2 374.7L380.2 376.5L381.6 380.6L380 381L379.9 382.1L377.8 379.8L378.4 384L375 382.3L375.1 374.7L373.4 372.5L370.5 372.9L369 365.4ZM382.2 354.1L382.3 355.6L385.2 357.2L384.2 360.2L384.6 364.6L386.2 368L385.7 369L387.9 371.4L386.5 370.4L381.2 370.2L378.5 367.8L376.9 365.1L377.9 362.5L376.4 362.4L370.5 357.7L368.5 352.5L380 352.5ZM315.9 340.8L323.7 341.2L325.7 342.5L326.7 341.8L331.1 345.6L330.4 348L331.3 351.7L329.3 355.9L325.6 356.5L321.2 350.3L319.7 345.6L316.6 342.3L315.1 342.1ZM445.3 545.3L450.6 545.5L453.7 548.1L417.1 548.1L421.2 543.9L431.9 543.5L434.4 544.8L438.5 542.9ZM399 546.4L405.7 548.1L391.9 547.7ZM122.6 530L126.4 539L132.5 540.3L129.8 544.3L130.5 546.5L121.5 543.4L118.6 535.4L109.8 533.7L113.1 530.9L113.6 528.4L115.9 527.3L117.5 529.9L117.7 527.4L120.3 527.1ZM392.7 393.6L394.1 393.4L395.6 397.4L395.8 398.7L393.4 401.8L396.4 403.2L397.7 406.7L397.4 411.3L399.2 413.2L399.4 418.5L397.4 421.4L394.1 423.4L394.1 430.2L389.1 417.5L387.3 418.3L383.1 425.4L385.9 428.2L387 434.3L382.7 439L381.3 437L381.1 433.1L378.5 435.6L377 435.5L367.4 431.1L365.6 429L364.3 421.7L367.3 416.7L364.1 413.4L360 411.5L357.7 411.6L356.3 416.5L353.4 415L352.3 412.9L350.9 414.8L348.9 415L348.2 412.6L345.8 412.1L343.9 413.7L339.4 422.2L337.9 422.5L336.2 420.7L339.3 411.5L340.8 409.9L349.8 407.3L351.7 403.8L355.6 402.1L356.9 400.5L360.2 401.5L362.5 403.8L362.8 406.9L361.8 408.6L367.2 406.4L370 401.8L374.4 402.2L376.2 397.1L379.9 398.4L380.8 396.5L384.7 396.6L383.6 388.5L384.4 387.4L389.8 390.4ZM327.4 278.2L335.4 281.5L338 281.1L339.5 279.2L341.1 279.5L341.8 281.2L339.9 284.4L339.6 289.4L343 295.4L344.5 296.1L339.3 307.7L332 310.8L332.2 314.1L329.3 318.4L333.4 325.7L332.5 327.6L334.3 332.7L336.3 334.5L340.4 335.7L341.4 334.8L340.2 333L346 330.9L350.1 332.5L352.4 337.9L355 336.8L355.3 334L362 336.8L361.9 338.3L358.4 339.2L362.1 343.9L361.6 345.8L366.4 346.8L365.3 352.6L362.9 351L363.8 348.2L359.5 348.3L355.2 346.7L353.2 341.7L345.5 335.9L343.8 336.2L346.5 342.3L346.6 344.1L345.6 344.8L342.6 340.7L334.5 335.6L330.8 336.8L328.6 339.2L325.3 338.8L321.8 336.2L319.1 337.2L318.8 332.5L322.9 328.7L323.2 326.8L318.4 323.9L318.4 328.8L316.4 329.2L313.9 325L311.6 324.2L309 312L307.4 309.9L307.4 306.8L308.2 306L312.7 309.4L315.5 308.6L314.6 302L316.3 292.9L315.3 289.7L318.6 278.9L321.5 277.7ZM492.4 517.4L499.2 517.6L501 518.9L500.5 520.8L503 525.3L500.9 529.7L501.6 535.6L505.7 543.5L506 540.4L508 539.9L509 544.8L510.9 544.5L511.4 548.1L496 548.1L497.4 546.3L496.4 546.1L494.9 548.1L481.1 548.1L477.2 545.3L473.2 544.5L472.1 543L475.6 541.6L482.3 543L486.5 539.2L488.6 538.6L495.5 540.9L496.2 538.8L498.2 538L498.1 537L496.7 536.8L498.4 534.5L485.5 536.6L476.7 536.2L472.8 533.1L471.6 527.7L463 525.7L458.9 526.1L461.6 522.9L462.5 519L469.9 517.1L477.8 512.8L484.1 513.6ZM521.5 547.9L529.8 540.4L531.8 536.6L541 534.5L542.3 533.5L541.7 531.2L550.9 526.8L577.7 537.5L588.9 538.7L590.6 540.7L596.5 541L614.7 548.1ZM381.2 489.8L369.7 502.9L361.2 504.6L354.6 504.4L351 502.3L324.2 502.9L318.3 501.8L315.2 502.8L311.6 507.9L310.9 513.8L313.7 519.2L317.5 521.3L319.5 525.4L324.5 525.8L326 525L331.8 518.7L337.1 520L341.3 517.8L349.5 517.8L348.7 516.6L353.3 515.5L356.6 517.2L356.3 520.3L355 521.1L351.7 519.2L349.7 519.6L340.9 527.7L335.6 529.4L332.8 531.9L328.8 531.7L335.5 537.3L338.6 542.5L341.4 544.5L342.9 548.1L324.5 548.1L324.7 542.5L320.8 541.2L314 545L315 548.1L294.6 548.1L295.1 544.7L294.1 542.1L298.2 539.2L299.3 534.9L301.3 532.3L301.8 523.8L306.6 516.8L308.4 519.1L306.7 509.5L308.7 507.9L307.9 505.4L309.3 502.9L314.1 496.4L316.1 497.9L318.6 497.8L322.2 492.9L325.1 491.9L329.5 493L332 495.2L343.4 495.8L348.8 497.9L351.9 496.7L363.6 497.9L371.7 493.1L372.6 491.1L375.1 490.2L377.3 487.7L379.5 487.5ZM-5.2 443.7L-2.1 443L7.4 443.8L12.3 447.9L13.5 450.6L16.9 453.7L17.6 457.6L36.9 468.9L47.6 481.3L52.5 484.2L51.7 480.6L54.6 480.4L60.4 487.4L64.6 488.3L67.8 490.5L72.8 498L79 499.5L81.4 501.2L81.1 503.2L74.9 505.7L79.6 504.9L85.6 502L87.5 502.4L91.6 507.8L86.8 510.8L86.5 512.9L87.9 514.2L86.9 515.5L90.7 519.4L99.4 521.3L101.5 531L105.9 534.4L105.7 536.1L103.2 538.5L103.3 540.6L107.6 537.8L113.4 537.9L115.9 539.3L122.3 548.1L62.2 548.1L52.5 536.3L52 532.4L44.4 518.3L38.6 512.3L36 507.8L29.1 504L24.3 489.9L21.5 485.3L9.5 479.2L8 473.1L5.3 471.5L-0.4 464.1L-7.5 461.1L-19.2 450.6L-24.2 442.9L-23.9 439.4L-18.5 438.8L-11.7 442.8ZM267.1 426.5L268.8 425.8L271.7 422L273.1 422.3L274 425.6L278.2 427.6L279.4 429.7L278.3 431.6L278.7 434L276.8 435.4L283.6 433.3L285.1 435.7L282.6 436.6L283.1 437.6L288.3 436.4L291.5 439.1L296.4 441.1L300 441.3L300.6 442.6L300 444.4L295.8 446.1L287 446.5L286 448.5L291.4 453.7L283.6 455.7L278.8 455L276.3 457.9L280.5 462.7L278.5 463.3L276.9 462.1L276.1 463.4L270.8 463.5L274.7 465.9L274.8 468.8L278.2 470.4L278.6 471.8L277.7 472.1L279.4 472.6L278.6 473.4L280.6 474.3L284.4 479.7L280.7 483.3L296.8 496.2L295.5 497.4L290.7 498.3L286.1 497.6L282.3 494.8L283 497.4L280.1 499.4L277 505.5L276.2 512.4L277.6 518L273.2 519.9L268.8 523.6L267.3 523.1L266.5 521.3L266.7 524.9L260.2 530.5L262.2 530.5L262.6 532.2L260.7 534.9L263.6 535.8L264.1 536.9L263.6 539.5L260.8 540L261.6 540.4L261 544.4L258.7 544.8L260 547.2L258.7 548.1L220 548.1L216.5 544.8L215.3 548.1L200.2 548.1L199.9 545.7L198.4 544.2L197.4 545.3L194 544.8L188.1 546.5L186.7 545.5L187.6 544.5L185 545.9L183.2 544.3L179 545.2L176.8 533.2L175 531.5L176 527.3L175.3 524.2L171.2 520.1L165.9 518.9L165.7 517.5L167 516.3L163.8 513.9L163.6 511.7L165.5 508L161.3 504L160.7 498.6L161.4 494.3L163.8 492.9L162.1 493L163 489.9L167.1 484.6L170.5 483.3L173.7 486.5L180.2 487.1L192 491.1L189.4 489.1L192.6 481.9L191.8 478.9L195 478.9L195.9 474.4L215.8 469.2L228.5 455.8L229.7 451.7L235.2 450.6L242.9 446.1L243.4 447.6L244.9 447.6L250 445.8L250.9 444L249.3 443.2L248.7 441.3L251.2 438.9L253 439.8L254.8 438.8L258.4 432.4L267 421.7L268 423.7ZM595.9 -9.9L592.8 -9.2L590 -9.9ZM589.1 -9.9L584.1 -5.7L581.6 -5.4L580.6 -6.5L581.6 -9.9ZM597.6 -4.4L600.1 -5L599.8 3.4L604.8 8.8L607.4 15L607.2 19.5L606.2 23.4L602.9 25.1L601.4 27.7L600.3 32.2L595.5 33L593.5 35.4L594 48.2L590.4 52.9L588.2 59.1L592.3 65.4L586.7 68.1L585.3 72.2L578.4 75.5L578.2 70.7L581.8 67.1L578.3 66.2L575.8 69.3L577 71.3L576.1 72.5L573.4 70.7L570.4 71L568.8 72.5L568.2 76.4L564.8 79.1L563.8 78.1L564.3 74.7L565.7 74.1L563.2 72.9L561.3 73.3L556.1 79.4L547.3 78.6L540.8 79.6L543.9 78.1L543.7 77.2L539.5 76.4L539.2 77.9L538.3 77.7L538.6 74L537.4 73.8L533.7 78.4L538.4 81.4L538 82.8L531 84.6L525.4 92.2L522.4 93.2L519.1 92.3L514.7 86.7L514.4 83.2L517.2 81.6L518.6 79.1L513.6 79L509.5 77.3L502.8 77.9L499.1 80.3L487.9 83L481.4 83.7L476.7 82.8L474.5 88.8L469 86.2L462.1 87.4L460 86.5L457.9 87.1L457.5 83.6L459.1 81.9L463.8 81.7L485 68.1L499.2 68.1L515.4 65.1L516.6 65.4L516.1 67.1L517.4 67.9L522.2 68.2L525.2 66.9L527.8 64.9L526.6 62.1L527.4 60.6L535.9 52.8L536.2 47.1L537.9 44.9L544.4 43.1L544.6 44.2L538.6 48.1L540.2 51.6L543.3 52.7L546.9 50.2L557.8 46.9L562 43.7L565.4 39.1L571.9 36L574 31L577.8 26.3L581.4 17.1L580.4 14.2L577 13.4L579.3 12.1L580.7 9.2L579.5 5L584.3 1.9L585.1 -2.5L589 -2.4L590.6 2.1L593.1 0.7L595.6 1.5L597 0.1L597.3 -2.5L591.3 -1.7L591.3 -3.1L593.1 -6.3ZM498.8 82.5L508.1 84L508.6 88.7L509.5 89L504.6 91.7L502 96.1L498.9 93.6L494.5 92.9L489.9 94.7L484.2 102.2L481.2 102.1L482.1 100.4L479.2 100.2L478.3 98.5L479.4 95.6L478 95.1L478.1 93.9L472.9 95L481.2 90.6L483.1 86.9L485.1 85.6L487.8 87.7L493.9 86.6L494.1 83.8ZM463.2 92.1L466.9 91.1L468.4 91.7L468.6 93L466.3 95.8L471.1 96L470.4 97.7L472.5 100.7L467.9 105.8L463.6 119L460 118.6L460.3 120.8L454.8 123.8L456.2 120.7L455 116.8L456.2 116.3L456 115.2L454.3 115.1L453 117L452.8 119L454.2 120.7L453.4 121.8L448.2 120.4L447.5 118.9L449.5 118.4L449.8 116.5L448 114.5L448.1 110.5L450.8 108.9L454.1 103.9L452.2 103.5L452.9 101.3L448.7 97L447.2 97.9L447.9 101L449.9 101L450.1 102.9L446.2 102L442.4 104.5L443.2 102.6L441.3 100.7L441.2 98.5L443.2 100.5L445.4 101L444.1 98.9L439.8 96.3L440.2 94.9L443.4 95.2L443.1 93.8L450.4 91.3L452 88.9L455.2 87.7L458.4 88.4L459.8 90.9ZM323.3 229.4L321.8 236.5L320.5 236.1L318.3 231.2L314.8 228.8L311.6 222L312.3 215.1L324.5 198L332 195L336.2 197.7L335.2 204.2L332.3 210.1L328.8 222.4ZM188.2 261.1L189.2 264.7L186.6 265.9L184.2 269.2L181.6 275.9L175.8 280L173 280.3L171.5 282L169 282.5L158 278.6L157.5 269L165.7 263.4L164.4 263.3L165.6 261.9L177.8 259.7L183.4 260.7L184.3 258.7ZM324.5 432.8L329.5 434.7L328 435.6L326.9 434.7L322.3 434.6ZM506.7 417.1L506.5 415.1L508.3 412.8L507.5 416.9ZM643.9 344L643.3 341.9L645.8 339.5L646.8 339.8ZM270.4 411.6L269.7 409L271 408.3L271.1 410.6ZM307.7 378.8L307.3 377.6L308.5 376.5L310.6 377.3ZM312.6 357.7L313.6 356.9L314.7 359.4L310.6 359.5L308.7 357.1L309 355.9ZM310 363.7L308.6 360.2L309.4 359.8L311.5 361.3ZM347.5 376.3L344.8 379.1L344.8 376.9L347 375.2ZM355.5 391.6L356.2 384.8L360.6 378.5L365 368.6L364.6 379.4L360.5 382.8L357.7 389.5ZM372.4 387.5L366.2 389.4L363.6 389.1L362 386.7L366.8 382.7L369 382.4L372.3 384.1ZM375 395.8L373.5 395.2L373.3 394L375.2 394.4ZM360.5 395.1L358.3 395.2L357.7 394.1L359.8 393.3ZM313.5 444L312.1 443.7L308.1 445.5L312.7 442.3ZM337.4 428.9L335.2 425.8L338.3 424.8L341.9 426.5ZM392.1 387.4L391.5 385.3L392.5 383.7L393.8 386.9ZM387.1 385.8L384.7 382.9L385.1 380.6L387 378.9ZM335.7 340.2L339 341.5L337.6 344.7L335 341.9ZM337.7 358.3L336.5 355.5L337.5 352.2L339.5 351.5ZM345.6 356.1L343.4 354.3L343.2 354L345.6 353.5L346.7 354.9ZM356 350.9L350.3 346.5L350.4 345.9L351.6 345.8ZM361.5 355.1L358.9 351.7L359.4 351.2L360.6 352ZM363.3 357.5L365 360L365.1 362.7L357.4 356.9L353.1 360.5L354.6 354.7L354.2 352.4ZM368.9 340.2L366.9 340.6L365 339L366.2 335.1L367.5 333.8L370.1 336.4ZM338.2 322.8L337.1 323.7L337.4 326.6L336.3 326.5L335.3 321.9ZM518.2 516.5L525.1 517.4L531.6 522L528.7 523.5L525.4 523L523.1 518.6L521.7 519.3L518.8 517.9ZM519.3 528.4L536.2 529.9L538.5 530.7L529.6 531.9ZM511.9 522.5L510.4 521.3L511.5 520L512.9 521.2ZM450.3 529.4L451.2 532.8L448.8 533.8L444 533L442 531.5L446.9 529.9ZM458.5 525.1L456.1 524L454.6 520.3L457.6 519.4L460 520.4ZM457.7 518L456.7 519.1L450.9 519.9L456.4 517.9ZM458.8 509L462.7 510.3L463.6 512L461.9 513L459.1 512.9L453.9 509.5L455.8 512L457.6 512.7L457.6 513.6L455.6 513.9L454.8 512.1L452.9 512.9L452.2 511.7L448.7 511L450.4 509.3ZM438.8 510.8L437 509.2L436.2 507.8L439.3 510.1ZM422.5 483.2L421.4 479.9L423 477.8L426.6 476.2L427.8 477.7L426.9 480.8L425.9 482.4ZM407.5 514.9L406.4 513.5L407.6 511.6L408.9 511.9ZM408.9 518.3L407.1 517.8L407.8 516.1L408.5 516.1ZM414.2 514.2L413.2 516L416.9 518.4L415.3 519.4L413.4 517.9L411.2 518.4L411.3 516.4L409 514.1L409.4 512.6L411.1 513.4L412.1 512.2ZM419.7 529.5L412.6 529.8L410.3 528.1L413.7 524.9L420.5 528.3ZM392 539L389.6 534.2L390.5 532.9L391.4 533.3ZM396 531L384.5 532.5L383.2 531.3L391.8 530.6ZM371 528.8L380.5 529.6L382.2 531.7L370.1 533.3L369 531.5L369.6 529.3ZM353.1 522.8L354.2 525.6L355.6 523.9L358.1 524.3L357.9 526.3L356 527.1L354.7 526.2L353.3 528.4L353 524.6L349.1 527.6L348.4 526.2L349.8 523.1ZM336.2 514L335.9 514.6L332.8 514.9L334.1 513.4ZM402 458.6L401 457.9L402.5 455.6L401.2 454.5L401.7 452L403.2 452.9L403.9 455.2ZM386.5 466.2L384.9 465.5L384.3 462.1L386.7 465.3ZM279.9 458.8L278.4 457.3L279.6 455.5L281.9 456.5L282.5 458.1ZM278.7 468.1L277.6 467.1L277.4 465.8L279.2 466.1ZM168.9 524.3L167.8 523.8L168.4 520.6L172 521.3L172.1 522.6ZM152.8 462.6L149.9 462.5L151.8 461.2L149.1 460.2L148.5 458.3L151.9 456.1L153.9 460.3ZM64.3 483.6L63.7 486.2L62.1 487.1L60.3 486.6L59.4 484.8L60.1 482.8L62.6 482ZM72.6 496.5L70.9 494.2L71 491.1L73.5 493.1ZM74.2 491.9L68.6 489.8L67.8 488.5L73.8 489.7ZM81.1 499.6L74.1 497.8L74.3 494.9L81 497.7ZM82.9 498L77 495.3L77.3 494L81 495.2ZM83.3 501.8L83.1 500.4L84.2 499.7L84.8 501.7ZM86.8 500.3L85.6 498.8L86.2 497.6L87.7 499.4ZM94.8 493.8L96.4 493.9L95.4 496.1L93.7 495.4ZM102.4 493.3L103.4 495.4L102.3 498.1L100.3 496.5L100.4 495.4L97.9 495.8L99.4 493.7ZM105.4 510.8L105.9 510.1L108.1 511.9L100.5 510.7L101.8 508.2ZM102.2 513.8L101.3 515.8L99.4 516.6L98 514.1L100.9 512.5ZM91.3 512.3L87.2 512.8L88.4 511.2ZM152.4 543.5L149.6 548.1L146.6 546.7L143.3 548.1L142.6 544.6L144 540.2L146.3 539.8L151.4 541.8ZM4.8 489.3L12.6 496.3L11.1 501.4L9.2 501L8.2 498.1L5.5 496.7L1.1 490.7L3.3 490.7ZM46.3 548.1L45.2 548.1L43.3 545.4L43.2 542.9L46.6 545.6ZM42.3 543.4L40.4 542.7L40.7 539.5L43.2 541.6ZM38.4 537.8L35.2 536.4L34.3 535.2L34.7 533.5L36.3 534ZM28 530.5L24.7 528.4L22 524L22.6 520.4L26.1 520.2L30.6 528.6L30.7 530ZM18.9 515.6L17.7 515L19.3 511.2L17.9 508.4L18.6 508.3L20.8 511.6ZM-7.2 479.1L-16.1 475.5L-17.3 473.4L-14.9 472.6L-7.9 477.2ZM193.8 478.6L193.2 478.2L193.5 474.1L194.1 474.8ZM271.1 420.2L270.9 418.4L273.6 417.2L273.2 419.3ZM367.7 206.4L365.6 205.4L368.6 203.5L368.9 203.8ZM362.1 207.5L360.2 207.2L360.2 206.9L361.4 205.7L363.6 206.3ZM384 201.6L381.6 201.7L381.8 200ZM422.7 177.1L416.7 180.5L417.2 181.9L415.7 182.8L415.8 184.1L413.8 184.8L414.8 180.6L417.8 178.6L417.2 177.4L419.8 177.7L421.9 175.1ZM431.4 164.9L430.4 163.2L431.3 162.3L432.2 164ZM436.9 159.6L434.2 158.1L441.3 154.8L441.6 155.8ZM452.4 133.4L450.7 131.6L452.2 130.6L454.6 131.9ZM457.3 131.6L458.3 128.1L459.8 126.1L458.5 131.5ZM428 102.2L429.8 102.1L430.6 103.5L427.9 104.1ZM445.5 109.2L445.6 105.1L447.8 104.9L448.2 107.4ZM491.1 58.9L489.2 59.8L488.8 58.4L490 57.8ZM556.9 39.4L557.9 37.6L556.9 36.2L560.3 33.3L559.6 36.3L561.3 36.4L560.2 38.4ZM510.6 84.3L508.5 83.2L513.1 80.1L511.7 81.9L512.1 83.2ZM432.7 101.3L432 99.8L433.5 97.6L434.5 99.3ZM434.9 85.8L434.9 82.8L436.6 83.3L435.8 85.3ZM436.9 83L435.6 82.2L436.4 79.3L438.1 78.3L438.4 80.1ZM427.2 77.7L425.1 76.1L428.2 74.2L428.5 76.9ZM419.2 78L416.8 77.7L416.2 76L419 75.9ZM395.3 96.7L393.7 95.3L396.1 93.5L401.8 92.3L404.1 93.7L401.1 95.8ZM393.8 82.4L393.2 81.3L394.8 79.8L396.6 80.6ZM398.5 42.1L397 41.5L397.1 39.4L398.5 40.5ZM335.6 117.9L328.5 116L326.9 114L330.3 114.6ZM341.3 137.1L337.8 136.2L337.1 134.6L341.3 135.6ZM307.1 193.3L306.4 191.1L307.5 190.3L308.2 192.5ZM143.1 245.3L140.4 246.8L141.4 244.7ZM94.9 379.1L95.2 383.6L94.7 384L92.5 379.8ZM73.3 360L71.6 359.8L71.2 357.7L72.6 358.7ZM92.1 492.7L89.8 492L90.5 490.7L94.5 491.5ZM44.1 443.1L43.1 442.9L43.8 440.6L45.1 441.3ZM39.4 429.6L37 430.7L35.7 428.8L38.4 428.2ZM18.9 411.3L17.5 412L17.8 407.1L19.4 408.1ZM-42.8 424.7L-45.1 419.9L-42.9 418.7L-41.5 421.9ZM-61.1 377.9L-62.5 377.6L-62.7 375.1L-60.6 373.3L-59.7 375.7ZM-58 365.6L-60.3 361.2L-58.4 357.2L-56.9 356.8L-57.8 352.9L-55.9 342.8L-53.2 340.4L-53.1 344.5L-55.5 347.9L-54.5 349.1L-54.1 352.9L-55.8 354.2ZM16.4 366.3L16.2 365L17.5 362.3L17.3 364.6ZM19.9 360.8L19.6 358.8L19.8 358.6L21.7 360.1ZM20.6 365.3L19.4 365L18.6 362.2L20.6 362ZM17.7 351.2L19.7 353.7L17.7 355.4ZM7.3 307L6.3 304.3L7.3 303.7L8.1 304.7ZM-34.9 311.9L-35.3 310.1L-32.4 307.5L-32.9 309.8ZM-44.9 276.8L-46.3 275.8L-47.4 274.4L-43.9 274.5ZM-44.3 265.9L-41.2 267.7L-43 269.1L-45.3 266.7ZM-69 241.8L-69.4 239.2L-68.4 239L-68.2 241.7ZM-74.1 231.2L-75.4 229.7L-74.8 228L-73.6 230.3ZM381.9 385.2L380.1 383.6L379.8 382.5L381.1 383ZM388.4 422.8L387.2 420.7L387.6 419.3L388.6 420ZM372.9 365.2L370.3 365.4L369.4 363.7L371.4 363.5ZM227.8 233L227.9 232.1L230.1 231.5L229.5 233ZM393.8 76.5L393.1 77.9L391.6 76L392.6 75.5ZM443.7 -9.9L441.3 -7.4L442.3 -3.8L441.6 1.8L436.6 3.4L433.5 6.3L428 8.5L425.4 10.8L418 12.5L412.7 15.1L412.1 20.1L410.2 21.1L410.3 22.2L415.6 23.8L422.9 28.8L426.9 35L436.5 46.2L438.4 52.8L437.4 61.4L439.7 61.4L438.6 65.9L434.9 72.1L425.4 73.1L424.2 74.2L424.5 76L419.8 75.2L419 74.1L414.7 75L413.6 75.8L414.7 77.9L410.5 76.6L411.5 79L409.4 81.1L407.3 80L408.3 77.4L403.6 81.4L401.7 80.5L398.7 82.9L398 80.7L395.1 78.5L398.6 78.1L397.9 77.4L399.5 76.6L397.2 76.6L395.4 72.5L399.8 67.3L398.1 66.4L401.2 64.9L401.7 63.6L400.2 63L400.9 61.8L398.8 59.9L398.1 53.4L393.9 53.4L393.7 52.4L398.1 49.5L402.1 50.2L403.3 51.8L404.7 50.4L403.2 49.9L401.6 47.2L402.2 45.9L399.1 40.7L400.1 39.9L396.5 38.7L393.1 40.4L392.2 38.8L388.4 37.4L382.8 40.6L382.2 39.1L377.8 38.1L380.8 36.2L373.8 35.6L376.3 34.3L378.9 30.3L385.5 28.7L380.3 27.2L383.5 21.2L382.9 18.3L375 15.4L373.1 17.2L372 15L369.2 13.6L369.2 12.3L365.9 14.4L359.8 13.9L358.8 15.1L348.8 17.3L342 20.3L337.3 24.1L333.1 24.8L332.8 26.5L326.2 28.1L325.4 25.8L333.2 23.5L332.5 22.1L335 20L327.7 20L327.6 18L331 16.9L331 14.3L334.8 13L341.1 6.2L339.4 3.9L335.6 2L335.3 0.3L333.8 1.9L326.4 1.2L320.9 5.1L317 9.5L305 13.6L302.3 15.5L300 19.7L296.7 22.5L287.5 24L284.1 22L280.6 23.1L277.5 28.6L278.9 31.9L283.7 34.9L294.3 35.6L296.2 36.7L298.2 40.9L296.9 41.6L296.4 45.5L300.9 47.9L307.3 47.7L309 46.5L308.9 45.2L314.7 41.9L314 41.2L320.6 39.3L332.6 43.9L337 44.1L338.3 43L342.1 44.6L346.5 44.6L345.2 45.7L345.4 47.4L343.5 48.8L344.5 50.3L342.1 51.7L339.7 50.1L336.6 50.1L324.7 54.4L321.4 54.2L322.6 56.5L320.1 56.9L319.1 60.4L315.8 61.3L314.9 59.2L313 59.5L311.8 60.5L314.3 62.2L302.8 70.7L299.2 76.3L299.7 77.5L301.7 77.5L314.1 83.4L317.3 91.3L322.3 99L322 103.4L328.6 106.3L330.1 109.7L335.2 112.8L335.7 115.3L334.3 115.3L328.8 113.4L323.6 113.2L321.2 111.2L317.5 110.3L311 112.4L320.2 111.8L321.1 113.8L332.9 120L335.3 123.2L335.9 125L329.7 126.6L324 129.5L322.6 131.5L316.6 131.6L313.1 133.4L317.2 132.6L319.1 134.7L327.5 132.6L333.2 136.7L338.6 138L330.8 142.8L336 141L337.1 142.7L336.4 147.1L333.7 145.6L331.2 145.9L330 147.2L333.2 149.4L331.3 149.6L332.9 150.6L330.4 153.2L332.2 157.6L327.7 158.4L326.9 156.9L326 157.1L323.4 160.7L320.6 161.1L321.7 162.5L318.4 166.4L318.7 168.5L314.3 172.4L311.1 178.1L308.9 178.4L308.1 175.5L306.6 177L304.9 176.3L308.9 181.9L303.3 185.3L298.9 184.5L301.5 186.6L305.4 186L304.3 191.1L305.4 193.5L299.4 192.8L300.9 195.5L296.7 195.8L295.8 199.3L292.1 200.4L293.2 201.5L292.4 203.1L284.7 203L283.6 204.8L281.4 204.9L283.8 206.1L284.3 207.7L278.5 212.8L276.3 212.8L275 215.9L273.9 214.3L271.1 216L268.8 215.2L268.1 217.6L265 218.8L265.9 219.8L263.8 221L262.9 223.9L259.9 223.4L254.5 225.7L251.6 225L249.7 226.7L245.6 225.5L241 228L238.3 226.2L237 229L233.1 228.9L234 230.7L233.1 231.9L228.2 230.7L229.7 229.3L224.4 224.9L224.4 221.6L223 221.9L222 223.9L220.5 224.3L223.5 228.2L223.4 232.8L218 234.7L217.2 233L215.4 236.7L213.4 236.3L210.4 238.4L207.4 235.9L207.8 238.1L206.6 238.8L201.7 237.5L200.8 239.1L197.1 241.1L189.2 241.7L189 242.7L185.9 243.2L183.2 245.3L181.7 245.1L181 243.8L180.6 245.9L177.6 248.7L177.9 249.8L180.4 250L179.7 252.1L182.4 254L180.2 256.7L174.7 256.7L174 255.3L175.1 254.8L173.6 254L170.9 249L171.2 246.4L174.6 242L171.3 241.5L169 239.4L169.3 241.3L163.1 242.5L163.4 240.7L158.9 240.2L156.8 238.4L156.5 236.8L155 236.8L155.3 240.1L152.9 239.4L151.8 241.1L145.9 241.8L140.5 244.5L139.8 247.3L137.2 248.6L130.7 248L131.7 251.3L128.9 253.9L128.5 256.8L123.7 260.5L121.3 261.2L116.4 273.2L120 279L128.2 285.9L128 288.7L126.5 288.3L146.3 306L148.9 305.9L156.3 315.1L159.6 317.7L166.1 336.6L165.9 337.7L165.3 336.6L165.7 343.7L167.7 347.7L168 352.2L166.5 350.3L165 351.6L166.1 354.7L164.8 354.4L165.5 360.2L164.7 359.6L164.7 363L162.5 364.7L161.8 367.8L149.8 373.3L148.5 375.5L138.5 379.5L136.2 378.2L135.1 376.2L134.3 379.4L131.3 377.8L129.7 378.6L131.5 378.9L131.7 380.7L127.8 380.7L132.1 383L129.5 386.1L123.3 381.7L129.1 387.9L128 389.9L126.6 389.9L119.2 384.4L123.6 389.4L123.8 391.9L114.8 395.6L109.5 401.4L104.9 401.8L106.6 399.9L105.6 399.3L105.9 389.3L106.7 386.7L109.2 385.6L108.4 383.6L105.3 381.9L103.5 382.3L98 377.7L92.8 376.3L89.9 378.1L88.9 377.6L88.3 376.1L90.7 373.4L88.2 370.2L85.8 373L83.1 373.1L82.7 366.3L75.5 357.1L74.8 358.2L71 354.7L70.6 355.5L63.8 351.1L60 351.9L52.6 351.5L53.5 341.8L48.6 340.2L40.7 342.8L41.7 346.6L40 351L40.4 357.5L35.5 366.3L33.6 373.4L29.2 380.4L29.2 387.7L30.9 391.7L30.4 393.5L32.3 394.1L38.3 393.2L40.4 401.9L42.2 403.9L42.7 402.9L44.3 405.9L47.9 418.8L46.4 418.1L45.6 414.9L44.3 414.8L44.8 412.7L44 412L42.6 412.6L42.7 414.2L46.2 419.3L48.4 419.4L54.2 423.3L60.7 423.3L64.8 428.1L68.9 431L72.1 431.9L74.7 435.7L83.7 443.1L87.1 450.5L85.9 461.7L87.1 464.7L86.9 472L92 476.4L97.5 487L98.3 490.8L96.9 491.5L94.2 488.3L94.4 490.4L90.4 490.4L87.5 491.9L85.8 489.2L77.3 485.4L64.5 476.5L61 475.1L58 472.6L58.8 471.1L58 468.1L50.2 459.2L51.2 458.5L48.8 454.2L48.8 450.7L45.3 439.1L45.1 434.2L42.1 428.5L36.4 423.1L36.7 420.3L34.5 418.9L35.1 417.2L31.8 417L30.6 413.9L28 412.7L27.7 410.6L24.1 408.5L23 406L21.3 404.9L18.4 406.9L16.7 404L18.5 393.2L23 382L21.1 384L19.8 376L22.6 372.2L23.5 364.7L25.3 363.1L22.1 362.8L22.9 356.8L21.6 356.6L22.7 355.3L21.3 345.2L16.8 338.1L16.2 335L15.5 339.2L15 338.4L14.9 332.8L12.3 326.7L13.8 326.7L11 324.1L9.6 311.5L7.9 309.8L8.6 304.3L9.8 302.9L5.1 303.5L2.7 296.4L-2 292.6L-1.2 297.2L-3.2 301.2L-7.7 303.7L-10.9 300.5L-9.1 304.5L-16.7 307.9L-17.8 310.3L-21.7 313.4L-22.9 313L-22.3 308.8L-24.6 312.2L-27.8 312.3L-28.4 307.7L-29.7 310.4L-31.6 311.2L-31 303.7L-31.5 305.8L-34.5 308.8L-37.5 309.8L-36.8 303.6L-32.5 290.5L-34.7 282.7L-38.2 276.1L-37.2 276L-39.6 274.1L-39.9 269.2L-41.3 271L-41.5 274L-44.5 272.5L-47.3 268.2L-46.2 267.8L-42.9 269.8L-40.5 267.3L-45.7 263.2L-44.5 261.5L-50.6 259.5L-51.9 259.9L-51.3 261.7L-52.3 262.2L-54 259.5L-52.7 258.2L-53.8 258.1L-53.1 255.7L-56.3 258.2L-55.5 256.2L-57.6 253.4L-57.7 256.7L-63.3 250.6L-66.7 245.8L-67.4 239.5L-69.9 232.8L-69.3 231.3L-70.2 231.9L-74.5 224.6L-77 226.6L-77 -9.9Z"/>
+            <g class="gl">
+              <path d="M-70 12.4H640M-70 136.4H640M-70 260.4H640M-70 384.4H640M-70 508.4H640M40.5 0V540M175.5 0V540M310.5 0V540M445.5 0V540M580.5 0V540"/>
+            </g>
+            <g class="gt">
+              <text x="-64" y="132">30°N</text><text x="-64" y="256">20°N</text><text x="-64" y="380">10°N</text><text x="-64" y="504">Equator</text>
+              <text x="180" y="534">110°E</text><text x="315" y="534">120°E</text><text x="450" y="534">130°E</text><text x="585" y="534">140°E</text>
+            </g>
+            <path class="home" d="M640 100Q612 72 584 67"/>
+            <path class="home" d="M47 338L90 298"/>
+            <path class="rt" style="stroke:var(--jp2)" d="M576 66Q526 158 415 181"/>
+            <path class="rt" style="stroke:var(--kr2)" d="M415 181Q442 106 405 43"/>
+            <path class="rt" style="stroke:var(--cn)" d="M405 43Q350 68 330 121"/>
+            <path class="rt" style="stroke:var(--hk2)" d="M330 121Q300 198 232 232"/>
+            <path class="rt" style="stroke:var(--sg2)" d="M232 232Q196 388 92 492"/>
+            <path class="rt" style="stroke:var(--sg2);stroke-dasharray:2 8;stroke-width:3.5" d="M92 492C116 466 160 460 165 477C168 494 128 501 92 492"/>
+            <path class="rt" style="stroke:var(--th)" d="M92 492Q36 420 47 338"/>
+            <path id="flightpath" fill="none" d="M576 66Q526 158 415 181Q442 106 405 43Q350 68 330 121Q300 198 232 232Q196 388 92 492Q36 420 47 338"/>
+            <path class="lead" d="M565 74L548 88M54 350L66 358"/>
+            <g>
+              <circle class="dot" cx="576" cy="66" r="6"/><circle class="dot" cx="415" cy="181" r="6"/>
+              <circle class="dot" cx="405" cy="43" r="6"/><circle class="dot" cx="330" cy="121" r="6"/><circle class="dot" cx="232" cy="232" r="6"/>
+              <circle class="dot" cx="92" cy="492" r="6"/><circle class="dot" cx="47" cy="338" r="6"/>
+              <circle class="dot" cx="567" cy="72" r="3" style="stroke-width:2"/><circle class="dot" cx="52" cy="348" r="3" style="stroke-width:2"/>
+            </g>
+            <path class="plane" id="plane" d="M-8 -6L10 0L-8 6L-4 0Z"><animateMotion dur="16s" repeatCount="indefinite" rotate="auto"><mpath href="#flightpath"/></animateMotion></path>
+            <text x="568" y="52" text-anchor="end">Tokyo</text><text class="dt" x="568" y="38" text-anchor="end">Jun 2-9</text>
+            <text x="544" y="99" text-anchor="end">Hakone</text><text class="dt" x="544" y="113" text-anchor="end">Jun 3-5</text>
+            <text x="415" y="206" text-anchor="middle">Okinawa</text><text class="dt" x="415" y="220" text-anchor="middle">Jun 9-11</text>
+            <text x="393" y="38" text-anchor="end">Seoul</text><text class="dt" x="393" y="24" text-anchor="end">Jun 11-14</text>
+            <text x="318" y="119" text-anchor="end">Shanghai</text><text class="dt" x="318" y="105" text-anchor="end">Jun 14-17</text>
+            <text x="220" y="230" text-anchor="end">Hong Kong</text><text class="dt" x="220" y="216" text-anchor="end">Jun 17-19</text>
+            <text x="80" y="508" text-anchor="end">Singapore</text><text class="dt" x="80" y="522" text-anchor="end">Jun 19-24</text>
+            <text class="dt" x="174" y="484">3 nights at sea</text>
+            <text x="35" y="336" text-anchor="end">Bangkok</text><text class="dt" x="35" y="350" text-anchor="end">Jun 24-28</text>
+            <text x="70" y="364">Pattaya</text><text class="dt" x="70" y="378">Jun 26-27</text>
+            <text class="dt" x="636" y="120" text-anchor="end">from LAX</text><text class="dt" x="96" y="294">home to LAX</text>
+          </svg>
+        </div>
+        <p class="map-note">Flights are drawn as simple arcs, not real flight paths. The dotted loop is the cruise.</p>
+      </div>
+      <div>
+        <ol class="hops" id="hops"></ol>
+        <p class="eyebrow" style="margin-top:22px">Right now it is</p>
+        <div class="clocks" id="clocks"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap sec" id="join-sec">
+    <div class="sec-head">
+      <p class="eyebrow">You're invited</p>
+      <h2>Come for a leg. Or all seven.</h2>
+      <p class="lede">Nobody is expected to take four weeks off. Tap the legs that sound like you, add your name, and text Steven the message it writes.</p>
+    </div>
+    <div class="tags" id="tags"><span class="eyebrow">I'm here for</span></div>
+    <div class="legs" id="legs"></div>
+    <div class="builder">
+      <div>
+        <label for="guest-name">Your name</label>
+        <input id="guest-name" type="text" autocomplete="given-name" placeholder="So he knows who's coming">
+      </div>
+      <div>
+        <label for="join-msg">Your message to Steven</label>
+        <textarea id="join-msg" readonly rows="3"></textarea>
+      </div>
+      <div class="builder-row">
+        <button class="btn" type="button" id="copy-msg">Copy message</button>
+        <p id="copy-status" role="status">Starts with the birthday leg picked as an example. Tap legs above to change it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">Worth the flight alone</p>
+      <h2>The eat list</h2>
+      <p class="lede">Food halls, hawker stalls, one street-food legend with a Michelin star, and a nine-course dinner in a bathrobe. Every name opens on a map.</p>
+    </div>
+    <div class="eat" id="eat"></div>
+  </div>
+</section>
+
+<!-- ================= DAYS ================= -->
+<section id="v-days" hidden>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">June 1 to 28, 2027</p>
+      <h2>Day by day</h2>
+      <p class="lede">Four weeks at a glance, then every day in order. Tap any day on the calendar to jump straight to it.</p>
+    </div>
+    <div class="cal-wrap">
+      <div class="cal" id="cal"></div>
+    </div>
+    <div class="legend">
+      <span><span class="badge ok">Confirmed</span> date announced by the organizer</span>
+      <span><span class="badge est">Estimated</span> based on prior years, shown with a question mark on the calendar</span>
+    </div>
+    <div id="chapters"></div>
+  </div>
+</section>
+
+<!-- ================= STAYS ================= -->
+<section id="v-stays" hidden>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">26 nights, 12 places to sleep</p>
+      <h2>Where to stay, and where to stay for less</h2>
+      <p class="lede">Nothing is booked yet. "Our pick" is where we're aiming: nice, not five-star-only. Most picks run roughly $120 to $330 a night in June. The ryokan (dinner and breakfast included) and the in-park Disney hotels cost more. The cheaper column is close enough to meet us for breakfast.</p>
+    </div>
+    <div id="stays"></div>
+    <div class="save">
+      <h3>Six ways to do this for less</h3>
+      <ol>
+        <li><strong>Join one leg, not four.</strong> A single round trip to Tokyo covers Pride weekend and the birthday.</li>
+        <li><strong>Sleep in the cheaper column.</strong> We'll all be at the same parade, park, and dinner anyway.</li>
+        <li><strong>Do one Tokyo park instead of two.</strong> If you pick one, pick DisneySea on June 8.</li>
+        <li><strong>Book an inside stateroom.</strong> Same ship, same shows, same birthday cake for Patrick.</li>
+        <li><strong>Eat where the list says.</strong> The best meals on this trip are market stalls and hawker centres that cost a few dollars.</li>
+        <li><strong>Book refundable rooms first.</strong> Lock a cancellable rate now, then rebook if prices drop.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK ================= -->
+<section id="v-book" hidden>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">What to book, and when</p>
+      <h2>The booking clock</h2>
+      <p class="lede">Some of this trip sells out the minute it goes on sale, usually at an odd hour in Los Angeles. Here is the order to do it in.</p>
+    </div>
+    <ol class="clock" id="clock"></ol>
+  </div>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">Straight to the source</p>
+      <h2>Direct links</h2>
+      <p class="lede">Flight links open a search with our date filled in. Everything else goes to the official site.</p>
+    </div>
+    <div class="linkgrid" id="linkgrid"></div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="v-faq" hidden>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">Guest relations</p>
+      <h2>Questions, answered</h2>
+      <p class="lede">Entry rules were checked on November 16, 2026 and each answer links to its sources. Rules change, so confirm on the official sites before you book.</p>
+    </div>
+    <div id="faq"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Last updated November 16, 2026. Dates, prices, and opening times will change between now and June 2027. This page gets updated when they do.</p>
+    <p><strong>Photo credits.</strong> All photos are from Wikimedia Commons, resized and cropped for this page, and used under the licenses shown. Map coastlines are from Natural Earth.</p>
+    <ul class="credits" id="credits"></ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var maps=function(q){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q)};
+var fly=function(q){return "https://www.google.com/travel/flights?q="+encodeURIComponent("one way flights "+q)};
+var ext=function(label,url,cls){return '<a href="'+url+'" target="_blank" rel="noopener"'+(cls?' class="'+cls+'"':'')+'>'+label+'</a>'};
+
+/* ---------- data ---------- */
+var LEGS=[
+ {id:"jp",name:"Japan",stops:"Tokyo · Hakone · Tokyo Disney · Okinawa",dates:"Jun 2-11",n:9},
+ {id:"kr",name:"South Korea",stops:"Seoul",dates:"Jun 11-14",n:3},
+ {id:"cn",name:"Shanghai",stops:"The Bund · Shanghai Disneyland",dates:"Jun 14-17",n:3},
+ {id:"hk",name:"Hong Kong",stops:"Harbour · Disneyland · Big Buddha",dates:"Jun 17-19",n:2},
+ {id:"sg",name:"Singapore + at sea",stops:"Singapore · 3 nights on the Disney Adventure",dates:"Jun 19-24",n:5},
+ {id:"th",name:"Thailand",stops:"Bangkok · Pattaya",dates:"Jun 24-28",n:4}
+];
+var SHOTS=[
+ ["tokyo","jp","Tokyo","Jun 2, 5-7","Tokyo skyline at dusk, looking toward Shibuya and Shinjuku"],
+ ["hakone","jp","Hakone","Jun 3-5","Lake Ashi in Hakone with a red torii gate on the shore and Mount Fuji behind"],
+ ["pride","jp","Tokyo Pride","Jun 5-6","Rainbow banners over the outdoor stage at Tokyo Rainbow Pride in Yoyogi Park"],
+ ["disneysea","jp","The birthday","Jun 8","The Mediterranean Harbor at Tokyo DisneySea"],
+ ["manzamo","jp","Okinawa","Jun 9-11","The elephant-trunk cliff of Cape Manzamo over bright blue water"],
+ ["churaumi","jp","Churaumi","Jun 10","A whale shark swimming past visitors at Okinawa Churaumi Aquarium"],
+ ["seoul","kr","Seoul","Jun 11-14","Gyeonghoeru pavilion reflected in its pond at Gyeongbokgung Palace"],
+ ["bund","cn","Shanghai","Jun 14","The Pudong skyline lit in neon at night"],
+ ["shdl","cn","Shanghai Disneyland","Jun 15-16","The castle at Shanghai Disneyland under a blue sky"],
+ ["hk","hk","Hong Kong","Jun 17-19","Hong Kong's skyline at night seen from Victoria Peak"],
+ ["buddha","hk","Big Buddha","Jun 19","The bronze Tian Tan Buddha on Lantau Island"],
+ ["supertree","sg","Singapore","Jun 19-21","The Supertree Grove at Gardens by the Bay"],
+ ["ship","sg","At sea","Jun 21-24","The Disney Adventure cruise ship at its pier"],
+ ["watarun","th","Bangkok","Jun 24-28","Wat Arun at sunset with a royal barge on the Chao Phraya River"],
+ ["pattaya","th","Pattaya Pride","Jun 26","A quiet stretch of Pattaya beach on a sunny day"]
+];
+var ALT={};SHOTS.forEach(function(s){ALT[s[0]]=s[4]});
+var HOPS=[
+ ["Jun 1","Los Angeles to Tokyo","Nonstop, about 11.5 hours. Lands June 2.","from LAX to Tokyo on June 1 2027"],
+ ["Jun 9","Tokyo to Okinawa","About 3 hours to Naha.","from Tokyo HND to Okinawa OKA on June 9 2027"],
+ ["Jun 11","Okinawa to Seoul","Evening nonstop, about 2 h 20 m.","from Okinawa OKA to Seoul ICN on June 11 2027"],
+ ["Jun 14","Seoul to Shanghai","Morning, about 2 hours. Starts the 240-hour clock.","from Seoul to Shanghai on June 14 2027"],
+ ["Jun 17","Shanghai to Hong Kong","About 2.5 hours.","from Shanghai to Hong Kong on June 17 2027"],
+ ["Jun 19","Hong Kong to Singapore","Afternoon, about 4 hours.","from Hong Kong to Singapore on June 19 2027"],
+ ["Jun 24","Singapore to Bangkok","Midday, about 2.5 hours.","from Singapore to Bangkok on June 24 2027"],
+ ["Jun 28","Bangkok to Los Angeles","One connection. Lands the same day.","from Bangkok to LAX on June 28 2027"]
+];
+var JOIN=[
+ {id:"land",leg:"jp",name:"Tokyo landing + ryokan",dates:"Jun 2-5",tags:["Slow","Food"],pitch:"PokéPark Kanto in the morning, then two nights of hot springs and nine-course dinners in Hakone.",fly:"Fly into Tokyo"},
+ {id:"bday",leg:"jp",name:"Tokyo Pride + the birthday",dates:"Jun 5-9",tags:["Pride","Parks"],pitch:"Pride festival Saturday, parade Sunday, Disneyland Monday, the big day at DisneySea Tuesday. If you can only do one, do this one.",fly:"Fly into and out of Tokyo"},
+ {id:"oki",leg:"jp",name:"Okinawa beach break",dates:"Jun 9-11",tags:["Beach","Slow"],pitch:"Japan's tropics. Snorkel the Blue Cave, meet a whale shark, watch the sun drop behind Cape Manzamo.",fly:"Fly into Naha"},
+ {id:"seoul",leg:"kr",name:"Seoul",dates:"Jun 11-14",tags:["Pride","Food"],pitch:"Palaces by day, barbecue by night, and the Seoul Queer Parade if the date lands where we think it will.",fly:"Fly into Seoul"},
+ {id:"china",leg:"cn",name:"Shanghai + Hong Kong",dates:"Jun 14-19",tags:["Parks","Food"],pitch:"Two skylines, two castles, soup dumplings, roast goose, and three park days across two resorts.",fly:"Join in Seoul or Hong Kong for the visa-free transit"},
+ {id:"ship",leg:"sg",name:"Singapore + the ship",dates:"Jun 19-24",tags:["Parks","Food","Slow"],pitch:"Hawker feasts and Supertrees, then three nights on the Disney Adventure. Boarding day is Patrick's birthday.",fly:"Fly into and out of Singapore"},
+ {id:"thai",leg:"th",name:"Bangkok + Pattaya Pride",dates:"Jun 24-28",tags:["Pride","Food","Beach"],pitch:"Gold temples, river sunsets, a beach-town Pride, a giant weekend market, and the farewell dinner.",fly:"Fly into and out of Bangkok"}
+];
+var EAT=[
+ ["jp","Tokyo",[["Isetan Shinjuku food hall, eaten on the roof","Isetan Shinjuku"],["Gyoza Sausage Bun at DisneySea","Nautilus Galley Tokyo DisneySea"]]],
+ ["jp","Hakone",[["Kaiseki dinner at the ryokan","Hakone Ginyu"],["Soba at Hatsuhana","Hatsuhana Soba Honten Hakone"],["Black eggs at Owakudani","Owakudani Hakone"],["Tea at Amazake-chaya","Amazake-chaya Hakone"]]],
+ ["jp","Okinawa",[["Okinawa soba at Kishimoto Shokudo","Kishimoto Shokudo Motobu Okinawa"],["Taco rice","King Tacos Kin Okinawa"],["Blue Seal ice cream","Blue Seal Okinawa"],["Lunch upstairs at Makishi Market","Makishi Public Market Naha"]]],
+ ["kr","Seoul",[["Samgyetang at Tosokchon","Tosokchon Samgyetang Seoul"],["Gwangjang Market","Gwangjang Market Seoul"],["Cold noodles at Eulji Myeonok","Eulji Myeonok Seoul"],["Korean barbecue, then fried chicken and beer","Korean BBQ Itaewon Seoul"]]],
+ ["cn","Shanghai",[["Soup dumplings at Jia Jia Tang Bao","Jia Jia Tang Bao 90 Huanghe Road Shanghai"],["Pan-fried buns at Yang's","Yang's Fry Dumpling Shanghai"],["Dinner at Old Jesse","Old Jesse Restaurant Shanghai"]]],
+ ["hk","Hong Kong",[["Roast goose at Yat Lok","Yat Lok 34-38 Stanley Street Hong Kong"],["Wonton noodles at Mak's","Mak's Noodle 77 Wellington Street Hong Kong"],["Dim sum at Tim Ho Wan","Tim Ho Wan Hong Kong"],["Breakfast at Australia Dairy Company","Australia Dairy Company Jordan Hong Kong"]]],
+ ["sg","Singapore",[["Tian Tian chicken rice, before noon","Tian Tian Hainanese Chicken Rice Maxwell Food Centre"],["Satay Street at Lau Pa Sat, from 7pm","Lau Pa Sat Satay Street Singapore"],["Chili crab at Jumbo","Jumbo Seafood Singapore"]]],
+ ["th","Bangkok",[["Crab omelet at Jay Fai","Raan Jay Fai Bangkok"],["Pad thai at Thipsamai","Thipsamai Pad Thai Bangkok"],["Yaowarat street food","Yaowarat Road Bangkok"],["Or Tor Kor Market","Or Tor Kor Market Bangkok"]]]
+];
+var M=function(label,q){return [label,maps(q)]};
+var CHAPTERS=[
+ {leg:"jp",title:"Wheels up, Tokyo down",dates:"Jun 1-2",pitch:"Eleven and a half hours in the air, then dinner from a department-store basement. Trust us on the basement.",photos:["tokyo"],days:[
+  {d:1,t:"Wheels up",p:"Depart Los Angeles for Tokyo. The date line takes a day now and gives it back on June 28.",links:[["Search LAX to Tokyo",fly("from LAX to Tokyo on June 1 2027"),"book"]]},
+  {d:2,t:"Land in Tokyo",p:"Check in at Shinjuku and keep it easy. Shower, walk, early night.",eat:"Dinner from the Isetan Shinjuku basement food hall, carried up to the roof garden.",links:[M("Isetan Shinjuku","Isetan Shinjuku")]}
+ ]},
+ {leg:"jp",title:"Pocket monsters, then hot springs",dates:"Jun 3-5",pitch:"A forest full of Pokémon in the morning. A private outdoor bath by dinner. Two nights of doing very little, very well.",photos:["hakone"],days:[
+  {d:3,t:"PokéPark Kanto, then the mountains",p:"Earliest forest slot at PokéPark Kanto inside Yomiuriland. Allow 3 to 5 hours and leave by 3:30pm for the train to Hakone. Ryokan night one.",eat:"Kaiseki dinner at the ryokan, served in courses.",links:[["PokéPark ticket guide","https://en.japantravel.com/kanagawa/how-to-get-pokepark-kanto-tickets/72623","book"],M("Yomiuriland","Yomiuriland PokePark Kanto")]},
+  {d:4,t:"Do nothing, beautifully",p:"Ryokan day: bath, robe, nap, repeat. If you get restless, the Hakone Open-Air Museum (9 to 5) or the ropeway to Owakudani's steaming valley.",eat:"Black eggs at Owakudani. Sweet rice tea at Amazake-chaya, a thatched teahouse on the old highway.",links:[["Hakone Open-Air Museum","https://www.hakone-oam.or.jp/en/"],M("Owakudani","Owakudani Hakone"),M("Amazake-chaya","Amazake-chaya Hakone")]}
+ ]},
+ {leg:"jp",title:"Tokyo Pride weekend",dates:"Jun 5-6",pitch:"Confirmed dates, Yoyogi Park, and a parade through Shibuya. Then Ni-chome until someone says stop.",photos:["pride"],days:[
+  {d:5,t:"Tokyo Pride festival",b:"ok",p:"Soba at Hatsuhana, then about 85 minutes back to Shinjuku. Afternoon at the Tokyo Pride festival in Yoyogi Park. Night out in Shinjuku Ni-chome, a few hundred bars in a few small blocks.",eat:"Hatsuhana's yam soba before the train.",links:[["Tokyo Pride","https://pride.tokyo/","book"],M("Yoyogi Park","Yoyogi Park event plaza"),M("Shinjuku Ni-chome","Shinjuku Nichome")]},
+  {d:6,t:"Tokyo Pride Parade",b:"ok",p:"Parade day through Shibuya and Harajuku. Walk it or cheer it. Ni-chome again after, because of course.",links:[["Tokyo Pride","https://pride.tokyo/","book"]]}
+ ]},
+ {leg:"jp",title:"The birthday",dates:"Jun 7-8",pitch:"The reason for the season. Thirty-nine ends on Monday night at Tokyo Disneyland. Forty starts on Tuesday at the best theme park on Earth.",photos:["disneysea"],days:[
+  {d:7,t:"Tokyo Disneyland",p:"The rebuilt Tomorrowland and its new Space Mountain are scheduled to open in 2027. If they're open, ride that first. Then the two you can't ride anywhere else: Enchanted Tale of Beauty and the Beast and Pooh's Hunny Hunt. Move into the Disney hotel tonight.",links:[["Tokyo Disney tickets and hotels","https://reserve.tokyodisneyresort.jp/en/","book"],["Tokyo Disney Resort","https://www.tokyodisneyresort.jp/en/"]]},
+  {d:8,t:"Steven turns 40 at Tokyo DisneySea",b:"bday",p:"Fantasy Springs first. Then Journey to the Center of the Earth, Tower of Terror, and the harbor show after dark. Wear something you'd want in the photos.",eat:"The Gyoza Sausage Bun at Nautilus Galley. It is a birthday cake if you believe.",links:[["Tokyo Disney tickets and hotels","https://reserve.tokyodisneyresort.jp/en/","book"]]}
+ ]},
+ {leg:"jp",title:"Okinawa",dates:"Jun 9-11",pitch:"Japan's tropics. We've done Kyoto, so we traded the temples for a snorkel and a whale shark.",photos:["manzamo","churaumi"],days:[
+  {d:9,t:"Fly south",p:"About 3 hours from Tokyo to Naha. Pick up the car and drive the Onna coast. Sunset at Cape Manzamo.",eat:"Taco rice for dinner, Blue Seal ice cream after.",links:[["Search Tokyo to Okinawa",fly("from Tokyo HND to Okinawa OKA on June 9 2027"),"book"],M("Cape Manzamo","Cape Manzamo Okinawa")]},
+  {d:10,t:"Blue Cave and whale sharks",p:"Morning snorkel in the Blue Cave at Cape Maeda. Afternoon at Churaumi Aquarium, or the Junglia nature park if we want rides.",eat:"Okinawa soba at Kishimoto Shokudo, open since 1905.",links:[["Churaumi Aquarium","https://churaumi.okinawa/en/","book"],M("Blue Cave","Blue Cave Cape Maeda Okinawa"),M("Junglia","Junglia Okinawa")]},
+  {d:11,t:"Shuri Castle, then Seoul",p:"The rebuilt main hall of Shuri Castle, on a timed reservation. Lunch at the market, then the evening nonstop to Seoul, about 2 hours 20 minutes.",eat:"Upstairs at Makishi Public Market: pick your fish downstairs, they cook it.",links:[["Shuri Castle reservations","https://visitokinawajapan.com/?p=18945","book"],["Search Okinawa to Seoul",fly("from Okinawa OKA to Seoul ICN on June 11 2027"),"book"]]}
+ ]},
+ {leg:"kr",title:"Seoul",dates:"Jun 12-13",pitch:"Palaces, barbecue, a 24-hour bathhouse, and a parade we're betting on.",photos:["seoul"],days:[
+  {d:12,t:"Palaces and, probably, Pride",b:"est",p:"Gyeongbokgung Palace and the changing of the guard, then the hanok lanes of Bukchon. The Seoul Queer Parade should be today: 2026's was June 13 and the announcement usually lands in mid-April. Night in Itaewon.",eat:"Ginseng chicken soup at Tosokchon for lunch. Korean barbecue for dinner.",links:[["Seoul Queer Culture Festival","https://www.sqcf.org/english","book"],M("Gyeongbokgung","Gyeongbokgung Palace"),M("Bukchon","Bukchon Hanok Village")]},
+  {d:13,t:"Secret Garden to sauna",p:"Changdeokgung's Secret Garden, the alleys of Ikseon-dong, the Han River at sunset, and a jjimjilbang late.",eat:"Gwangjang Market (check the posted prices first), cold noodles at Eulji Myeonok, then fried chicken and beer.",links:[M("Changdeokgung","Changdeokgung Palace Secret Garden"),M("Ikseon-dong","Ikseon-dong Hanok Village Seoul"),M("Gwangjang Market","Gwangjang Market Seoul")]}
+ ]},
+ {leg:"cn",title:"Shanghai",dates:"Jun 14-16",pitch:"One night of Art Deco and neon downtown, then two full days at the biggest castle Disney has ever built.",photos:["bund","shdl"],days:[
+  {d:14,t:"Old Shanghai in a day",p:"Morning flight from Seoul, about 2 hours. Landing starts China's 240-hour visa-free transit. Yu Garden, the French Concession, and the Bund once the lights come on.",eat:"Soup dumplings at Jia Jia Tang Bao, pan-fried buns at Yang's, dinner at Old Jesse.",links:[["Search Seoul to Shanghai",fly("from Seoul to Shanghai on June 14 2027"),"book"],M("The Bund","The Bund Shanghai"),M("Yu Garden","Yu Garden Shanghai")]},
+  {d:15,t:"Shanghai Disneyland, day one",p:"TRON Lightcycle Power Run, Zootopia, Pirates of the Caribbean, Soaring. Buy Premier Access for TRON and Zootopia first thing.",links:[["Shanghai Disney Resort","https://www.shanghaidisneyresort.com/en/","book"]]},
+  {d:16,t:"Shanghai Disneyland, day two",p:"Peter Pan's Flight, Seven Dwarfs Mine Train, Roaring Rapids, the shows, and everything we loved yesterday again.",links:[["Shanghai Disney Resort","https://www.shanghaidisneyresort.com/en/","book"]]}
+ ]},
+ {leg:"hk",title:"Hong Kong",dates:"Jun 17-19",pitch:"A harbour, a peak, a roast goose, and the best dark ride you've never heard of.",photos:["hk","buddha"],days:[
+  {d:17,t:"Harbour and Peak",p:"Flight from Shanghai, about 2.5 hours. Star Ferry across the harbour, Peak Tram for sunset, the 8pm light show from the waterfront.",eat:"Roast goose at Yat Lok, wonton noodles at Mak's, dim sum at Tim Ho Wan.",links:[["Search Shanghai to Hong Kong",fly("from Shanghai to Hong Kong on June 17 2027"),"book"],M("Peak Tram","Peak Tram Hong Kong"),M("Star Ferry","Star Ferry Tsim Sha Tsui")]},
+  {d:18,t:"Hong Kong Disneyland",p:"Mystic Manor is the one. Then World of Frozen and Big Grizzly Mountain. Small park, short lines, done by dinner.",links:[["Hong Kong Disneyland","https://www.hongkongdisneyland.com/","book"]]},
+  {d:19,t:"Big Buddha, then Singapore",p:"Drop bags at the airport and ride the Ngong Ping cable car up to the Big Buddha. Afternoon flight to Singapore, about 4 hours.",eat:"Breakfast at Australia Dairy Company: scrambled eggs, fast. Dinner on Satay Street at Lau Pa Sat from 7pm.",links:[["Ngong Ping 360","https://www.np360.com.hk/en/","book"],["Search Hong Kong to Singapore",fly("from Hong Kong to Singapore on June 19 2027"),"book"]]}
+ ]},
+ {leg:"sg",title:"Singapore",dates:"Jun 20",pitch:"One full day of hawker stalls and giant electric trees before the ship.",photos:["supertree"],days:[
+  {d:20,t:"Singapore in a day",p:"Chinatown, Kampong Glam, then Gardens by the Bay: Cloud Forest in the heat of the afternoon, the Supertree light show after dark, Marina Bay to finish.",eat:"Tian Tian chicken rice at Maxwell before noon, since it sells out around 2pm (Ah Tai next door is the backup). Chili crab at Jumbo.",links:[["Gardens by the Bay","https://www.gardensbythebay.com.sg/","book"],M("Maxwell Food Centre","Maxwell Food Centre Singapore")]}
+ ]},
+ {leg:"sg",title:"Three nights at sea",dates:"Jun 21-24",pitch:"No ports. The ship is the destination, the buffet is the excursion, and Patrick gets a birthday on the water.",photos:["ship"],days:[
+  {d:21,t:"All aboard. Happy birthday, Patrick.",p:"Board the Disney Adventure at Marina Bay Cruise Centre on Monday afternoon. Sail-away party on deck. It is also Patrick's birthday, and he gets a ship.",links:[["Disney Cruise Line","https://disneycruise.disney.go.com/","book"],M("Marina Bay Cruise Centre","Marina Bay Cruise Centre Singapore")]},
+  {d:22,d2:23,t:"At sea",p:"Two full days with nothing to plan. Shows, pools, dinner in rotation, and no one checking the time."}
+ ]},
+ {leg:"th",title:"Bangkok",dates:"Jun 24-25",pitch:"Gold temples, river sunsets, and a queue number at 9am.",photos:["watarun"],days:[
+  {d:24,t:"Ship to shore to Bangkok",p:"Off the ship in the morning, midday flight to Bangkok (about 2.5 hours). Sunset drinks on the river facing Wat Arun.",eat:"Street food crawl down Yaowarat, Bangkok's Chinatown.",links:[["Search Singapore to Bangkok",fly("from Singapore to Bangkok on June 24 2027"),"book"],M("Yaowarat","Yaowarat Road Bangkok")]},
+  {d:25,t:"Temples and a Michelin star on the street",p:"9am: put our name down at Jay Fai (open Wednesday to Saturday, cash only). While we wait: the Grand Palace, Wat Pho, Wat Arun. Silom after dark.",eat:"Jay Fai's crab omelet. Thipsamai pad thai if the queue wins. Dinner at Le Du, Nahm, or Nusara.",links:[M("Jay Fai","Raan Jay Fai Bangkok"),M("Grand Palace","Grand Palace Bangkok"),M("Wat Pho","Wat Pho Bangkok")]}
+ ]},
+ {leg:"th",title:"Pattaya Pride and the last supper",dates:"Jun 26-28",pitch:"One beach-town Pride, one enormous market, one farewell dinner, one very long flight home.",photos:["pattaya"],days:[
+  {d:26,t:"Pattaya Pride",b:"est",p:"Overnight in Jomtien. Dongtan Beach by day, the Pride parade in the late afternoon (currently listed for June 25 to 27), and Jomtien Complex at night.",links:[["Pattaya Pride listing","https://www.pattayaland.com/en/events/pattaya-international-pride-festival","book"],M("Dongtan Beach","Dongtan Beach Jomtien Pattaya")]},
+  {d:27,t:"Markets and a farewell dinner",p:"Back in Bangkok by midday. Chatuchak Weekend Market, 15,000 stalls, bring a tote. Then the farewell dinner.",eat:"Lunch at Or Tor Kor Market across the road from Chatuchak.",links:[M("Chatuchak Market","Chatuchak Weekend Market"),M("Or Tor Kor Market","Or Tor Kor Market Bangkok")]},
+  {d:28,t:"Home",p:"Bangkok to Los Angeles with one connection. The date line gives the day back, so we land the same day we leave. Forty, tanned, broke, happy.",links:[["Search Bangkok to LAX",fly("from Bangkok to LAX on June 28 2027"),"book"]]}
+ ]}
+];
+var H=function(name,note,url,q){return {name:name,note:note,url:url||maps(q||name)}};
+var STAYS=[
+ {leg:"jp",place:"Tokyo (Shinjuku)",dates:"Jun 2-3 and Jun 5-7",n:"3 nights",
+  pick:[H("JR Kyushu Hotel Blossom Shinjuku","Three minutes from Shinjuku Station's south exit. Calm rooms, easy walk to Ni-chome.")],
+  also:[H("Hotel Groove Shinjuku","Inside Tokyu Kabukicho Tower, with the nightlife at the door.")],
+  cheap:[H("Tokyu Stay Shinjuku","Washer-dryer in the room. On a four-week trip that is a luxury."),H("APA Hotel Shinjuku Kabukicho Tower","Small room, small price, same neighborhood.")]},
+ {leg:"jp",place:"Hakone ryokan",dates:"Jun 3-5",n:"2 nights",
+  pick:[H("Hakone Ginyu","Every room has its own open-air bath over the valley. Dinner and breakfast included.","https://www.ikyu.com/en-us/00002591/")],
+  also:[H("Yama no Chaya","Family-run inn reached by a footbridge over the river.",null,"Yama no Chaya Hakone"),H("Gora Kadan","The splurge: a former imperial villa.",null,"Gora Kadan Hakone")],
+  cheap:[H("Hakone Kowakien Tenyu","Modern ryokan-style hotel, outdoor bath on every balcony.",null,"Hakone Kowakien Tenyu"),H("Ichinoyu Honkan","An inn founded in 1630 at budget prices.",null,"Ichinoyu Honkan Hakone")]},
+ {leg:"jp",place:"Tokyo Disney Resort",dates:"Jun 7-9",n:"2 nights",
+  pick:[H("Hotel MiraCosta","Inside DisneySea itself. Harbor rooms overlook the birthday.","https://reserve.tokyodisneyresort.jp/en/"),H("Fantasy Springs Hotel","The newest, with its own entrance into Fantasy Springs.","https://reserve.tokyodisneyresort.jp/en/")],
+  also:[H("Tokyo Disney Resort Toy Story Hotel","The mid-priced Disney hotel, on the monorail loop.","https://reserve.tokyodisneyresort.jp/en/")],
+  cheap:[H("Hilton Tokyo Bay","Official partner hotel on the monorail, usually well under Disney-hotel rates.",null,"Hilton Tokyo Bay"),H("Tokyo Disney Celebration Hotel","Disney's value hotel, a free shuttle ride away.",null,"Tokyo Disney Celebration Hotel")]},
+ {leg:"jp",place:"Okinawa (Onna coast)",dates:"Jun 9-11",n:"2 nights",
+  pick:[H("Hyatt Regency Seragaki Island","On its own small island, with a lagoon and a bridge to the mainland.","https://www.hyatt.com/hyatt-regency/en-US/okaro-hyatt-regency-seragaki-island-okinawa")],
+  also:[H("Renaissance Okinawa Resort","Beachfront, close to the Blue Cave.",null,"Renaissance Okinawa Resort")],
+  cheap:[H("Rizzan Sea Park Hotel Tancha Bay","Big beachfront resort, older rooms, friendlier rates.",null,"Rizzan Sea Park Hotel Tancha Bay"),H("Hotel Miyuki Beach","Simple rooms right on the sand.",null,"Hotel Miyuki Beach Okinawa")]},
+ {leg:"kr",place:"Seoul",dates:"Jun 11-14",n:"3 nights",
+  pick:[H("The Plaza Seoul, Autograph Collection","Faces City Hall. Palaces and Myeongdong on foot.","https://www.marriott.com/SELAK")],
+  also:[H("Le Méridien Seoul Myeongdong","Newer, in the middle of Myeongdong.",null,"Le Meridien Seoul Myeongdong")],
+  cheap:[H("Hotel28 Myeongdong","Film-themed boutique on the main shopping street.",null,"Hotel28 Myeongdong"),H("Moxy Seoul Myeongdong","Compact, lively, cheap.",null,"Moxy Seoul Myeongdong"),H("Hotel Midcity Myeongdong","Plain, clean, central.",null,"Hotel Midcity Myeongdong")]},
+ {leg:"cn",place:"Shanghai (downtown)",dates:"Jun 14-15",n:"1 night",
+  pick:[H("Radisson Collection Hotel, Yangtze Shanghai","1930s Art Deco a block from People's Square. Formerly the Yangtze Boutique.","https://www.radissonhotels.com/en-us/hotels/radisson-collection-yangtze-shanghai")],
+  also:[H("Hotel Indigo Shanghai on the Bund","River rooms looking straight at the Pudong skyline.",null,"Hotel Indigo Shanghai on the Bund")],
+  cheap:[H("Campanile Shanghai Bund","Plain rooms, short walk to the Bund.",null,"Campanile Shanghai Bund Hotel")]},
+ {leg:"cn",place:"Shanghai Disney Resort",dates:"Jun 15-17",n:"2 nights",
+  pick:[H("Shanghai Disneyland Hotel","Art Nouveau hotel across the lake, with a ferry to the gates.","https://www.shanghaidisneyresort.com/en/hotels-compare/")],
+  also:[H("Toy Story Hotel","The value Disney hotel, shuttle to the gate.","https://www.shanghaidisneyresort.com/en/hotels-compare/")],
+  cheap:[H("Novotel Shanghai Clover","Not Disney, cheaper again, close to the resort.",null,"Novotel Shanghai Clover")]},
+ {leg:"hk",place:"Hong Kong",dates:"Jun 17-19",n:"2 nights",
+  pick:[H("Hotel ICON","Harbour-view rooms and a rooftop pool in Tsim Sha Tsui East.",null,"Hotel ICON Hong Kong")],
+  also:[H("The Hari Hong Kong","Polished and quiet on the Island side, in Wan Chai.",null,"The Hari Hong Kong")],
+  cheap:[H("Eaton HK","Jordan. Great food hall downstairs and known as one of the city's most queer-friendly hotels.",null,"Eaton HK"),H("Ovolo Southside","Warehouse conversion, cheaper for being off-center.",null,"Ovolo Southside Hong Kong")]},
+ {leg:"sg",place:"Singapore",dates:"Jun 19-21",n:"2 nights",
+  pick:[H("Mondrian Singapore Duxton","Duxton Hill. Short walk to Maxwell Food Centre and the Neil Road bars.","https://mondrianhotels.com/singapore-duxton/")],
+  also:[H("The Clan Hotel","Telok Ayer, with a skyline pool.",null,"The Clan Hotel Singapore"),H("Parkroyal Collection Pickering","The hotel wrapped in gardens, beside Chinatown.",null,"Parkroyal Collection Pickering")],
+  cheap:[H("The Scarlet Singapore","Boutique shophouses a block from Maxwell.",null,"The Scarlet Singapore"),H("Lloyd's Inn","Minimalist and quiet, near Orchard Road.",null,"Lloyd's Inn Singapore")]},
+ {leg:"sg",place:"Disney Adventure",dates:"Jun 21-24",n:"3 nights",
+  pick:[H("Verandah stateroom","A balcony earns its keep on a sailing with no ports.","https://disneycruise.disney.go.com/")],
+  also:[H("Oceanview stateroom","A window, no balcony.","https://disneycruise.disney.go.com/")],
+  cheap:[H("Inside stateroom","Same ship, same shows, smallest bill.","https://disneycruise.disney.go.com/")]},
+ {leg:"th",place:"Bangkok",dates:"Jun 24-26 and Jun 27-28",n:"3 nights",
+  pick:[H("The Standard, Bangkok Mahanakhon","In the Mahanakhon tower, walking distance to Silom's bars.","https://www.hyatt.com/the-standard/th-TH/bkksb-the-standard-bangkok/ojo")],
+  also:[H("Sala Rattanakosin","Tiny riverside hotel that stares straight at Wat Arun.",null,"Sala Rattanakosin Bangkok")],
+  cheap:[H("Lub d Bangkok Silom","Design hostel with private rooms, in Silom.",null,"Lub d Bangkok Silom"),H("Baan Tuk Din","Simple old-town hotel near Khao San Road.",null,"Baan Tuk Din Hotel Bangkok")]},
+ {leg:"th",place:"Pattaya (Jomtien)",dates:"Jun 26-27",n:"1 night",
+  pick:[H("Rabbit Resort Pattaya","Thai-style villas on Dongtan Beach.","https://www.booking.com/hotel/th/rabbit-resort-pattaya.html")],
+  also:[H("Hilton Pattaya","Big sea-view rooms above the mall in central Pattaya.",null,"Hilton Pattaya")],
+  cheap:[H("The AGATE Pattaya Boutique Resort","Beside Jomtien Complex.",null,"The AGATE Pattaya Boutique Resort"),H("Marine Beach Hotel","Jomtien basics near the beach.",null,"Marine Beach Hotel Pattaya")]}
+];
+var CLOCK=[
+ {when:"Now",what:"The ship: Disney Adventure, June 21 sailing",p:"On sale now. A three-night sailing on a brand-new ship is the piece most likely to sell out, so book this first. Leaves Singapore Monday, June 21, back Thursday, June 24.",links:[["Disney Cruise Line","https://disneycruise.disney.go.com/","book"]]},
+ {when:"Now",what:"Long-haul flights",p:"June 2027 fares are already published. Set a price alert for Los Angeles to Tokyo on June 1 and Bangkok to Los Angeles on June 28, or for whichever leg you're joining.",links:[["LAX to Tokyo, Jun 1",fly("from LAX to Tokyo on June 1 2027"),"book"],["Bangkok to LAX, Jun 28",fly("from Bangkok to LAX on June 28 2027"),"book"]]},
+ {when:"Now",what:"Refundable rooms everywhere else",p:"Lock cancellable rates for Tokyo, Hakone, Okinawa, Seoul, Hong Kong, Singapore, Bangkok, and Pattaya. Keep Seoul and Pattaya refundable until their Pride dates are announced.",links:[["See the Stays page","#stays",""]]},
+ {when:"Sat, Feb 6, 2027 · 6:00pm PT",at:Date.UTC(2027,1,7,2),short:"Tokyo Disney hotel rooms open",what:"Tokyo Disney hotels for June 7",p:"Rooms open four months ahead at 11:00am Japan time, which is Saturday evening in Los Angeles. MiraCosta and Fantasy Springs go in minutes. Be logged in early.",links:[["Tokyo Disney reservations","https://reserve.tokyodisneyresort.jp/en/","book"]]},
+ {when:"Sat, Apr 3, 2027 · 2:00am PT",at:Date.UTC(2027,3,3,9),short:"PokéPark Kanto tickets open",what:"PokéPark Kanto tickets for June 3",p:"Tickets for international guests open two months ahead at 6:00pm Japan time. That is 2:00am in Los Angeles. Set an alarm and aim for the earliest forest slot.",links:[["How to get tickets","https://en.japantravel.com/kanagawa/how-to-get-pokepark-kanto-tickets/72623","book"]]},
+ {when:"Early April 2027",what:"Tokyo Disney park tickets",p:"Dated park tickets usually go on sale about two months ahead. Buy Tokyo Disneyland for June 7 and DisneySea for June 8.",links:[["Tokyo Disney reservations","https://reserve.tokyodisneyresort.jp/en/","book"]]},
+ {when:"Mid-April 2027",what:"Seoul announces its Pride date",p:"The Seoul Queer Culture Festival usually posts dates in mid-April. Our plan assumes Saturday, June 12. Then lock or adjust the Seoul hotel.",links:[["Seoul Queer Culture Festival","https://www.sqcf.org/english",""]]},
+ {when:"By mid-May 2027",what:"Park tickets, timed entries, paperwork",p:"Shanghai Disneyland (two days) and Hong Kong Disneyland tickets. The Shuri Castle timed reservation for June 11. A K-ETA for Korea if 2027 requires it (KRW 10,000, allow 72 hours). An International Driving Permit from AAA if you'll drive in Okinawa. Check your passport has six months left after June 28. Not on a US passport? The FAQ lists what changes, including the visas a Guatemalan passport needs for Shanghai and Thailand.",links:[["Visa answers in the FAQ","#faq",""],["Shanghai Disney Resort","https://www.shanghaidisneyresort.com/en/","book"],["Hong Kong Disneyland","https://www.hongkongdisneyland.com/","book"],["Shuri Castle","https://visitokinawajapan.com/?p=18945","book"],["K-ETA","https://www.k-eta.go.kr/","book"]]},
+ {when:"Jun 16 to 19, 2027",what:"SG Arrival Card",p:"Free, and filed within the three days before you land in Singapore on June 19.",links:[["SG Arrival Card","https://eservices.ica.gov.sg/sgarrivalcard/","book"]]},
+ {when:"Jun 21 to 24, 2027",what:"Thailand Digital Arrival Card",p:"Filed within the three days before you land in Bangkok on June 24. That window opens on boarding day, so do it before the ship sails. Use only the official site; there are paid look-alikes.",links:[["Official TDAC site","https://tdac.immigration.go.th/","book"]]}
+];
+var LINKS=[
+ ["Flights on our route",HOPS.map(function(h){return [h[0]+": "+h[1],fly(h[3]),h[2]]})],
+ ["Parks and the ship",[["Tokyo Disney Resort tickets and hotels","https://reserve.tokyodisneyresort.jp/en/","Tokyo Disneyland Jun 7, DisneySea Jun 8"],["Shanghai Disney Resort","https://www.shanghaidisneyresort.com/en/","Two days, Jun 15 and 16"],["Shanghai Disney hotels compared","https://www.shanghaidisneyresort.com/en/hotels-compare/",""],["Hong Kong Disneyland","https://www.hongkongdisneyland.com/","Jun 18"],["Disney Cruise Line","https://disneycruise.disney.go.com/","Disney Adventure, 3 nights from Singapore, Jun 21"],["PokéPark Kanto ticket guide","https://en.japantravel.com/kanagawa/how-to-get-pokepark-kanto-tickets/72623","Jun 3"]]],
+ ["Pride",[["Tokyo Pride","https://pride.tokyo/","Confirmed: Jun 5 and 6"],["Seoul Queer Culture Festival","https://www.sqcf.org/english","Estimated: Jun 12"],["Pattaya International Pride","https://www.pattayaland.com/en/events/pattaya-international-pride-festival","Estimated: Jun 26"]]],
+ ["Sights that need a ticket",[["Shuri Castle reservations","https://visitokinawajapan.com/?p=18945","Jun 11"],["Okinawa Churaumi Aquarium","https://churaumi.okinawa/en/","Jun 10"],["Hakone Open-Air Museum","https://www.hakone-oam.or.jp/en/","Jun 4, optional"],["Ngong Ping 360 cable car","https://www.np360.com.hk/en/","Jun 19"],["Gardens by the Bay","https://www.gardensbythebay.com.sg/","Jun 20"]]],
+ ["Entry paperwork",[["K-ETA (South Korea)","https://www.k-eta.go.kr/","If required in 2027"],["China National Immigration Administration","https://en.nia.gov.cn/","240-hour visa-free transit rules"],["SG Arrival Card","https://eservices.ica.gov.sg/sgarrivalcard/","Within 3 days before arrival"],["Thailand Digital Arrival Card","https://tdac.immigration.go.th/","Within 3 days before arrival"],["Visit Japan Web","https://services.digital.go.jp/en/visit-japan-web/","Optional, speeds up arrival"],["International Driving Permit at AAA","https://www.aaa.com/vacation/idpapplc.html","Only if you'll drive in Okinawa"],["Japan visa exemption list","https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html","Which passports enter visa-free"],["Hong Kong visa requirements","https://www.gov.hk/en/nonresidents/visarequire/general/","Visa-free periods by passport"],["Singapore visa requirements","https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements","Which passports need a visa"],["Thailand e-Visa","https://www.thaievisa.go.th/","For passports not on the exemption list"]]]
+];
+var R={
+ mofa:["Japan visa exemptions (Ministry of Foreign Affairs)","https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html"],
+ keta:["K-ETA official site","https://www.k-eta.go.kr/"],
+ cn240:["China's 240-hour transit policy (Chinese consulate notice)","https://chicago.china-consulate.gov.cn/eng/lsfw/qzsq/202605/t20260506_11904889.htm"],
+ nia:["China National Immigration Administration","https://en.nia.gov.cn/"],
+ hk:["Hong Kong visa requirements (GovHK)","https://www.gov.hk/en/nonresidents/visarequire/general/"],
+ ica:["Singapore visa requirements (ICA)","https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements"],
+ sgac:["SG Arrival Card","https://eservices.ica.gov.sg/sgarrivalcard/"],
+ tdac:["Thailand Digital Arrival Card","https://tdac.immigration.go.th/"],
+ thevisa:["Thailand e-Visa official site","https://www.thaievisa.go.th/"],
+ th30:["Thailand's 30-day rule and country list (VisasNews)","https://visasnews.com/en/thailand-to-officially-cut-visa-free-stay-to-30-days-on-september-15-2026/"],
+ state:["US State Department travel pages","https://travel.state.gov/"],
+ tp:["Tokyo Pride","https://pride.tokyo/"],
+ sqcf:["Seoul Queer Culture Festival","https://www.sqcf.org/english"],
+ ptp:["Pattaya International Pride","https://www.pattayaland.com/en/events/pattaya-international-pride-festival"],
+ dcl:["Disney Cruise Line","https://disneycruise.disney.go.com/"]
+};
+var FAQ=[
+ ["Coming along",[
+  ["Do I have to come for all four weeks?","<p>No, and almost nobody will. The trip is cut into seven legs so you can drop in for one or two. Use Pick your leg on the Trip page and text Steven the message it writes.</p>"],
+  ["If I can only do one leg, which one?","<p>Tokyo Pride plus the birthday, June 5 to 9. It has the confirmed Pride weekend, both Tokyo Disney parks, and the actual day. Runner-up: Singapore plus the ship, June 19 to 24, which includes Patrick's birthday.</p>"],
+  ["Do I have to do the Disney days?","<p>No. Park days are easy to skip. Sleep in, see the city, meet us for dinner. The one exception is the ship. Once it sails, you're in.</p>"],
+  ["How do I get on the same cruise?","<p>Book your own stateroom on the Disney Adventure sailing that leaves Singapore on Monday, June 21, 2027. It is three nights with no ports and returns Thursday morning, June 24. Send Steven your reservation number so the dining times can be linked.</p>",[R.dcl]],
+  ["How do I tell Steven I'm in?","<p>Go to the Trip page, tap the legs you want, add your name, and copy the message. Then text it to him. Earlier is better: some pieces sell out months ahead.</p>"]
+ ]],
+ ["Dates and plans",[
+  ["How locked are these dates?","<p>The plan stays tentative until the long-haul flights are booked. Tokyo Pride on June 5 and 6 is confirmed by the organizers. Seoul Queer Parade (June 12) and Pattaya Pride (June 26) are estimates from prior years, and this site marks them Estimated.</p>",[R.tp,R.sqcf,R.ptp]],
+  ["What if Seoul or Pattaya Pride lands on a different weekend?","<p>The trip dates hold and we go anyway. Both are good weekends with or without a parade. Book refundable rooms for those two stops until the dates are announced. Seoul usually announces in mid-April.</p>",[R.sqcf,R.ptp]],
+  ["Which flights should I book?","<p>For one leg, a round trip into that leg's first city is simplest. For two legs next to each other, search multi-city: into one city, home from another. The Book page has a search link for every flight on our route with the date filled in. If you want to be on the same plane, check with Steven before you buy.</p>",[["Flight searches on the Book page","#book"]]],
+  ["Why two days at Shanghai Disneyland but one in Hong Kong?","<p>Shanghai is the big one, with rides that exist nowhere else and lines to match. Hong Kong is small and quick, and one relaxed day covers it.</p>",[["Shanghai Disney Resort","https://www.shanghaidisneyresort.com/en/"],["Hong Kong Disneyland","https://www.hongkongdisneyland.com/"]]]
+ ]],
+ ["Paperwork",[
+  ["Do I need a visa on a US passport?","<p>No visa applications on this route, but there is paperwork:</p><ul><li><strong>Japan:</strong> visa-free for up to 90 days.</li><li><strong>South Korea:</strong> visa-free for up to 90 days. The K-ETA waiver for US travelers runs through December 31, 2026, and 2027 rules aren't announced. Plan to apply (KRW 10,000, allow 72 hours).</li><li><strong>Shanghai:</strong> China's 240-hour visa-free transit. You must arrive from one country or region and leave for a different one, with a confirmed onward ticket. Seoul to Shanghai to Hong Kong qualifies.</li><li><strong>Hong Kong:</strong> visa-free for up to 90 days.</li><li><strong>Singapore:</strong> visa-free, plus the free SG Arrival Card within three days before arrival.</li><li><strong>Thailand:</strong> visa-free for 30 days (cut from 60 on September 15, 2026), plus the Thailand Digital Arrival Card within three days before arrival.</li></ul><p>Everyone: have six months left on your passport after June 28, 2027.</p>",[R.mofa,R.keta,R.cn240,R.hk,R.ica,R.sgac,R.th30,R.tdac,R.state]],
+  ["What changes on a Guatemalan passport?","<p>Two stops need a visa arranged before you fly: Shanghai and Thailand. Checked November 16, 2026 against the sources below.</p><ul><li><strong>Japan:</strong> visa-free for up to 90 days.</li><li><strong>South Korea:</strong> visa-free for up to 90 days, with an approved K-ETA before you board. Guatemala does not appear on the list of places with a temporary K-ETA waiver.</li><li><strong>Shanghai: visa required.</strong> Guatemala is not one of the 55 countries eligible for the 240-hour transit, so this stop needs a Chinese tourist (L) visa in the passport before travel. Apply through the Chinese embassy or consulate that serves where you live, and start early.</li><li><strong>Hong Kong:</strong> visa-free for up to 30 days.</li><li><strong>Singapore:</strong> visa-free for up to 30 days, plus the SG Arrival Card and six months of passport validity.</li><li><strong>Thailand: visa required.</strong> Guatemala is not on the 60-country visa-exemption list that took effect September 15, 2026. Apply online for a tourist e-Visa before the trip, then file the Thailand Digital Arrival Card like everyone else.</li></ul><p>The ship calls at no ports, so it adds no paperwork. If the Chinese visa is more trouble than it's worth, skip Shanghai: fly Seoul to Hong Kong and rejoin us on June 17. Also check the rules for any country where you change planes, and what you need to get back home.</p>",[R.mofa,R.keta,R.cn240,R.hk,R.ica,R.thevisa,R.th30,R.tdac]],
+  ["I only want to join in Shanghai. Does visa-free transit still work?","<p>Only if your passport is on the 55-country list and you arrive from one country or region and leave for a different one. Los Angeles to Shanghai and back to Los Angeles does not qualify. Flying in from Seoul with us and out to Hong Kong does. Otherwise you'd need a regular Chinese visa.</p>",[R.cn240,R.nia]],
+  ["Do I need an International Driving Permit?","<p>Only to drive in Okinawa. Japan won't rent a car on a US license alone, and it only accepts permits issued under the 1949 Geneva Convention, which is the kind AAA issues. Get it before you leave.</p>",[["AAA International Driving Permit","https://www.aaa.com/vacation/idpapplc.html"],["Which permits Japan accepts (Toyota Rent a Car)","https://rent.toyota.co.jp/global_eng/license-flow/geneva/"]]]
+ ]],
+ ["Money",[
+  ["What will it cost?","<p>It depends on the leg. For hotels, our picks mostly run $120 to $330 a night in June, and the cheaper column on the Stays page is well under that. The Hakone ryokan (dinner and breakfast included) and the in-park Disney hotels cost more. Flights and the cruise are priced by date and cabin, so use the Book page for live numbers.</p>",[["Stays page","#stays"],["Book page","#book"]]],
+  ["Do I have to stay where you stay?","<p>No. Every stop on the Stays page lists cheaper places close by. Stay wherever suits you and meet us out.</p>",[["Stays page","#stays"]]],
+  ["Cash or card?","<p>Cards work almost everywhere on this route. Carry some cash for markets and street food. Jay Fai in Bangkok is cash only. For Shanghai, set up Alipay or WeChat Pay with your own card before you land, because many places don't take foreign cards at the register.</p>",[["Adding a foreign card to Alipay (Trip.com guide)","https://www.trip.com/guide/payments/how-to-add-card-to-alipay.html"]]]
+ ]],
+ ["On the ground",[
+  ["What's the weather in June?","<p>Hot and humid everywhere, with rain in the mix. Tokyo and Shanghai are in their early-summer rainy seasons. Okinawa's rainy season ends around June 21 in an average year, so expect showers and sun. Hong Kong, Singapore, and Bangkok are tropical: sun, a downpour, sun again.</p>"],
+  ["What should I pack?","<ul><li>Light, breathable clothes and a small umbrella or rain layer.</li><li>Walking shoes that can get wet.</li><li>A swimsuit: Okinawa, hotel pools, the ship, Pattaya.</li><li>Something that covers shoulders and knees for the Grand Palace and Bangkok's temples.</li><li>A portable battery.</li><li>One outfit worthy of a 40th birthday dinner.</li></ul><p>For the ryokan: shared hot spring baths are nude and separated by gender, and many restrict tattoos. Our pick has a private bath in every room, which solves both.</p>"],
+  ["Is the route comfortable for LGBTQ travelers?","<p>Yes. Every stop is well traveled by LGBTQ visitors and has an established gay district: Shinjuku Ni-chome in Tokyo, Itaewon and Jongno in Seoul, Neil Road in Singapore, Silom in Bangkok, Jomtien in Pattaya. Thailand has had marriage equality since 2025. Laws and attitudes vary by place, and public affection is low-key for everyone across most of East Asia. One note: Singapore's Pink Dot rally limits entry to citizens and permanent residents, so it isn't on our schedule.</p>",[R.tp,R.sqcf,["Pink Dot SG","https://pinkdot.sg/"]]],
+  ["How do phones and data work?","<p>Install a multi-country Asia eSIM before you fly. In mainland China many Western apps and sites are blocked on local Wi-Fi. A roaming eSIM generally still reaches them.</p>"],
+  ["What time is it over there?","<p>In June, Japan and Korea are 16 hours ahead of Los Angeles. Shanghai, Hong Kong, and Singapore are 15 ahead. Bangkok is 14 ahead. Live clocks are on the Trip page.</p>"],
+  ["My question isn't here.","<p>Text Steven. If he doesn't know, his travel agent will.</p>"]
+ ]]
+];
+var CREDITS=[
+ ["Tokyo","Shibuya and Shinjuku from Yebisu Garden Place Tower, Ebisu, Tokyo, Japan, 2024 May.jpg","Ximonic (Simo Räsänen)","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
+ ["Hakone","LakeAshi and MtFuji Hakone.JPG","Kentagon","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
+ ["Tokyo Pride","Tokyo 2013 Rainbow Pride (9409312304).jpg","Rob Young","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],
+ ["Tokyo DisneySea","Tokyo DisneySea Mediterranean Harbour View1 201306.jpg","Wing1990hk","CC BY 3.0","https://creativecommons.org/licenses/by/3.0"],
+ ["Cape Manzamo","Onna Okinawa Japan Cape-Manzamo-01.jpg","CEphoto, Uwe Aranas","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
+ ["Churaumi Aquarium","Whale shark at Churauma Aquarium, Okinawa.jpg","Mokkie","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
+ ["Seoul","Gyeonghoeru (Royal Banquet Hall) at Gyeongbokgung Palace, Seoul.jpg","Frank Schulenburg","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
+ ["Shanghai","Pudong CBD viewed from the North Bund in Shanghai.jpg","David Zhang","CC BY-SA 2.0","https://creativecommons.org/licenses/by-sa/2.0"],
+ ["Shanghai Disneyland","Shanghai disneyland castle.jpg","Jeremy Thompson","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],
+ ["Hong Kong","Hong Kong Skyline Restitch - Dec 2007.jpg","Diliff","CC BY 3.0","https://creativecommons.org/licenses/by/3.0"],
+ ["Big Buddha","Tian Tan Buddha by Beria.jpg","Béria Lima de Rodríguez","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
+ ["Singapore","Singapore Supertree-Grove-in-The-Gardens-01.jpg","CEphoto, Uwe Aranas","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
+ ["Disney Adventure","Disney Adventure Disney Cruise Line (55114526305).jpg","nagi usano","CC BY 4.0","https://creativecommons.org/licenses/by/4.0"],
+ ["Bangkok","Wat Arun Ratchawararam and the Royal Barge Procession.jpg","Tee-12838","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
+ ["Pattaya","Pattaya beach on a sunny day in june 2017.jpg","FritzDaCat","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
+ ["Yomiuriland","Yomiuriland-20100411.jpg","Rsa","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
+ ["Shibuya Crossing","Tokyo Shibuya Scramble Crossing 2018-10-09.jpg","Benh LIEU SONG","CC BY-SA 2.0","https://creativecommons.org/licenses/by-sa/2.0"],
+ ["Tokyo Disneyland","Tokyo Disneyland Cinderella Castle (53441923868).jpg","Dick Thomas Johnson","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],
+ ["Shuri Castle","Rekonstruktionshalle (Seiden) aussen.jpg","Piet Parkiet","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
+ ["Secret Garden","Changdeokgung, Seoul - Changdeokgung3148.jpg","lumoplank","CC0","https://creativecommons.org/publicdomain/zero/1.0/"],
+ ["TRON","Tron Lightcycles Power Run (29586661836).jpg","Jeremy Thompson","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],
+ ["Hong Kong Disneyland","Disneyland Hong Kong - Sleeping Beauty Castle IMG 5412.JPG","Deror_avi","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
+ ["Marina Bay","Skylines of the Central Business District, Singapore at dusk.jpg","Basile Morin","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
+ ["Grand Palace","วัดพระศรีรัตนศาสดาราม วัดพระแก้ว กรุงเทพมหานคร - Wat Phra Kaew, Temple of Emerald Buddha, Bangkok, Thailand.jpg","Basile Morin","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
+ ["Chatuchak Market","Chatuchak Weekend Market 2.jpg","Christophe95","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"]
+];
+
+/* ---------- render: trip ---------- */
+$("#flag").innerHTML=LEGS.map(function(l){
+  return '<a class="stripe l-'+l.id+'" style="--n:'+l.n+'" href="#days" data-leg="'+l.id+'" aria-label="'+l.name+', '+l.dates+', '+l.n+' nights. See these days.">'+
+    '<span class="s-name">'+l.name+'</span><span class="s-dates">'+l.dates+'</span>'+
+    '<span class="s-stops">'+l.stops+'</span><span class="s-n">'+l.n+' nights</span></a>';
+}).join("");
+$("#strip").innerHTML=SHOTS.map(function(s){
+  return '<figure class="shot l-'+s[1]+'"><img src="img/'+s[0]+'.jpg" alt="'+s[4]+'" width="330" height="224"><figcaption><b>'+s[2]+'</b><span>'+s[3]+'</span></figcaption></figure>';
+}).join("");
+$("#hops").innerHTML=HOPS.map(function(h){
+  return '<li><span class="d">'+h[0]+'</span><span>'+ext(h[1],fly(h[3]))+'<small>'+h[2]+'</small></span></li>';
+}).join("");
+$("#eat").innerHTML=EAT.map(function(g){
+  return '<div class="l-'+g[0]+'"><span class="chip">'+g[1]+'</span><ul>'+g[2].map(function(i){return '<li>'+ext(i[0],maps(i[1]))+'</li>'}).join("")+'</ul></div>';
+}).join("");
+
+/* join a leg */
+var picked={bday:true},interest=null,touched=false;
+var TAGS=["Pride","Parks","Food","Beach","Slow"];
+$("#tags").insertAdjacentHTML("beforeend",TAGS.map(function(t){return '<button type="button" class="tag" aria-pressed="false" data-tag="'+t+'">'+(t==="Slow"?"Slowing down":t)+'</button>'}).join(""));
+function drawLegs(){
+  $("#legs").innerHTML=JOIN.map(function(j){
+    var on=!!picked[j.id],dim=interest&&j.tags.indexOf(interest)<0;
+    return '<button type="button" class="leg l-'+j.leg+(dim?' dim':'')+'" aria-pressed="'+on+'" data-id="'+j.id+'">'+
+      '<span class="leg-top"><span class="chip">'+j.dates+'</span><span class="leg-in">'+(on?"✓ I'm in":"Tap to add")+'</span></span>'+
+      '<b>'+j.name+'</b><p>'+j.pitch+'</p><small>'+j.tags.join(" · ")+' · '+j.fly+'</small></button>';
+  }).join("");
+}
+function drawMsg(){
+  var names=JOIN.filter(function(j){return picked[j.id]}).map(function(j){return j.name+" ("+j.dates+")"});
+  var who=$("#guest-name").value.trim();
+  $("#join-msg").value=names.length?("Steven! I'm in for the 40th. Put me down for: "+names.join("; ")+"."+(who?" From "+who+".":"")):"Tap at least one leg above and your message appears here.";
+}
+$("#legs").addEventListener("click",function(e){
+  var b=e.target.closest(".leg");if(!b)return;
+  if(!touched){touched=true;$("#copy-status").textContent="Pick as many legs as you like."}
+  picked[b.dataset.id]=!picked[b.dataset.id];drawLegs();drawMsg();
+  var again=$('.leg[data-id="'+b.dataset.id+'"]');if(again)again.focus();
+});
+$("#tags").addEventListener("click",function(e){
+  var b=e.target.closest(".tag");if(!b)return;
+  interest=interest===b.dataset.tag?null:b.dataset.tag;
+  $$(".tag").forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.tag===interest))});
+  drawLegs();
+});
+$("#guest-name").addEventListener("input",drawMsg);
+$("#copy-msg").addEventListener("click",function(){
+  var ta=$("#join-msg"),st=$("#copy-status");
+  var ok=function(){st.textContent="Copied. Now paste it into a text to Steven."};
+  var no=function(){ta.focus();ta.select();st.textContent="Couldn't copy automatically. The message is selected, so copy it by hand."};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(ok,no)}else{no()}
+});
+$("#go-join").addEventListener("click",function(){$("#join-sec").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})});
+drawLegs();drawMsg();
+
+/* ---------- render: days ---------- */
+var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+var dow=function(d){return DOW[new Date(Date.UTC(2027,5,d)).getUTCDay()]};
+var BADGE={ok:'<span class="badge ok">Confirmed</span>',est:'<span class="badge est">Estimated date</span>',bday:'<span class="badge bday">The big day</span>'};
+function linkRow(links){return links&&links.length?'<div class="links">'+links.map(function(l){return l[1].charAt(0)==="#"?'<a class="here" href="'+l[1]+'">'+l[0]+'</a>':ext(l[0],l[1],l[2]||"")}).join("")+'</div>':""}
+ALT.yomiuri="Roller coasters at Yomiuriland behind cherry blossoms";
+ALT.shibuya="Crowds crossing Shibuya Scramble Crossing at dusk under neon signs";
+ALT.tdl="Cinderella Castle at Tokyo Disneyland on a clear day";
+ALT.shuri="The red main hall of Shuri Castle in Okinawa";
+ALT.secretgarden="A pavilion beside a lily pond in the Secret Garden of Changdeokgung Palace";
+ALT.tron="The glowing purple canopy of the TRON coaster at Shanghai Disneyland at night";
+ALT.hkdl="The castle at Hong Kong Disneyland with green hills behind";
+ALT.marina="Marina Bay in Singapore at dusk, seen from above";
+ALT.palace="Golden spires of Wat Phra Kaew at the Grand Palace in Bangkok";
+ALT.chatuchak="A covered aisle of stalls at Chatuchak Weekend Market";
+var PH={2:["tokyo","Tokyo at dusk"],3:["yomiuri","Yomiuriland"],4:["hakone","Lake Ashi"],5:["pride","Yoyogi Park stage"],6:["shibuya","Shibuya Crossing"],7:["tdl","Tokyo Disneyland"],8:["disneysea","Tokyo DisneySea"],9:["manzamo","Cape Manzamo"],10:["churaumi","Churaumi Aquarium"],11:["shuri","Shuri Castle"],12:["seoul","Gyeongbokgung"],13:["secretgarden","Secret Garden"],14:["bund","Pudong from the Bund"],15:["tron","TRON"],16:["shdl","Shanghai Disneyland"],17:["hk","From Victoria Peak"],18:["hkdl","Hong Kong Disneyland"],19:["buddha","Big Buddha"],20:["supertree","Supertree Grove"],21:["marina","Marina Bay"],22:["ship","Disney Adventure"],24:["watarun","Wat Arun"],25:["palace","Grand Palace"],26:["pattaya","Pattaya"],27:["chatuchak","Chatuchak Market"]};
+var TILE={1:["LAX","TYO","About 11.5 hours"],28:["BKK","LAX","One connection"]};
+function dayPic(d){
+  var t=TILE[d.d];
+  if(t)return '<div class="day-pic tile"><b>'+t[0]+' \u2192 '+t[1]+'</b><span>'+t[2]+'</span></div>';
+  var p=PH[d.d];
+  return '<figure class="day-pic"><img src="img/'+p[0]+'.jpg" alt="'+ALT[p[0]]+'" loading="lazy" width="440" height="330"><figcaption>'+p[1]+'</figcaption></figure>';
+}
+$("#chapters").innerHTML=CHAPTERS.map(function(c){
+  var leg=LEGS.filter(function(l){return l.id===c.leg})[0];
+  return '<article class="chapter l-'+c.leg+'" data-leg="'+c.leg+'">'+
+   '<div class="ch-rail"><div class="ch-meta"><span class="chip">'+leg.name+'</span><span class="mono">'+c.dates+'</span></div><h3 class="ch-title">'+c.title+'</h3><p class="ch-pitch">'+c.pitch+'</p></div>'+
+   '<div class="ch-days">'+c.days.map(function(d){
+     return '<div class="day" id="day-'+d.d+'">'+dayPic(d)+
+      '<div class="day-body"><p class="day-when"><span class="mono">'+dow(d.d)+(d.d2?" and "+dow(d.d2):"")+' \u00b7 Jun '+d.d+(d.d2?" and "+d.d2:"")+'</span>'+(d.b?BADGE[d.b]:"")+'</p><h3>'+d.t+'</h3><p>'+d.p+'</p>'+
+      (d.eat?'<p class="eatline"><i>Eat</i>'+d.eat+'</p>':"")+linkRow(d.links)+'</div></div>';
+   }).join("")+'</div></article>';
+}).join("");
+var CAL={1:["jp","Flight"],2:["jp","Tokyo"],3:["jp","Hakone"],4:["jp","Hakone"],5:["jp","Pride"],6:["jp","Pride"],7:["jp","Disney"],8:["jp","Birthday"],9:["jp","Okinawa"],10:["jp","Okinawa"],11:["jp","Okinawa"],12:["kr","Pride?"],13:["kr","Seoul"],14:["cn","Shanghai"],15:["cn","Disney"],16:["cn","Disney"],17:["hk","Hong Kong"],18:["hk","Disney"],19:["hk","Buddha"],20:["sg","Singapore"],21:["sg","Boarding"],22:["sg","At sea"],23:["sg","At sea"],24:["th","Bangkok"],25:["th","Bangkok"],26:["th","Pride?"],27:["th","Bangkok"],28:["th","Home"]};
+$("#cal").innerHTML=["Tue","Wed","Thu","Fri","Sat","Sun","Mon"].map(function(d){return '<div class="cal-h">'+d+'</div>'}).join("")+
+  Object.keys(CAL).map(function(k){var c=CAL[k];return '<button type="button" class="l-'+c[0]+'" data-day="'+k+'" aria-label="June '+k+', '+c[1]+'. Jump to this day."><b>'+k+'</b><span>'+c[1]+'</span></button>'}).join("");
+$("#cal").addEventListener("click",function(e){
+  var b=e.target.closest("button");if(!b)return;
+  var t=document.getElementById("day-"+(b.dataset.day==="23"?"22":b.dataset.day));
+  if(t)t.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+});
+var pendingLeg=null;
+$("#flag").addEventListener("click",function(e){var a=e.target.closest(".stripe");if(a)pendingLeg=a.dataset.leg});
+
+/* ---------- render: stays ---------- */
+function tier(cls,label,list){return '<div class="tier '+cls+'"><h4>'+label+'</h4><ul>'+list.map(function(h){return '<li>'+ext(h.name,h.url)+'<span>'+h.note+'</span></li>'}).join("")+'</ul></div>'}
+$("#stays").innerHTML=STAYS.map(function(s){
+  return '<div class="stay l-'+s.leg+'"><div class="stay-head"><div><span class="chip">'+s.n+'</span></div><h3>'+s.place+'</h3><span class="mono">'+s.dates+'</span></div>'+
+   '<div class="tiers">'+tier("","Our pick",s.pick)+tier("","Also great",s.also)+tier("cheap","Cheaper nearby",s.cheap)+'</div></div>';
+}).join("");
+
+/* ---------- render: book ---------- */
+var now=Date.now();
+var daysTo=function(t){return Math.ceil((t-now)/864e5)};
+$("#clock").innerHTML=CLOCK.map(function(c){
+  var chip="";
+  if(c.at){var n=daysTo(c.at);chip=n>1?'<span class="in">in '+n+' days</span>':n>=0?'<span class="in">this week</span>':'<span class="badge ok">Open now</span>'}
+  return '<li><div class="when"><span>'+c.when+'</span>'+chip+'</div><div class="what"><h3>'+c.what+'</h3><p>'+c.p+'</p>'+linkRow(c.links)+'</div></li>';
+}).join("");
+$("#linkgrid").innerHTML=LINKS.map(function(g){
+  return '<div><h3>'+g[0]+'</h3><ul>'+g[1].map(function(l){return '<li>'+ext(l[0],l[1])+(l[2]?'<small>'+l[2]+'</small>':'')+'</li>'}).join("")+'</ul></div>';
+}).join("");
+var upcoming=CLOCK.filter(function(c){return c.at&&c.at>now})[0];
+$("#next").innerHTML=upcoming?'<strong>Next on the booking clock:</strong> '+upcoming.short+' in '+daysTo(upcoming.at)+' days. <a href="#book">See what to book and when</a>':'<a href="#book">See what to book and when</a>';
+
+/* ---------- render: faq + credits ---------- */
+function refs(r){return r&&r.length?'<p class="refs"><span>References</span>'+r.map(function(x){return x[1].charAt(0)==="#"?'<a href="'+x[1]+'">'+x[0]+'</a>':ext(x[0],x[1])}).join("")+'</p>':""}
+$("#faq").innerHTML=FAQ.map(function(g,gi){
+  return '<div class="faq-group"><h3>'+g[0]+'</h3>'+g[1].map(function(q,qi){return '<details'+(gi===0&&qi===0?' open':'')+'><summary>'+q[0]+'</summary><div class="ans">'+q[1]+refs(q[2])+'</div></details>'}).join("")+'</div>';
+}).join("");
+$("#credits").innerHTML=CREDITS.map(function(c){
+  return '<li>'+c[0]+': '+ext("photo","https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(c[1].replace(/ /g,"_")))+' by '+c[2]+', '+ext(c[3],c[4])+'</li>';
+}).join("");
+
+/* ---------- countdown + clocks ---------- */
+var TARGET=Date.UTC(2027,5,7,15,0,0); /* midnight June 8, 2027 in Tokyo */
+var pad=function(n){return (n<10?"0":"")+n};
+function tick(){
+  var ms=TARGET-Date.now();
+  if(ms<=0){$("#cd-d").textContent="40";$("#cd-h").textContent=$("#cd-m").textContent=$("#cd-s").textContent="00";$("#cd-note").textContent="It's official. Steven is 40.";return}
+  var s=Math.floor(ms/1000);
+  $("#cd-d").textContent=Math.floor(s/86400);$("#cd-h").textContent=pad(Math.floor(s%86400/3600));$("#cd-m").textContent=pad(Math.floor(s%3600/60));$("#cd-s").textContent=pad(s%60);
+}
+tick();setInterval(tick,1000);
+var ZONES=[["Los Angeles","America/Los_Angeles"],["Tokyo and Seoul","Asia/Tokyo"],["Shanghai, Hong Kong, Singapore","Asia/Singapore"],["Bangkok","Asia/Bangkok"]];
+function clocks(){
+  var html="";
+  try{html=ZONES.map(function(z){return '<div><b>'+new Intl.DateTimeFormat("en-US",{weekday:"short",hour:"numeric",minute:"2-digit",timeZone:z[1]}).format(new Date())+'</b><span>'+z[0]+'</span></div>'}).join("")}
+  catch(e){html='<div><b>+16 h</b><span>Tokyo and Seoul vs Los Angeles</span></div><div><b>+15 h</b><span>Shanghai, Hong Kong, Singapore</span></div><div><b>+14 h</b><span>Bangkok</span></div>'}
+  $("#clocks").innerHTML=html;
+}
+clocks();setInterval(clocks,30000);
+
+/* ---------- photo strip drift ---------- */
+var strip=$("#strip"),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,view="trip";
+if(reduce){var pl=$("#plane");if(pl)pl.remove()}
+else{
+  var pos=0,dir=1,hold=false,timer=null;
+  var pause=function(){hold=true;clearTimeout(timer)};
+  var resume=function(){clearTimeout(timer);timer=setTimeout(function(){pos=strip.scrollLeft;hold=false},2500)};
+  ["pointerdown","touchstart","wheel","focusin","mouseenter"].forEach(function(ev){strip.addEventListener(ev,pause,{passive:true})});
+  ["pointerup","touchend","mouseleave","focusout"].forEach(function(ev){strip.addEventListener(ev,resume,{passive:true})});
+  (function drift(){
+    if(!hold&&!document.hidden&&view==="trip"){
+      var max=strip.scrollWidth-strip.clientWidth;
+      if(max>4){pos+=dir*0.35;if(pos>=max){pos=max;dir=-1}if(pos<=0){pos=0;dir=1}strip.scrollLeft=pos}
+    }
+    requestAnimationFrame(drift);
+  })();
+}
+
+/* ---------- pages ---------- */
+var VIEWS=["trip","days","stays","book","faq"];
+function route(first){
+  var h=(location.hash||"").replace("#","");if(VIEWS.indexOf(h)<0)h="trip";
+  view=h;
+  VIEWS.forEach(function(v){$("#v-"+v).hidden=v!==h});
+  $$(".top nav a").forEach(function(a){if(a.getAttribute("href")==="#"+h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+  if(!first){var tgt=h==="days"&&pendingLeg?$('.chapter[data-leg="'+pendingLeg+'"]'):null;pendingLeg=null;if(tgt)tgt.scrollIntoView();else window.scrollTo(0,0)}
+}
+window.addEventListener("hashchange",function(){route(false)});
+route(true);
+})();
+</script>
+</body>
+</html>
