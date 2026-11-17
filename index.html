@@ -180,7 +180,10 @@ h1 span{display:block}
 .cal button:hover{filter:brightness(1.08)}
 .cal button b{font:400 1.15rem/1 var(--font-display)}
 .cal button span{font:500 .62rem/1.2 var(--font-mono);text-transform:uppercase;letter-spacing:.03em;display:none}
-@media (min-width:620px){.cal button{min-height:66px}.cal button span{display:block}}
+.cal-off{display:grid;gap:2px;align-content:center;justify-items:center;min-height:50px;border-radius:7px;border:1px dashed var(--line);color:var(--muted);min-width:0}
+.cal-off b{font:400 1.05rem/1 var(--font-display);opacity:.5}
+.cal-off span{font:500 .62rem/1.2 var(--font-mono);text-transform:uppercase;letter-spacing:.03em;display:none}
+@media (min-width:620px){.cal button,.cal-off{min-height:66px}.cal button span,.cal-off span{display:block}}
 .legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.9rem;color:var(--muted);margin-top:14px;align-items:center}
 .chapter{display:grid;gap:10px;padding-top:44px;scroll-margin-top:60px}
 .chapter > *{min-width:0}
@@ -221,11 +224,13 @@ h1 span{display:block}
 .tiers{display:grid;gap:16px}
 .tier h4{margin:0 0 6px;font:500 .74rem var(--font-mono);text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
 .tier.cheap h4{color:var(--ok-fg)}
+.tier.splurge h4{color:var(--est-fg)}
 .tier ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .tier li{font-size:.95rem;line-height:1.4}
 .tier li a{font-weight:700}
 .tier li span{display:block;color:var(--muted)}
-@media (min-width:760px){.stay{grid-template-columns:230px minmax(0,1fr);gap:28px}.tiers{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}}
+@media (min-width:760px){.stay{grid-template-columns:230px minmax(0,1fr);gap:28px}.tiers{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px}}
+@media (min-width:1040px){.tiers{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .save{background:var(--wash);border-radius:10px;padding:20px 22px;margin-top:8px}
 .save ol{margin:10px 0 0;padding-left:22px;display:grid;gap:8px;max-width:70ch}
 
@@ -414,7 +419,7 @@ footer p{margin:0 0 10px;max-width:80ch}
     <div class="sec-head">
       <p class="eyebrow">June 1 to 28, 2027</p>
       <h2>Day by day</h2>
-      <p class="lede">Four weeks at a glance, then every day in order. Tap any day on the calendar to jump straight to it.</p>
+      <p class="lede">The whole trip on one calendar, then every day in order. Tap any day to jump straight to it.</p>
     </div>
     <div class="cal-wrap">
       <div class="cal" id="cal"></div>
@@ -432,8 +437,8 @@ footer p{margin:0 0 10px;max-width:80ch}
   <div class="wrap sec">
     <div class="sec-head">
       <p class="eyebrow">26 nights, 12 places to sleep</p>
-      <h2>Where to stay, and where to stay for less</h2>
-      <p class="lede">Nothing is booked yet. "Our pick" is where we're aiming: nice, not five-star-only. Most picks run roughly $120 to $330 a night in June. The ryokan (dinner and breakfast included) and the in-park Disney hotels cost more. The cheaper column is close enough to meet us for breakfast.</p>
+      <h2>Where to stay, for more or for less</h2>
+      <p class="lede">Nothing is booked yet. "Our pick" is where we're aiming: nice, not five-star-only. Most picks run roughly $120 to $330 a night in June. The ryokan (dinner and breakfast included) and the in-park Disney hotels cost more. The splurge column is for anyone who wants to go big. The cheaper column is close enough to meet us for breakfast.</p>
     </div>
     <div id="stays"></div>
     <div class="save">
@@ -615,50 +620,62 @@ var STAYS=[
  {leg:"jp",place:"Tokyo (Shinjuku)",dates:"Jun 2-3 and Jun 5-7",n:"3 nights",
   pick:[H("JR Kyushu Hotel Blossom Shinjuku","Three minutes from Shinjuku Station's south exit. Calm rooms, easy walk to Ni-chome.")],
   also:[H("Hotel Groove Shinjuku","Inside Tokyu Kabukicho Tower, with the nightlife at the door.")],
+  splurge:[H("Park Hyatt Tokyo","The Lost in Translation hotel, newly renovated, high above west Shinjuku.",null,"Park Hyatt Tokyo")],
   cheap:[H("Tokyu Stay Shinjuku","Washer-dryer in the room. On a four-week trip that is a luxury."),H("APA Hotel Shinjuku Kabukicho Tower","Small room, small price, same neighborhood.")]},
  {leg:"jp",place:"Hakone ryokan",dates:"Jun 3-5",n:"2 nights",
   pick:[H("Hakone Ginyu","Every room has its own open-air bath over the valley. Dinner and breakfast included.","https://www.ikyu.com/en-us/00002591/")],
-  also:[H("Yama no Chaya","Family-run inn reached by a footbridge over the river.",null,"Yama no Chaya Hakone"),H("Gora Kadan","The splurge: a former imperial villa.",null,"Gora Kadan Hakone")],
+  also:[H("Yama no Chaya","Family-run inn reached by a footbridge over the river.",null,"Yama no Chaya Hakone")],
+  splurge:[H("Gora Kadan","A former imperial villa turned ryokan. The top of the Hakone ladder.",null,"Gora Kadan Hakone")],
   cheap:[H("Hakone Kowakien Tenyu","Modern ryokan-style hotel, outdoor bath on every balcony.",null,"Hakone Kowakien Tenyu"),H("Ichinoyu Honkan","An inn founded in 1630 at budget prices.",null,"Ichinoyu Honkan Hakone")]},
  {leg:"jp",place:"Tokyo Disney Resort",dates:"Jun 7-9",n:"2 nights",
   pick:[H("Hotel MiraCosta","Inside DisneySea itself. Harbor rooms overlook the birthday.","https://reserve.tokyodisneyresort.jp/en/"),H("Fantasy Springs Hotel","The newest, with its own entrance into Fantasy Springs.","https://reserve.tokyodisneyresort.jp/en/")],
   also:[H("Tokyo Disney Resort Toy Story Hotel","The mid-priced Disney hotel, on the monorail loop.","https://reserve.tokyodisneyresort.jp/en/")],
+  splurge:[H("Fantasy Springs Hotel, Grand Chateau","The resort's top-tier wing, looking straight into Fantasy Springs.","https://reserve.tokyodisneyresort.jp/en/")],
   cheap:[H("Hilton Tokyo Bay","Official partner hotel on the monorail, usually well under Disney-hotel rates.",null,"Hilton Tokyo Bay"),H("Tokyo Disney Celebration Hotel","Disney's value hotel, a free shuttle ride away.",null,"Tokyo Disney Celebration Hotel")]},
  {leg:"jp",place:"Okinawa (Onna coast)",dates:"Jun 9-11",n:"2 nights",
   pick:[H("Hyatt Regency Seragaki Island","On its own small island, with a lagoon and a bridge to the mainland.","https://www.hyatt.com/hyatt-regency/en-US/okaro-hyatt-regency-seragaki-island-okinawa")],
   also:[H("Renaissance Okinawa Resort","Beachfront, close to the Blue Cave.",null,"Renaissance Okinawa Resort")],
+  splurge:[H("Halekulani Okinawa","The Waikiki legend's Okinawa outpost, right on the Onna coast.",null,"Halekulani Okinawa")],
   cheap:[H("Rizzan Sea Park Hotel Tancha Bay","Big beachfront resort, older rooms, friendlier rates.",null,"Rizzan Sea Park Hotel Tancha Bay"),H("Hotel Miyuki Beach","Simple rooms right on the sand.",null,"Hotel Miyuki Beach Okinawa")]},
  {leg:"kr",place:"Seoul",dates:"Jun 11-14",n:"3 nights",
   pick:[H("The Plaza Seoul, Autograph Collection","Faces City Hall. Palaces and Myeongdong on foot.","https://www.marriott.com/SELAK")],
   also:[H("Le Méridien Seoul Myeongdong","Newer, in the middle of Myeongdong.",null,"Le Meridien Seoul Myeongdong")],
+  splurge:[H("Four Seasons Hotel Seoul","Gwanghwamun, a short walk from Gyeongbokgung, with a serious Korean sauna.",null,"Four Seasons Hotel Seoul")],
   cheap:[H("Hotel28 Myeongdong","Film-themed boutique on the main shopping street.",null,"Hotel28 Myeongdong"),H("Moxy Seoul Myeongdong","Compact, lively, cheap.",null,"Moxy Seoul Myeongdong"),H("Hotel Midcity Myeongdong","Plain, clean, central.",null,"Hotel Midcity Myeongdong")]},
  {leg:"cn",place:"Shanghai (downtown)",dates:"Jun 14-15",n:"1 night",
   pick:[H("Radisson Collection Hotel, Yangtze Shanghai","1930s Art Deco a block from People's Square. Formerly the Yangtze Boutique.","https://www.radissonhotels.com/en-us/hotels/radisson-collection-yangtze-shanghai")],
   also:[H("Hotel Indigo Shanghai on the Bund","River rooms looking straight at the Pudong skyline.",null,"Hotel Indigo Shanghai on the Bund")],
+  splurge:[H("Fairmont Peace Hotel","The 1929 Art Deco landmark on the Bund, house jazz band included.",null,"Fairmont Peace Hotel Shanghai")],
   cheap:[H("Campanile Shanghai Bund","Plain rooms, short walk to the Bund.",null,"Campanile Shanghai Bund Hotel")]},
  {leg:"cn",place:"Shanghai Disney Resort",dates:"Jun 15-17",n:"2 nights",
   pick:[H("Shanghai Disneyland Hotel","Art Nouveau hotel across the lake, with a ferry to the gates.","https://www.shanghaidisneyresort.com/en/hotels-compare/")],
   also:[H("Toy Story Hotel","The value Disney hotel, shuttle to the gate.","https://www.shanghaidisneyresort.com/en/hotels-compare/")],
+  splurge:[H("Shanghai Disneyland Hotel, club level","Magic Kingdom Club rooms and suites, with lounge access.","https://www.shanghaidisneyresort.com/en/hotels-compare/")],
   cheap:[H("Novotel Shanghai Clover","Not Disney, cheaper again, close to the resort.",null,"Novotel Shanghai Clover")]},
  {leg:"hk",place:"Hong Kong",dates:"Jun 17-19",n:"2 nights",
   pick:[H("Hotel ICON","Harbour-view rooms and a rooftop pool in Tsim Sha Tsui East.",null,"Hotel ICON Hong Kong")],
   also:[H("The Hari Hong Kong","Polished and quiet on the Island side, in Wan Chai.",null,"The Hari Hong Kong")],
+  splurge:[H("The Peninsula Hong Kong","The 1928 grande dame of Tsim Sha Tsui. Go for the harbour view, stay for afternoon tea.",null,"The Peninsula Hong Kong")],
   cheap:[H("Eaton HK","Jordan. Great food hall downstairs and known as one of the city's most queer-friendly hotels.",null,"Eaton HK"),H("Ovolo Southside","Warehouse conversion, cheaper for being off-center.",null,"Ovolo Southside Hong Kong")]},
  {leg:"sg",place:"Singapore",dates:"Jun 19-21",n:"2 nights",
   pick:[H("Mondrian Singapore Duxton","Duxton Hill. Short walk to Maxwell Food Centre and the Neil Road bars.","https://mondrianhotels.com/singapore-duxton/")],
   also:[H("The Clan Hotel","Telok Ayer, with a skyline pool.",null,"The Clan Hotel Singapore"),H("Parkroyal Collection Pickering","The hotel wrapped in gardens, beside Chinatown.",null,"Parkroyal Collection Pickering")],
+  splurge:[H("Marina Bay Sands","The one with the ship on the roof. Only hotel guests get into the rooftop infinity pool.","https://www.marinabaysands.com/"),H("Raffles Singapore","The colonial grande dame, and the birthplace of the Singapore Sling.",null,"Raffles Hotel Singapore")],
   cheap:[H("The Scarlet Singapore","Boutique shophouses a block from Maxwell.",null,"The Scarlet Singapore"),H("Lloyd's Inn","Minimalist and quiet, near Orchard Road.",null,"Lloyd's Inn Singapore")]},
  {leg:"sg",place:"Disney Adventure",dates:"Jun 21-24",n:"3 nights",
   pick:[H("Verandah stateroom","A balcony earns its keep on a sailing with no ports.","https://disneycruise.disney.go.com/")],
   also:[H("Oceanview stateroom","A window, no balcony.","https://disneycruise.disney.go.com/")],
+  splurge:[H("Concierge stateroom or suite","A private lounge, a private sundeck, and someone to book everything for you.","https://disneycruise.disney.go.com/")],
   cheap:[H("Inside stateroom","Same ship, same shows, smallest bill.","https://disneycruise.disney.go.com/")]},
  {leg:"th",place:"Bangkok",dates:"Jun 24-26 and Jun 27-28",n:"3 nights",
   pick:[H("The Standard, Bangkok Mahanakhon","In the Mahanakhon tower, walking distance to Silom's bars.","https://www.hyatt.com/the-standard/th-TH/bkksb-the-standard-bangkok/ojo")],
   also:[H("Sala Rattanakosin","Tiny riverside hotel that stares straight at Wat Arun.",null,"Sala Rattanakosin Bangkok")],
+  splurge:[H("Mandarin Oriental, Bangkok","The riverside legend, welcoming guests since 1876.",null,"Mandarin Oriental Bangkok")],
   cheap:[H("Lub d Bangkok Silom","Design hostel with private rooms, in Silom.",null,"Lub d Bangkok Silom"),H("Baan Tuk Din","Simple old-town hotel near Khao San Road.",null,"Baan Tuk Din Hotel Bangkok")]},
  {leg:"th",place:"Pattaya (Jomtien)",dates:"Jun 26-27",n:"1 night",
   pick:[H("Rabbit Resort Pattaya","Thai-style villas on Dongtan Beach.","https://www.booking.com/hotel/th/rabbit-resort-pattaya.html")],
   also:[H("Hilton Pattaya","Big sea-view rooms above the mall in central Pattaya.",null,"Hilton Pattaya")],
+  splurge:[H("Andaz Pattaya Jomtien Beach","Garden villas on a quiet beach, a short drive south of Jomtien.",null,"Andaz Pattaya Jomtien Beach")],
   cheap:[H("The AGATE Pattaya Boutique Resort","Beside Jomtien Complex.",null,"The AGATE Pattaya Boutique Resort"),H("Marine Beach Hotel","Jomtien basics near the beach.",null,"Marine Beach Hotel Pattaya")]}
 ];
 var CLOCK=[
@@ -848,8 +865,11 @@ $("#chapters").innerHTML=CHAPTERS.map(function(c){
    }).join("")+'</div></article>';
 }).join("");
 var CAL={1:["jp","Flight"],2:["jp","Tokyo"],3:["jp","Hakone"],4:["jp","Hakone"],5:["jp","Pride"],6:["jp","Pride"],7:["jp","Disney"],8:["jp","Birthday"],9:["jp","Okinawa"],10:["jp","Okinawa"],11:["jp","Okinawa"],12:["kr","Pride?"],13:["kr","Seoul"],14:["cn","Shanghai"],15:["cn","Disney"],16:["cn","Disney"],17:["hk","Hong Kong"],18:["hk","Disney"],19:["hk","Buddha"],20:["sg","Singapore"],21:["sg","Boarding"],22:["sg","At sea"],23:["sg","At sea"],24:["th","Bangkok"],25:["th","Bangkok"],26:["th","Pride?"],27:["th","Bangkok"],28:["th","Home"]};
-$("#cal").innerHTML=["Tue","Wed","Thu","Fri","Sat","Sun","Mon"].map(function(d){return '<div class="cal-h">'+d+'</div>'}).join("")+
-  Object.keys(CAL).map(function(k){var c=CAL[k];return '<button type="button" class="l-'+c[0]+'" data-day="'+k+'" aria-label="June '+k+', '+c[1]+'. Jump to this day."><b>'+k+'</b><span>'+c[1]+'</span></button>'}).join("");
+var calOff=function(a){return '<div class="cal-off" aria-hidden="true"><b>'+a[1]+'</b><span>'+a[0]+'</span></div>'};
+$("#cal").innerHTML=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(function(d){return '<div class="cal-h">'+d+'</div>'}).join("")+
+  [["May","30"],["May","31"]].map(calOff).join("")+
+  Object.keys(CAL).map(function(k){var c=CAL[k];return '<button type="button" class="l-'+c[0]+'" data-day="'+k+'" aria-label="June '+k+', '+c[1]+'. Jump to this day."><b>'+k+'</b><span>'+c[1]+'</span></button>'}).join("")+
+  [["Jun","29"],["Jun","30"],["Jul","1"],["Jul","2"],["Jul","3"]].map(calOff).join("");
 $("#cal").addEventListener("click",function(e){
   var b=e.target.closest("button");if(!b)return;
   var t=document.getElementById("day-"+(b.dataset.day==="23"?"22":b.dataset.day));
@@ -862,7 +882,7 @@ $("#flag").addEventListener("click",function(e){var a=e.target.closest(".stripe"
 function tier(cls,label,list){return '<div class="tier '+cls+'"><h4>'+label+'</h4><ul>'+list.map(function(h){return '<li>'+ext(h.name,h.url)+'<span>'+h.note+'</span></li>'}).join("")+'</ul></div>'}
 $("#stays").innerHTML=STAYS.map(function(s){
   return '<div class="stay l-'+s.leg+'"><div class="stay-head"><div><span class="chip">'+s.n+'</span></div><h3>'+s.place+'</h3><span class="mono">'+s.dates+'</span></div>'+
-   '<div class="tiers">'+tier("","Our pick",s.pick)+tier("","Also great",s.also)+tier("cheap","Cheaper nearby",s.cheap)+'</div></div>';
+   '<div class="tiers">'+tier("","Our pick",s.pick)+tier("","Also great",s.also)+tier("splurge","Splurge",s.splurge)+tier("cheap","Cheaper nearby",s.cheap)+'</div></div>';
 }).join("");
 
 /* ---------- render: book ---------- */
