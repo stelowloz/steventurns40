@@ -764,7 +764,7 @@ var CREDITS=[
  ["Disney Adventure","Disney Adventure Disney Cruise Line (55114526305).jpg","nagi usano","CC BY 4.0","https://creativecommons.org/licenses/by/4.0"],
  ["Bangkok","Wat Arun Ratchawararam and the Royal Barge Procession.jpg","Tee-12838","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
  ["Pattaya","Pattaya beach on a sunny day in june 2017.jpg","FritzDaCat","CC BY-SA 4.0","https://creativecommons.org/licenses/by-sa/4.0"],
- ["Yomiuriland","Yomiuriland-20100411.jpg","Rsa","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
+ ["PokéPark Kanto","ProfSekkokuLab 20260205.jpg","ぶい133","CC BY 4.0","https://creativecommons.org/licenses/by/4.0"],
  ["Shibuya Crossing","Tokyo Shibuya Scramble Crossing 2018-10-09.jpg","Benh LIEU SONG","CC BY-SA 2.0","https://creativecommons.org/licenses/by-sa/2.0"],
  ["Tokyo Disneyland","Tokyo Disneyland Cinderella Castle (53441923868).jpg","Dick Thomas Johnson","CC BY 2.0","https://creativecommons.org/licenses/by/2.0"],
  ["Shuri Castle","Rekonstruktionshalle (Seiden) aussen.jpg","Piet Parkiet","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0"],
@@ -836,7 +836,7 @@ var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 var dow=function(d){return DOW[new Date(Date.UTC(2027,5,d)).getUTCDay()]};
 var BADGE={ok:'<span class="badge ok">Confirmed</span>',est:'<span class="badge est">Estimated date</span>',bday:'<span class="badge bday">The big day</span>'};
 function linkRow(links){return links&&links.length?'<div class="links">'+links.map(function(l){return l[1].charAt(0)==="#"?'<a class="here" href="'+l[1]+'">'+l[0]+'</a>':ext(l[0],l[1],l[2]||"")}).join("")+'</div>':""}
-ALT.yomiuri="Roller coasters at Yomiuriland behind cherry blossoms";
+ALT.pokepark="The professor's research lab inside PokéPark Kanto, with three Poké Balls on a table";
 ALT.shibuya="Crowds crossing Shibuya Scramble Crossing at dusk under neon signs";
 ALT.tdl="Cinderella Castle at Tokyo Disneyland on a clear day";
 ALT.shuri="The red main hall of Shuri Castle in Okinawa";
@@ -846,7 +846,7 @@ ALT.hkdl="The castle at Hong Kong Disneyland with green hills behind";
 ALT.marina="Marina Bay in Singapore at dusk, seen from above";
 ALT.palace="Golden spires of Wat Phra Kaew at the Grand Palace in Bangkok";
 ALT.chatuchak="A covered aisle of stalls at Chatuchak Weekend Market";
-var PH={2:["tokyo","Tokyo at dusk"],3:["yomiuri","Yomiuriland"],4:["hakone","Lake Ashi"],5:["pride","Yoyogi Park stage"],6:["shibuya","Shibuya Crossing"],7:["tdl","Tokyo Disneyland"],8:["disneysea","Tokyo DisneySea"],9:["manzamo","Cape Manzamo"],10:["churaumi","Churaumi Aquarium"],11:["shuri","Shuri Castle"],12:["seoul","Gyeongbokgung"],13:["secretgarden","Secret Garden"],14:["bund","Pudong from the Bund"],15:["tron","TRON"],16:["shdl","Shanghai Disneyland"],17:["hk","From Victoria Peak"],18:["hkdl","Hong Kong Disneyland"],19:["buddha","Big Buddha"],20:["supertree","Supertree Grove"],21:["marina","Marina Bay"],22:["ship","Disney Adventure"],24:["watarun","Wat Arun"],25:["palace","Grand Palace"],26:["pattaya","Pattaya"],27:["chatuchak","Chatuchak Market"]};
+var PH={2:["tokyo","Tokyo at dusk"],3:["pokepark","PokéPark Kanto"],4:["hakone","Lake Ashi"],5:["pride","Yoyogi Park stage"],6:["shibuya","Shibuya Crossing"],7:["tdl","Tokyo Disneyland"],8:["disneysea","Tokyo DisneySea"],9:["manzamo","Cape Manzamo"],10:["churaumi","Churaumi Aquarium"],11:["shuri","Shuri Castle"],12:["seoul","Gyeongbokgung"],13:["secretgarden","Secret Garden"],14:["bund","Pudong from the Bund"],15:["tron","TRON"],16:["shdl","Shanghai Disneyland"],17:["hk","From Victoria Peak"],18:["hkdl","Hong Kong Disneyland"],19:["buddha","Big Buddha"],20:["supertree","Supertree Grove"],21:["marina","Marina Bay"],22:["ship","Disney Adventure"],24:["watarun","Wat Arun"],25:["palace","Grand Palace"],26:["pattaya","Pattaya"],27:["chatuchak","Chatuchak Market"]};
 var TILE={1:["LAX","TYO","About 11.5 hours"],28:["BKK","LAX","One connection"]};
 function dayPic(d){
   var t=TILE[d.d];
