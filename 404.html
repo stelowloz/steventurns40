@@ -17,13 +17,13 @@
 <title>Steven Turns 40</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
-/* Palette: one sunset ombre, raspberry to gold, stepped across the six destinations in trip order.
+/* Palette: six destinations, six distinct two-tone ombres (raspberry, teal, gold, plum, blue, orange).
    Layout: six stacked blocks are the itinerary. One block per destination, block height = nights there.
    Everything else is ink on ticket stock, with each destination's two-tone colour reused wherever that place appears. */
 :root{
   --bg:#F4F3F9; --surface:#FFFFFF; --wash:#E9E7F3; --ink:#17123A; --muted:#58537C; --line:#D7D4E6; --link:#3A2BD1; --pop:#17123A;
-  --jp:#A8174F; --jp2:#C01F47; --kr:#C01F47; --kr2:#D2303B; --cn:#D2303B; --cn2:#DC462F;
-  --hk:#E0522D; --hk2:#EA6B27; --sg:#EA6B27; --sg2:#F18F1E; --th:#F18F1E; --th2:#F6B529;
+  --jp:#A3154F; --jp2:#DE4433; --kr:#0B4F6C; --kr2:#17877A; --cn:#D98E04; --cn2:#F3CF45;
+  --hk:#55238F; --hk2:#C2337F; --sg:#123A94; --sg2:#1F7DCB; --th:#E2551D; --th2:#F6A823;
   --board:#15131C; --flap:#2A2733; --flap2:#211E29; --flap-ink:#F6ECCF; --flap-line:#09080D; --board-dim:#A9A3B5; --board-ok:#F6C445;
   --on-dark:#17123A; --on-light:#FFFFFF;
   --ok-bg:#DDF1E4; --ok-fg:#14663A; --est-bg:#FBEBCF; --est-fg:#7A4300;
@@ -47,14 +47,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:var(--link)}
 :focus-visible{outline:3px solid var(--link);outline-offset:2px;border-radius:4px}
 .wrap{max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.l-jp{--c:var(--jp);--c2:var(--jp2);--on:var(--on-light)} .l-kr{--c:var(--kr);--c2:var(--kr2);--on:var(--on-light)} .l-cn{--c:var(--cn);--c2:var(--cn2);--on:var(--on-light)}
-.l-hk{--c:var(--hk);--c2:var(--hk2);--on:var(--on-dark)} .l-sg{--c:var(--sg);--c2:var(--sg2);--on:var(--on-dark)} .l-th{--c:var(--th);--c2:var(--th2);--on:var(--on-dark)}
+.l-jp{--c:var(--jp);--c2:var(--jp2);--on:var(--on-light)} .l-kr{--c:var(--kr);--c2:var(--kr2);--on:var(--on-light)} .l-cn{--c:var(--cn);--c2:var(--cn2);--on:var(--on-dark)}
+.l-hk{--c:var(--hk);--c2:var(--hk2);--on:var(--on-light)} .l-sg{--c:var(--sg);--c2:var(--sg2);--on:var(--on-light)} .l-th{--c:var(--th);--c2:var(--th2);--on:var(--on-dark)}
 .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
 .eyebrow{font:500 .78rem/1.4 var(--font-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0}
 .chip{display:inline-block;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);font:500 .72rem/1.5 var(--font-mono);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
 .badge{display:inline-block;font:500 .72rem/1.5 var(--font-mono);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 .badge.ok{background:var(--ok-bg);color:var(--ok-fg)} .badge.est{background:var(--est-bg);color:var(--est-fg)} .badge.bday{background:var(--ink);color:var(--bg)}
-.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem/1.2 var(--font-body);padding:11px 20px;border-radius:999px;border:2px solid transparent;background:linear-gradient(100deg,var(--jp),var(--cn2)) border-box;color:var(--on-light);text-decoration:none;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem/1.2 var(--font-body);padding:11px 20px;border-radius:999px;border:2px solid transparent;background:linear-gradient(100deg,var(--jp),var(--jp2)) border-box;color:var(--on-light);text-decoration:none;cursor:pointer}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .btn:hover{transform:translateY(-1px)}
@@ -73,7 +73,7 @@ h3{margin:0;font-size:1.1rem;line-height:1.3;text-wrap:balance}
 @media (min-width:620px){.brand span{display:inline}}
 .top nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0}
 .top nav a{font:600 .9rem/1 var(--font-body);padding:9px 8px;border-radius:999px;color:var(--ink);text-decoration:none;white-space:nowrap}
-.top nav a.go{background:linear-gradient(100deg,var(--jp),var(--cn2));color:var(--on-light);padding-inline:12px;margin-left:2px}
+.top nav a.go{background:linear-gradient(100deg,var(--jp),var(--jp2));color:var(--on-light);padding-inline:12px;margin-left:2px}
 .top nav a.go[aria-current="page"]{background:var(--ink);color:var(--bg)}
 @media (max-width:519px){.brand{display:none}.top nav{flex:1;justify-content:space-between}}
 @media (min-width:620px){.top nav a{font-size:.95rem;padding:9px 12px}.top nav a.go{padding-inline:16px}}
@@ -125,7 +125,7 @@ h1 span{display:block}
 .bookbar{display:grid;gap:10px;margin-top:16px;font-size:.95rem}
 .bookbar p{margin:0}
 .lab{display:inline-block;font:500 .7rem/1.6 var(--font-mono);text-transform:uppercase;letter-spacing:.07em;padding:1px 8px;border-radius:3px;margin-right:8px;white-space:nowrap}
-.lab.hot{background:linear-gradient(100deg,var(--jp),var(--cn2));color:var(--on-light)}
+.lab.hot{background:linear-gradient(100deg,var(--jp),var(--jp2));color:var(--on-light)}
 .lab.cool{box-shadow:inset 0 0 0 1.5px var(--ink)}
 .doors{display:grid;gap:14px}
 .door{display:grid;gap:6px;padding:22px 24px 24px;border-radius:14px;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);text-decoration:none;min-width:0}
@@ -180,7 +180,7 @@ h1 span{display:block}
 .rsvp{display:grid;gap:34px}
 .step{border:0;margin:0;padding:0;min-width:0}
 .step legend{display:flex;align-items:center;gap:10px;padding:0;margin-bottom:8px;font:400 1.25rem/1.2 var(--font-display)}
-.stepn{display:inline-grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(140deg,var(--jp),var(--cn2));color:var(--on-light);font:500 .85rem/1 var(--font-mono)}
+.stepn{display:inline-grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(140deg,var(--jp),var(--jp2));color:var(--on-light);font:500 .85rem/1 var(--font-mono)}
 .hint{margin:0 0 12px;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
 .mini{font:600 .85rem/1 var(--font-body);padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
 .mini:hover{border-color:var(--ink)}
@@ -209,7 +209,8 @@ h1 span{display:block}
 .builder > *{min-width:0}
 .builder label{font:500 .78rem var(--font-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:block;margin-bottom:4px}
 .builder input,.builder textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:10px 12px}
-.builder textarea{resize:vertical;min-height:104px}
+.builder textarea{resize:vertical;min-height:88px}
+.builder.one{grid-template-columns:minmax(0,1fr)}
 .builder-row{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
 .builder-row p{margin:0;font-size:.92rem;color:var(--muted);flex:1 1 240px;min-width:0}
 @media (min-width:760px){.builder{grid-template-columns:1fr 1fr}.builder .full{grid-column:1 / -1}}
@@ -282,6 +283,9 @@ h1 span{display:block}
 .tier li{font-size:.95rem;line-height:1.4}
 .tier li a{font-weight:700}
 .tier li span{display:block;color:var(--muted)}
+.est{display:inline-block;margin-left:8px;font:500 .76rem/1.5 var(--font-mono);background:var(--wash);color:var(--ink);padding:0 6px;border-radius:3px;white-space:nowrap}
+.range{font-size:.88rem;color:var(--muted);line-height:1.35;margin-top:4px}
+.range b{display:block;font:500 1rem/1.3 var(--font-mono);color:var(--ink)}
 @media (min-width:760px){.stay{grid-template-columns:230px minmax(0,1fr);gap:28px}.tiers{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px}}
 @media (min-width:1040px){.tiers{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .save{background:var(--wash);border-radius:10px;padding:20px 22px;margin-top:8px}
@@ -296,6 +300,13 @@ h1 span{display:block}
 .clock p{margin:0;max-width:66ch}
 .in{font:500 .72rem/1.5 var(--font-mono);background:var(--ink);color:var(--bg);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 @media (min-width:760px){.clock li{grid-template-columns:250px minmax(0,1fr)}}
+.visa{display:grid;gap:14px}
+@media (min-width:700px){.visa{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1040px){.visa{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.visa-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:12px;align-content:start;min-width:0}
+.visa-card > div{padding-inline:4px}
+.visa-card h4{margin:0 0 3px;font:500 .72rem var(--font-mono);text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.visa-card p{margin:0;font-size:.94rem;line-height:1.45}
 .linkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:26px 32px}
 .linkgrid h3{margin-bottom:8px}
 .linkgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
@@ -313,6 +324,8 @@ details[open] summary::after{content:"\2212"}
 .ans{padding:0 0 18px;max-width:70ch;display:grid;gap:10px}
 .ans p,.ans ul{margin:0}
 .ans ul{padding-left:20px;display:grid;gap:6px}
+.apply{font-weight:700;white-space:nowrap}
+.apply::after{content:" \2197";font-family:var(--font-mono);font-weight:400}
 .refs{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.88rem;align-items:baseline}
 .refs span{font:500 .7rem var(--font-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 
@@ -402,11 +415,11 @@ footer p{margin:0 0 10px;max-width:80ch}
             <path class="home" d="M47 338L90 298"/>
             <path class="rt" style="stroke:var(--jp2)" d="M576 66Q526 158 415 181"/>
             <path class="rt" style="stroke:var(--kr2)" d="M415 181Q442 106 405 43"/>
-            <path class="rt" style="stroke:var(--cn2)" d="M405 43Q350 68 330 121"/>
+            <path class="rt" style="stroke:var(--cn)" d="M405 43Q350 68 330 121"/>
             <path class="rt" style="stroke:var(--hk2)" d="M330 121Q300 198 232 232"/>
             <path class="rt" style="stroke:var(--sg2)" d="M232 232Q196 388 92 492"/>
             <path class="rt" style="stroke:var(--sg2);stroke-dasharray:2 8;stroke-width:3.5" d="M92 492C116 466 160 460 165 477C168 494 128 501 92 492"/>
-            <path class="rt" style="stroke:var(--th2)" d="M92 492Q36 420 47 338"/>
+            <path class="rt" style="stroke:var(--th)" d="M92 492Q36 420 47 338"/>
             <path id="flightpath" fill="none" d="M576 66Q526 158 415 181Q442 106 405 43Q350 68 330 121Q300 198 232 232Q196 388 92 492Q36 420 47 338"/>
             <path class="lead" d="M565 74L548 88M54 350L66 358"/>
             <g>
@@ -472,7 +485,7 @@ footer p{margin:0 0 10px;max-width:80ch}
     <div class="sec-head">
       <p class="eyebrow">26 nights, 12 places to sleep</p>
       <h2>Where to stay, for more or for less</h2>
-      <p class="lede">Nothing is booked yet. "Our pick" is where we're aiming: nice, not five-star-only. Most picks run roughly $120 to $330 a night in June. The ryokan (dinner and breakfast included) and the in-park Disney hotels cost more. The splurge column is for anyone who wants to go big. The cheaper column is close enough to meet us for breakfast.</p>
+      <p class="lede">Nothing is booked yet. "Our pick" is where we're aiming: nice, not five-star-only. Every name carries a rough June price for a room for two, before tax. They are estimates, not live quotes, so tap a name for today's rate. The splurge column is for anyone who wants to go big. The cheaper column is close enough to meet us for breakfast.</p>
     </div>
     <div id="stays"></div>
     <div class="save">
@@ -498,6 +511,14 @@ footer p{margin:0 0 10px;max-width:80ch}
       <p class="lede">Some of this trip sells out the minute it goes on sale, usually at an odd hour in Los Angeles. Here is the order to do it in.</p>
     </div>
     <ol class="clock" id="clock"></ol>
+  </div>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">For your information</p>
+      <h2>Entry rules at a glance</h2>
+      <p class="lede">What each stop asks of a US passport and a Guatemalan passport, with a link to anything you have to file. Checked November 16, 2026. On another passport, check each country before you book.</p>
+    </div>
+    <div class="visa" id="visa-fyi"></div>
   </div>
   <div class="wrap sec">
     <div class="sec-head">
@@ -527,7 +548,7 @@ footer p{margin:0 0 10px;max-width:80ch}
     <div class="sec-head">
       <p class="eyebrow">You're invited</p>
       <h2>Come for a leg. Or all seven.</h2>
-      <p class="lede">Nobody is expected to take four weeks off. Say what you're into, tick the legs you'll join, and send Steven the message it writes.</p>
+      <p class="lede">Nobody is expected to take four weeks off. Say what you're into, tick the legs you'll join, and hit send. It lands on Steven's guest list.</p>
     </div>
     <div class="rsvp">
       <fieldset class="step">
@@ -541,11 +562,22 @@ footer p{margin:0 0 10px;max-width:80ch}
         <div class="legs" id="legs"></div>
       </fieldset>
       <fieldset class="step">
-        <legend><span class="stepn">3</span>Your message to Steven</legend>
+        <legend><span class="stepn">3</span>Got a suggestion?</legend>
+        <p class="hint">Optional. A restaurant, a bar, a thing to do in any of the cities. Steven reads every one and the good ones go on the site.</p>
+        <div class="builder one">
+          <div>
+            <label for="guest-idea">Eats or things to do we should add</label>
+            <textarea id="guest-idea" rows="3" placeholder="The best bowl of noodles in Seoul is at..."></textarea>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="step">
+        <legend><span class="stepn">4</span>Send it</legend>
+        <p class="hint">Your RSVP goes straight onto Steven's guest list.</p>
         <div class="builder">
           <div>
             <label for="guest-name">Your name</label>
-            <input id="guest-name" type="text" autocomplete="given-name" placeholder="So he knows who's coming">
+            <input id="guest-name" type="text" autocomplete="name" placeholder="So he knows who's coming">
           </div>
           <div>
             <label for="guest-note">Anything to add? Optional</label>
@@ -556,9 +588,9 @@ footer p{margin:0 0 10px;max-width:80ch}
             <textarea id="join-msg" readonly rows="4"></textarea>
           </div>
           <div class="builder-row full">
-            <button class="btn" type="button" id="copy-msg">Copy message</button>
-            <a class="btn ghost" id="sms-link" href="sms:?&amp;body=">Text it</a>
-            <p id="copy-status" role="status">Starts with the birthday leg ticked as an example. On a phone, Text it opens your messages app with this filled in.</p>
+            <button class="btn" type="button" id="send-rsvp">Send RSVP</button>
+            <button class="btn ghost" type="button" id="copy-msg">Copy message</button>
+            <p id="copy-status" role="status">Starts with the birthday leg ticked as an example. Change it to match your plans, then send.</p>
           </div>
         </div>
       </fieldset>
@@ -644,7 +676,7 @@ var JOIN=[
  {id:"thai",leg:"th",name:"Bangkok + Pattaya Pride",dates:"Jun 24-28",tags:["Pride","Food","Beach"],pitch:"Gold temples, river sunsets, a beach-town Pride, a giant weekend market, and the farewell dinner.",fly:"Fly into and out of Bangkok"}
 ];
 var EAT=[
- ["jp","Tokyo",[["Isetan Shinjuku food hall, eaten on the roof","Isetan Shinjuku","Jun 2",2],["Dinner at Den","Den Jingumae Tokyo","Jun 5",5,"Michelin \u2605\u2605"],["Gyoza Sausage Bun at DisneySea","Nautilus Galley Tokyo DisneySea","Jun 8",8]]],
+ ["jp","Tokyo",[["Isetan Shinjuku food hall, eaten on the roof","Isetan Shinjuku","Jun 2",2],["Birthday-eve dinner at Den","Den Jingumae Tokyo","Jun 7",7,"Michelin \u2605\u2605"],["Gyoza Sausage Bun at DisneySea","Nautilus Galley Tokyo DisneySea","Jun 8",8]]],
  ["jp","Hakone",[["Kaiseki dinner at the ryokan","Hakone Ginyu","Jun 3",3],["Black eggs at Owakudani","Owakudani Hakone","Jun 4",4],["Tea at Amazake-chaya","Amazake-chaya Hakone","Jun 4",4],["Yam soba at Hatsuhana","Hatsuhana Soba Honten Hakone","Jun 5",5]]],
  ["jp","Okinawa",[["Taco rice","King Tacos Kin Okinawa","Jun 9",9],["Blue Seal ice cream","Blue Seal Okinawa","Jun 9",9],["Okinawa soba at Kishimoto Shokudo","Kishimoto Shokudo Motobu Okinawa","Jun 10",10],["Lunch upstairs at Makishi Market","Makishi Public Market Naha","Jun 11",11]]],
  ["kr","Seoul",[["Samgyetang at Tosokchon","Tosokchon Samgyetang Seoul","Jun 12",12],["Korean barbecue","Korean BBQ Itaewon Seoul","Jun 12",12],["Gwangjang Market","Gwangjang Market Seoul","Jun 13",13],["Cold noodles at Eulji Myeonok","Eulji Myeonok Seoul","Jun 13",13],["Fried chicken and beer","Korean fried chicken Seoul","Jun 13",13]]],
@@ -664,11 +696,11 @@ var CHAPTERS=[
   {d:4,t:"Do nothing, beautifully",p:"Ryokan day: bath, robe, nap, repeat. If you get restless, the Hakone Open-Air Museum (9 to 5) or the ropeway to Owakudani's steaming valley.",eat:"Black eggs at Owakudani. Sweet rice tea at Amazake-chaya, a thatched teahouse on the old highway.",links:[["Hakone Open-Air Museum","https://www.hakone-oam.or.jp/en/"],M("Owakudani","Owakudani Hakone"),M("Amazake-chaya","Amazake-chaya Hakone")]}
  ]},
  {leg:"jp",title:"Tokyo Pride weekend",dates:"Jun 5-6",pitch:"Confirmed dates, Yoyogi Park, and a parade through Shibuya. Then Ni-chome until someone says stop.",photos:["pride"],days:[
-  {d:5,t:"Tokyo Pride festival",b:"ok",p:"Soba at Hatsuhana, then about 85 minutes back to Shinjuku. Afternoon at the Tokyo Pride festival in Yoyogi Park. A two-Michelin-star dinner, then Shinjuku Ni-chome, a few hundred bars in a few small blocks.",eat:"Hatsuhana's yam soba before the train. Dinner at Den in Jingumae: two Michelin stars and a famously playful menu, if we can land the table. Backup: Shinjuku Kappo Nakajima, starred in past guides and five minutes from Ni-chome.",links:[["Tokyo Pride","https://pride.tokyo/","book"],["Den in the Michelin Guide","https://guide.michelin.com/us/en/tokyo-region/tokyo/restaurant/den","book"],M("Yoyogi Park","Yoyogi Park event plaza"),M("Shinjuku Ni-chome","Shinjuku Nichome")]},
+  {d:5,t:"Tokyo Pride festival",b:"ok",p:"Soba at Hatsuhana, then about 85 minutes back to Shinjuku. Afternoon at the Tokyo Pride festival in Yoyogi Park. Night out in Shinjuku Ni-chome, a few hundred bars in a few small blocks.",eat:"Hatsuhana's yam soba before the train.",links:[["Tokyo Pride","https://pride.tokyo/","book"],M("Yoyogi Park","Yoyogi Park event plaza"),M("Shinjuku Ni-chome","Shinjuku Nichome")]},
   {d:6,t:"Tokyo Pride Parade",b:"ok",p:"Parade day through Shibuya and Harajuku. Walk it or cheer it. Ni-chome again after, because of course.",links:[["Tokyo Pride","https://pride.tokyo/","book"]]}
  ]},
- {leg:"jp",title:"The birthday",dates:"Jun 7-8",pitch:"The reason for the season. Thirty-nine ends on Monday night at Tokyo Disneyland. Forty starts on Tuesday at the best theme park on Earth.",photos:["disneysea"],days:[
-  {d:7,t:"Tokyo Disneyland",p:"The rebuilt Tomorrowland and its new Space Mountain are scheduled to open in 2027. If they're open, ride that first. Then the two you can't ride anywhere else: Enchanted Tale of Beauty and the Beast and Pooh's Hunny Hunt. Move into the Disney hotel tonight.",links:[["Tokyo Disney tickets and hotels","https://reserve.tokyodisneyresort.jp/en/","book"],["Tokyo Disney Resort","https://www.tokyodisneyresort.jp/en/"]]},
+ {leg:"jp",title:"The birthday",dates:"Jun 7-8",pitch:"The reason for the season. Thirty-nine ends on Monday with Tokyo Disneyland and two Michelin stars. Forty starts on Tuesday at the best theme park on Earth.",photos:["disneysea"],days:[
+  {d:7,t:"Tokyo Disneyland, then the last supper of his thirties",p:"The rebuilt Tomorrowland and its new Space Mountain are scheduled to open in 2027. If they're open, ride that first. Then the two you can't ride anywhere else: Enchanted Tale of Beauty and the Beast and Pooh's Hunny Hunt. Out of the park by 4:30pm: it is about 45 minutes into town for a 6pm table. Then back out to the Disney hotel, where forty is waiting.",eat:"Birthday-eve dinner at Den in Jingumae: two Michelin stars and a famously playful menu, if we can land the table. If not, another starred table that opens on Mondays.",links:[["Den in the Michelin Guide","https://guide.michelin.com/us/en/tokyo-region/tokyo/restaurant/den","book"],["Tokyo Disney tickets and hotels","https://reserve.tokyodisneyresort.jp/en/","book"],["Tokyo Disney Resort","https://www.tokyodisneyresort.jp/en/"]]},
   {d:8,t:"Steven turns 40 at Tokyo DisneySea",b:"bday",p:"Fantasy Springs first. Then Journey to the Center of the Earth, Tower of Terror, and the harbor show after dark. Wear something you'd want in the photos.",eat:"The Gyoza Sausage Bun at Nautilus Galley. It is a birthday cake if you believe.",links:[["Tokyo Disney tickets and hotels","https://reserve.tokyodisneyresort.jp/en/","book"]]}
  ]},
  {leg:"jp",title:"Okinawa",dates:"Jun 9-11",pitch:"Japan's tropics. We've done Kyoto, so we traded the temples for a snorkel and a whale shark.",photos:["manzamo","churaumi"],days:[
@@ -778,7 +810,7 @@ var CLOCK=[
  {when:"Sat, Apr 3, 2027 · 2:00am PT",at:Date.UTC(2027,3,3,9),short:"PokéPark Kanto tickets open",what:"PokéPark Kanto tickets for June 3",p:"Tickets for international guests open two months ahead at 6:00pm Japan time. That is 2:00am in Los Angeles. Set an alarm and aim for the earliest forest slot.",links:[["How to get tickets","https://en.japantravel.com/kanagawa/how-to-get-pokepark-kanto-tickets/72623","book"]]},
  {when:"Early April 2027",what:"Tokyo Disney park tickets",p:"Dated park tickets usually go on sale about two months ahead. Buy Tokyo Disneyland for June 7 and DisneySea for June 8.",links:[["Tokyo Disney reservations","https://reserve.tokyodisneyresort.jp/en/","book"]]},
  {when:"Mid-April 2027",what:"Seoul announces its Pride date",p:"The Seoul Queer Culture Festival usually posts dates in mid-April. Our plan assumes Saturday, June 12. Then lock or adjust the Seoul hotel.",links:[["Seoul Queer Culture Festival","https://www.sqcf.org/english",""]]},
- {when:"Spring 2027",what:"The Michelin dinner: Den, Saturday June 5",p:"Two Michelin stars in Jingumae. Dinner only, closed Sundays. Den takes its own bookings by phone and fills fast, so call as soon as it opens June dates. Backup: Shinjuku Kappo Nakajima in Shinjuku.",links:[["Den in the Michelin Guide","https://guide.michelin.com/us/en/tokyo-region/tokyo/restaurant/den","book"],["Den's own site","https://www.jimbochoden.com/",""]]},
+ {when:"Spring 2027",what:"The Michelin dinner: Den, Monday June 7",p:"Two Michelin stars in Jingumae, for the night before the birthday. Dinner only, closed Sundays. Den takes its own bookings by phone and fills fast, so call as soon as it opens June dates.",links:[["Den in the Michelin Guide","https://guide.michelin.com/us/en/tokyo-region/tokyo/restaurant/den","book"],["Den's own site","https://www.jimbochoden.com/",""]]},
  {when:"By mid-May 2027",what:"Park tickets, timed entries, paperwork",p:"Shanghai Disneyland (two days) and Hong Kong Disneyland tickets. The Shuri Castle timed reservation for June 11. A K-ETA for Korea if 2027 requires it (KRW 10,000, allow 72 hours). An International Driving Permit from AAA if you'll drive in Okinawa. Check your passport has six months left after June 28. Not on a US passport? The FAQ lists what changes, including the visas a Guatemalan passport needs for Shanghai and Thailand.",links:[["Visa answers in the FAQ","#faq",""],["Shanghai Disney Resort","https://www.shanghaidisneyresort.com/en/","book"],["Hong Kong Disneyland","https://www.hongkongdisneyland.com/","book"],["Shuri Castle","https://visitokinawajapan.com/?p=18945","book"],["K-ETA","https://www.k-eta.go.kr/","book"]]},
  {when:"Jun 16 to 19, 2027",what:"SG Arrival Card",p:"Free, and filed within the three days before you land in Singapore on June 19.",links:[["SG Arrival Card","https://eservices.ica.gov.sg/sgarrivalcard/","book"]]},
  {when:"Jun 21 to 24, 2027",what:"Thailand Digital Arrival Card",p:"Filed within the three days before you land in Bangkok on June 24. That window opens on boarding day, so do it before the ship sails. Use only the official site; there are paid look-alikes.",links:[["Official TDAC site","https://tdac.immigration.go.th/","book"]]}
@@ -790,6 +822,17 @@ var LINKS=[
  ["Sights that need a ticket",[["Shuri Castle reservations","https://visitokinawajapan.com/?p=18945","Jun 11"],["Okinawa Churaumi Aquarium","https://churaumi.okinawa/en/","Jun 10"],["Hakone Open-Air Museum","https://www.hakone-oam.or.jp/en/","Jun 4, optional"],["Ngong Ping 360 cable car","https://www.np360.com.hk/en/","Jun 19"],["Gardens by the Bay","https://www.gardensbythebay.com.sg/","Jun 20"]]],
  ["Entry paperwork",[["K-ETA (South Korea)","https://www.k-eta.go.kr/","If required in 2027"],["China National Immigration Administration","https://en.nia.gov.cn/","240-hour visa-free transit rules"],["SG Arrival Card","https://eservices.ica.gov.sg/sgarrivalcard/","Within 3 days before arrival"],["Thailand Digital Arrival Card","https://tdac.immigration.go.th/","Within 3 days before arrival"],["Visit Japan Web","https://services.digital.go.jp/en/visit-japan-web/","Optional, speeds up arrival"],["International Driving Permit at AAA","https://www.aaa.com/vacation/idpapplc.html","Only if you'll drive in Okinawa"],["Japan visa exemption list","https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html","Which passports enter visa-free"],["Hong Kong visa requirements","https://www.gov.hk/en/nonresidents/visarequire/general/","Visa-free periods by passport"],["Singapore visa requirements","https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements","Which passports need a visa"],["Thailand e-Visa","https://www.thaievisa.go.th/","For passports not on the exemption list"]]]
 ];
+var V={keta:["Apply for a K-ETA","https://www.k-eta.go.kr/"],sgac:["File the SG Arrival Card","https://eservices.ica.gov.sg/sgarrivalcard/"],tdac:["File the Thailand arrival card","https://tdac.immigration.go.th/"],thev:["Apply for a Thai e-Visa","https://www.thaievisa.go.th/"],cnv:["How to apply for a Chinese visa","https://us.china-embassy.gov.cn/eng/lsfw/zj/qz2021/202509/t20250920_11712385.htm"],vjw:["Optional: Visit Japan Web","https://services.digital.go.jp/en/visit-japan-web/"],cn240:["Read the transit rules","https://chicago.china-consulate.gov.cn/eng/lsfw/qzsq/202605/t20260506_11904889.htm"]};
+var VISA=[
+ {leg:"jp",stop:"Japan",us:"Visa-free for up to 90 days. Nothing to apply for.",gt:"Visa-free for up to 90 days. Nothing to apply for.",usL:[V.vjw],gtL:[V.vjw]},
+ {leg:"kr",stop:"South Korea",us:"Visa-free for up to 90 days. The K-ETA waiver for US travelers runs through December 31, 2026 and 2027 rules aren't announced, so plan to apply (KRW 10,000, allow 72 hours).",gt:"Visa-free for up to 90 days, with an approved K-ETA before you board. Guatemala does not appear on the temporary K-ETA waiver list.",usL:[V.keta],gtL:[V.keta]},
+ {leg:"cn",stop:"Shanghai",us:"No visa needed: China's 240-hour visa-free transit. Arrive from one country or region and leave for a different one, with a confirmed onward ticket. Seoul to Shanghai to Hong Kong qualifies. Nothing to apply for.",gt:"Visa required. Guatemala is not on the 55-country transit list, so this stop needs a Chinese tourist (L) visa before travel, through the embassy or consulate that serves where you live. Start early.",usL:[V.cn240],gtL:[V.cnv]},
+ {leg:"hk",stop:"Hong Kong",us:"Visa-free for up to 90 days. Nothing to apply for.",gt:"Visa-free for up to 30 days. Nothing to apply for.",usL:[],gtL:[]},
+ {leg:"sg",stop:"Singapore",us:"Visa-free. File the free SG Arrival Card within three days before arrival.",gt:"Visa-free for up to 30 days. File the free SG Arrival Card within three days before arrival, and have six months left on the passport.",usL:[V.sgac],gtL:[V.sgac]},
+ {leg:"th",stop:"Thailand",us:"Visa-free for 30 days (cut from 60 on September 15, 2026). File the Thailand Digital Arrival Card within three days before arrival.",gt:"Visa required. Guatemala is not on the 60-country exemption list that took effect September 15, 2026. Apply online for a tourist e-Visa, then file the Thailand Digital Arrival Card within three days before arrival.",usL:[V.tdac],gtL:[V.thev,V.tdac]}
+];
+function applyLinks(l){return l.map(function(x){return ' <a class="apply" href="'+x[1]+'" target="_blank" rel="noopener">'+x[0]+'</a>'}).join("")}
+function visaList(k){return "<ul>"+VISA.map(function(v){return "<li><strong>"+v.stop+":</strong> "+v[k]+applyLinks(v[k+"L"])+"</li>"}).join("")+"</ul>"}
 var R={
  mofa:["Japan visa exemptions (Ministry of Foreign Affairs)","https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html"],
  keta:["K-ETA official site","https://www.k-eta.go.kr/"],
@@ -809,11 +852,11 @@ var R={
 };
 var FAQ=[
  ["Coming along",[
-  ["Do I have to come for all four weeks?","<p>No, and almost nobody will. The trip is cut into seven legs so you can drop in for one or two. Use the RSVP page and text Steven the message it writes.</p>"],
+  ["Do I have to come for all four weeks?","<p>No, and almost nobody will. The trip is cut into seven legs so you can drop in for one or two. Use the RSVP page. It goes straight onto his guest list.</p>"],
   ["If I can only do one leg, which one?","<p>Tokyo Pride plus the birthday, June 5 to 9. It has the confirmed Pride weekend, both Tokyo Disney parks, and the actual day. Runner-up: Singapore plus the ship, June 19 to 24, which includes Patrick's birthday.</p>"],
   ["Do I have to do the Disney days?","<p>No. Park days are easy to skip. Sleep in, see the city, meet us for dinner. The one exception is the ship. Once it sails, you're in.</p>"],
   ["How do I get on the same cruise?","<p>Book your own stateroom on the Disney Adventure sailing that leaves Singapore on Monday, June 21, 2027. It is three nights with no ports and returns Thursday morning, June 24. Send Steven your reservation number so the dining times can be linked.</p>",[R.dcl]],
-  ["How do I tell Steven I'm in?","<p>Go to the RSVP page, tick the legs you want, add your name, and copy the message. Then text it to him. Earlier is better: some pieces sell out months ahead.</p>"]
+  ["How do I tell Steven I'm in?","<p>Go to the RSVP page, tick the legs you want, add your name, and hit Send RSVP. It lands on his guest list. Earlier is better: some pieces sell out months ahead.</p>"]
  ]],
  ["Dates and plans",[
   ["How locked are these dates?","<p>The plan stays tentative until the long-haul flights are booked. Tokyo Pride on June 5 and 6 is confirmed by the organizers. Seoul Queer Parade (June 12) and Pattaya Pride (June 26) are estimates from prior years, and this site marks them Estimated.</p>",[R.tp,R.sqcf,R.ptp]],
@@ -822,13 +865,13 @@ var FAQ=[
   ["Why two days at Shanghai Disneyland but one in Hong Kong?","<p>Shanghai is the big one, with rides that exist nowhere else and lines to match. Hong Kong is small and quick, and one relaxed day covers it.</p>",[["Shanghai Disney Resort","https://www.shanghaidisneyresort.com/en/"],["Hong Kong Disneyland","https://www.hongkongdisneyland.com/"]]]
  ]],
  ["Paperwork",[
-  ["Do I need a visa on a US passport?","<p>No visa applications on this route, but there is paperwork:</p><ul><li><strong>Japan:</strong> visa-free for up to 90 days.</li><li><strong>South Korea:</strong> visa-free for up to 90 days. The K-ETA waiver for US travelers runs through December 31, 2026, and 2027 rules aren't announced. Plan to apply (KRW 10,000, allow 72 hours).</li><li><strong>Shanghai:</strong> China's 240-hour visa-free transit. You must arrive from one country or region and leave for a different one, with a confirmed onward ticket. Seoul to Shanghai to Hong Kong qualifies.</li><li><strong>Hong Kong:</strong> visa-free for up to 90 days.</li><li><strong>Singapore:</strong> visa-free, plus the free SG Arrival Card within three days before arrival.</li><li><strong>Thailand:</strong> visa-free for 30 days (cut from 60 on September 15, 2026), plus the Thailand Digital Arrival Card within three days before arrival.</li></ul><p>Everyone: have six months left on your passport after June 28, 2027.</p>",[R.mofa,R.keta,R.cn240,R.hk,R.ica,R.sgac,R.th30,R.tdac,R.state]],
-  ["What changes on a Guatemalan passport?","<p>Two stops need a visa arranged before you fly: Shanghai and Thailand. Checked November 16, 2026 against the sources below.</p><ul><li><strong>Japan:</strong> visa-free for up to 90 days.</li><li><strong>South Korea:</strong> visa-free for up to 90 days, with an approved K-ETA before you board. Guatemala does not appear on the list of places with a temporary K-ETA waiver.</li><li><strong>Shanghai: visa required.</strong> Guatemala is not one of the 55 countries eligible for the 240-hour transit, so this stop needs a Chinese tourist (L) visa in the passport before travel. Apply through the Chinese embassy or consulate that serves where you live, and start early.</li><li><strong>Hong Kong:</strong> visa-free for up to 30 days.</li><li><strong>Singapore:</strong> visa-free for up to 30 days, plus the SG Arrival Card and six months of passport validity.</li><li><strong>Thailand: visa required.</strong> Guatemala is not on the 60-country visa-exemption list that took effect September 15, 2026. Apply online for a tourist e-Visa before the trip, then file the Thailand Digital Arrival Card like everyone else.</li></ul><p>The ship calls at no ports, so it adds no paperwork. If the Chinese visa is more trouble than it's worth, skip Shanghai: fly Seoul to Hong Kong and rejoin us on June 17. Also check the rules for any country where you change planes, and what you need to get back home.</p>",[R.mofa,R.keta,R.cn240,R.hk,R.ica,R.thevisa,R.th30,R.tdac]],
+  ["Do I need a visa on a US passport?","<p>No visa applications on this route, but there is paperwork. Each line links to the thing you actually file.</p>"+visaList("us")+"<p>Everyone: have six months left on your passport after June 28, 2027.</p>",[R.mofa,R.keta,R.cn240,R.hk,R.ica,R.th30,R.state]],
+  ["What changes on a Guatemalan passport?","<p>Two stops need a visa arranged before you fly: Shanghai and Thailand. Checked November 16, 2026 against the sources below. Each line links to the thing you actually file.</p>"+visaList("gt")+"<p>The ship calls at no ports, so it adds no paperwork. If the Chinese visa is more trouble than it's worth, skip Shanghai: fly Seoul to Hong Kong and rejoin us on June 17. Also check the rules for any country where you change planes, and what you need to get back home.</p>",[R.mofa,R.keta,R.cn240,R.hk,R.ica,R.th30]],
   ["I only want to join in Shanghai. Does visa-free transit still work?","<p>Only if your passport is on the 55-country list and you arrive from one country or region and leave for a different one. Los Angeles to Shanghai and back to Los Angeles does not qualify. Flying in from Seoul with us and out to Hong Kong does. Otherwise you'd need a regular Chinese visa.</p>",[R.cn240,R.nia]],
   ["Do I need an International Driving Permit?","<p>Only to drive in Okinawa. Japan won't rent a car on a US license alone, and it only accepts permits issued under the 1949 Geneva Convention, which is the kind AAA issues. Get it before you leave.</p>",[["AAA International Driving Permit","https://www.aaa.com/vacation/idpapplc.html"],["Which permits Japan accepts (Toyota Rent a Car)","https://rent.toyota.co.jp/global_eng/license-flow/geneva/"]]]
  ]],
  ["Money",[
-  ["What will it cost?","<p>It depends on the leg. For hotels, our picks mostly run $120 to $330 a night in June, and the cheaper column on the Stays page is well under that. The Hakone ryokan (dinner and breakfast included) and the in-park Disney hotels cost more. Flights and the cruise are priced by date and cabin, so use the Book page for live numbers.</p>",[["Stays page","#stays"],["Book page","#book"]]],
+  ["What will it cost?","<p>It depends on the leg. For hotels, our picks mostly run $110 to $450 a night in June, and the cheaper column on the Stays page is well under that. Every hotel there shows an estimate. The Hakone ryokan (dinner and breakfast included) and the in-park Disney hotels cost more. Flights and the cruise are priced by date and cabin, so use the Book page for live numbers.</p>",[["Stays page","#stays"],["Book page","#book"]]],
   ["Do I have to stay where you stay?","<p>No. Every stop on the Stays page lists cheaper places close by. Stay wherever suits you and meet us out.</p>",[["Stays page","#stays"]]],
   ["Cash or card?","<p>Cards work almost everywhere on this route. Carry some cash for markets and street food. Jay Fai in Bangkok is cash only. For Shanghai, set up Alipay or WeChat Pay with your own card before you land, because many places don't take foreign cards at the register.</p>",[["Adding a foreign card to Alipay (Trip.com guide)","https://www.trip.com/guide/payments/how-to-add-card-to-alipay.html"]]]
  ]],
@@ -898,13 +941,15 @@ $("#legs").innerHTML=JOIN.map(function(j){
     '<b>'+j.name+'</b><p>'+j.pitch+'</p><small>'+j.tags.join(" \u00b7 ")+' \u00b7 '+j.fly+'</small></label>';
 }).join("");
 function andList(a){return a.length<3?a.join(" and "):a.slice(0,-1).join(", ")+" and "+a[a.length-1]}
+function rsvpData(){
+  return {legs:JOIN.filter(function(j){return $("#leg-"+j.id).checked}).map(function(j){return j.name+" ("+j.dates+")"}),
+    into:TAGS.filter(function(t){return $("#like-"+t.toLowerCase()).checked}).map(function(t){return TAGSAY[t]}),
+    who:$("#guest-name").value.trim(),note:$("#guest-note").value.trim(),idea:$("#guest-idea").value.trim()};
+}
+function endDot(t){return t+(/[.!?]$/.test(t)?"":".")}
 function drawMsg(){
-  var names=JOIN.filter(function(j){return $("#leg-"+j.id).checked}).map(function(j){return j.name+" ("+j.dates+")"});
-  var into=TAGS.filter(function(t){return $("#like-"+t.toLowerCase()).checked}).map(function(t){return TAGSAY[t]});
-  var who=$("#guest-name").value.trim(),note=$("#guest-note").value.trim();
-  var msg=names.length?"Steven! I'm in for the 40th. Put me down for: "+names.join("; ")+"."+(into.length?" I'm mostly here for "+andList(into)+".":"")+(note?" "+note+(/[.!?]$/.test(note)?"":"."):"")+(who?" From "+who+".":""):"Tick at least one leg above and your message appears here.";
-  $("#join-msg").value=msg;
-  $("#sms-link").setAttribute("href","sms:?&body="+encodeURIComponent(names.length?msg:""));
+  var d=rsvpData();
+  $("#join-msg").value=d.legs.length||d.idea?"Steven! "+(d.legs.length?"I'm in for the 40th. Put me down for: "+d.legs.join("; ")+".":"I can't make a leg yet, but I have ideas.")+(d.into.length?" I'm mostly here for "+andList(d.into)+".":"")+(d.note?" "+endDot(d.note):"")+(d.idea?" Suggestion: "+endDot(d.idea):"")+(d.who?" From "+d.who+".":""):"Tick at least one leg above and your message appears here.";
 }
 function syncRsvp(){
   var likes=TAGS.filter(function(t){return $("#like-"+t.toLowerCase()).checked});
@@ -919,17 +964,29 @@ function syncRsvp(){
   $("#leg-count").textContent=n+" of "+JOIN.length+" legs selected";
   drawMsg();
 }
-var rsvpTouched=false;
-function touchRsvp(){if(!rsvpTouched){rsvpTouched=true;$("#copy-status").textContent="On a phone, Text it opens your messages app with this filled in."}}
-$("#legs").addEventListener("change",function(){touchRsvp();syncRsvp()});
+var RSVP_FORM="https://docs.google.com/forms/d/e/1FAIpQLScfp3W2I3xaAuXsQw3sSii_HXr82e1nBm7oS2CIDdUXmfI2vQ/formResponse";
+var RSVP_FIELDS={who:"entry.1771762445",legs:"entry.1243171349",into:"entry.163697177",note:"entry.1353852558",idea:"entry.865051910"};
+$("#legs").addEventListener("change",syncRsvp);
 $("#tags").addEventListener("change",syncRsvp);
-$("#legs-all").addEventListener("click",function(){touchRsvp();$$(".leg input").forEach(function(i){i.checked=true});syncRsvp()});
-$("#legs-none").addEventListener("click",function(){touchRsvp();$$(".leg input").forEach(function(i){i.checked=false});syncRsvp()});
-$("#guest-name").addEventListener("input",drawMsg);
-$("#guest-note").addEventListener("input",drawMsg);
+$("#legs-all").addEventListener("click",function(){$$(".leg input").forEach(function(i){i.checked=true});syncRsvp()});
+$("#legs-none").addEventListener("click",function(){$$(".leg input").forEach(function(i){i.checked=false});syncRsvp()});
+["#guest-name","#guest-note","#guest-idea"].forEach(function(q){$(q).addEventListener("input",drawMsg)});
+$("#send-rsvp").addEventListener("click",function(){
+  var d=rsvpData(),st=$("#copy-status"),btn=this;
+  if(!d.who){st.textContent="Add your name first, so Steven knows who's coming.";$("#guest-name").focus();return}
+  if(!d.legs.length&&!d.idea){st.textContent="Tick at least one leg, or add a suggestion, then send.";return}
+  var body=new URLSearchParams();
+  body.append(RSVP_FIELDS.who,d.who);body.append(RSVP_FIELDS.legs,d.legs.join("; "));body.append(RSVP_FIELDS.into,d.into.join(", "));body.append(RSVP_FIELDS.note,d.note);body.append(RSVP_FIELDS.idea,d.idea);
+  btn.disabled=true;st.textContent="Sending...";
+  fetch(RSVP_FORM,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:body.toString()}).then(function(){
+    btn.disabled=false;btn.textContent="Send again";st.textContent="Sent. You're on Steven's guest list. Plans change? Update this and send again.";
+  },function(){
+    btn.disabled=false;st.textContent="That didn't go through. Check your connection and try again, or copy the message and send it to Steven yourself.";
+  });
+});
 $("#copy-msg").addEventListener("click",function(){
   var ta=$("#join-msg"),st=$("#copy-status");
-  var ok=function(){st.textContent="Copied. Now paste it into a text to Steven."};
+  var ok=function(){st.textContent="Copied. Paste it anywhere you like. To get on the guest list, hit Send RSVP."};
   var no=function(){ta.focus();ta.select();st.textContent="Couldn't copy automatically. The message is selected, so copy it by hand."};
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(ok,no)}else{no()}
 });
@@ -984,9 +1041,23 @@ $("#eat").addEventListener("click",function(e){var a=e.target.closest(".when");i
 $("#flag").addEventListener("click",function(e){var a=e.target.closest(".stripe");if(a)pendingLeg=a.dataset.leg});
 
 /* ---------- render: stays ---------- */
-function tier(cls,label,list){return '<div class="tier '+cls+'"><h4>'+label+'</h4><ul>'+list.map(function(h){return '<li>'+ext(h.name,h.url)+'<span>'+h.note+'</span></li>'}).join("")+'</ul></div>'}
+var EST={"JR Kyushu Hotel Blossom Shinjuku":"$230-330","Hotel Groove Shinjuku":"$200-300","Park Hyatt Tokyo":"$900+","Tokyu Stay Shinjuku":"$130-200","APA Hotel Shinjuku Kabukicho Tower":"$90-160",
+ "Hakone Ginyu":"$600-900","Yama no Chaya":"$400-600","Gora Kadan":"$1,100+","Hakone Kowakien Tenyu":"$400-600","Ichinoyu Honkan":"$170-270",
+ "Hotel MiraCosta":"$450-800","Fantasy Springs Hotel":"$430-730","Tokyo Disney Resort Toy Story Hotel":"$300-430","Fantasy Springs Hotel, Grand Chateau":"$2,000+","Hilton Tokyo Bay":"$200-330","Tokyo Disney Celebration Hotel":"$170-270",
+ "Hyatt Regency Seragaki Island":"$280-450","Renaissance Okinawa Resort":"$250-400","Halekulani Okinawa":"$600-1,000","Rizzan Sea Park Hotel Tancha Bay":"$120-200","Hotel Miyuki Beach":"$90-160",
+ "The Plaza Seoul, Autograph Collection":"$220-330","Le M\u00e9ridien Seoul Myeongdong":"$230-350","Four Seasons Hotel Seoul":"$450-700","Hotel28 Myeongdong":"$110-180","Moxy Seoul Myeongdong":"$100-160","Hotel Midcity Myeongdong":"$80-130",
+ "Radisson Collection Hotel, Yangtze Shanghai":"$110-180","Hotel Indigo Shanghai on the Bund":"$180-280","Fairmont Peace Hotel":"$300-450","Campanile Shanghai Bund":"$70-110",
+ "Shanghai Disneyland Hotel":"$330-550","Toy Story Hotel":"$170-280","Shanghai Disneyland Hotel, club level":"$600-900","Novotel Shanghai Clover":"$90-150",
+ "Hotel ICON":"$230-350","The Hari Hong Kong":"$230-350","The Peninsula Hong Kong":"$650-1,000","Eaton HK":"$130-200","Ovolo Southside":"$110-170",
+ "Mondrian Singapore Duxton":"$300-430","The Clan Hotel":"$280-400","Parkroyal Collection Pickering":"$300-450","Marina Bay Sands":"$650-1,000","Raffles Singapore":"$1,000-1,500","The Scarlet Singapore":"$160-240","Lloyd's Inn":"$140-220",
+ "Verandah stateroom":"$1,550-2,800","Oceanview stateroom":"$1,450-2,400","Concierge stateroom or suite":"$3,500+","Inside stateroom":"$1,100-1,900",
+ "The Standard, Bangkok Mahanakhon":"$200-300","Sala Rattanakosin":"$150-250","Mandarin Oriental, Bangkok":"$650-1,000","Lub d Bangkok Silom":"$40-70","Baan Tuk Din":"$50-90",
+ "Rabbit Resort Pattaya":"$110-180","Hilton Pattaya":"$150-230","Andaz Pattaya Jomtien Beach":"$230-400","The AGATE Pattaya Boutique Resort":"$50-90","Marine Beach Hotel":"$40-70"};
+var RANGE={"Tokyo (Shinjuku)":["$90 to $900+"],"Hakone ryokan":["$170 to $1,100+","per night for two, dinner and breakfast included"],"Tokyo Disney Resort":["$170 to $2,000+"],"Okinawa (Onna coast)":["$90 to $1,000"],"Seoul":["$80 to $700"],"Shanghai (downtown)":["$70 to $450"],"Shanghai Disney Resort":["$90 to $900"],"Hong Kong":["$110 to $1,000"],"Singapore":["$140 to $1,500"],"Disney Adventure":["$1,100 to $3,500+","for two, all three nights"],"Bangkok":["$40 to $1,000"],"Pattaya (Jomtien)":["$40 to $400"]};
+
+function tier(cls,label,list){return '<div class="tier '+cls+'"><h4>'+label+'</h4><ul>'+list.map(function(h){if(!EST[h.name])throw new Error("no estimate for "+h.name);return '<li>'+ext(h.name,h.url)+'<b class="est">'+EST[h.name]+'</b><span>'+h.note+'</span></li>'}).join("")+'</ul></div>'}
 $("#stays").innerHTML=STAYS.map(function(s){
-  return '<div class="stay l-'+s.leg+'"><div class="stay-head"><div><span class="chip">'+s.n+'</span></div><h3>'+s.place+'</h3><span class="mono">'+s.dates+'</span></div>'+
+  return '<div class="stay l-'+s.leg+'"><div class="stay-head"><div><span class="chip">'+s.n+'</span></div><h3>'+s.place+'</h3><span class="mono">'+s.dates+'</span><span class="range"><b>'+RANGE[s.place][0]+'</b>est. '+(RANGE[s.place][1]||"per night, room for two")+'</span></div>'+
    '<div class="tiers">'+tier("","Our pick",s.pick)+tier("","Also great",s.also)+tier("splurge","Splurge",s.splurge)+tier("cheap","Cheaper nearby",s.cheap)+'</div></div>';
 }).join("");
 
@@ -997,6 +1068,9 @@ $("#clock").innerHTML=CLOCK.map(function(c){
   var chip="";
   if(c.at){var n=daysTo(c.at);chip=n>1?'<span class="in">in '+n+' days</span>':n>=0?'<span class="in">this week</span>':'<span class="badge ok">Open now</span>'}
   return '<li><div class="when"><span>'+c.when+'</span>'+chip+'</div><div class="what"><h3>'+c.what+'</h3><p>'+c.p+'</p>'+linkRow(c.links)+'</div></li>';
+}).join("");
+$("#visa-fyi").innerHTML=VISA.map(function(v){
+  return '<div class="visa-card l-'+v.leg+'"><h3 class="eat-head">'+v.stop+'</h3><div><h4>US passport</h4><p>'+v.us+applyLinks(v.usL)+'</p></div><div><h4>Guatemalan passport</h4><p>'+v.gt+applyLinks(v.gtL)+'</p></div></div>';
 }).join("");
 $("#linkgrid").innerHTML=LINKS.map(function(g){
   return '<div><h3>'+g[0]+'</h3><ul>'+g[1].map(function(l){return '<li>'+ext(l[0],l[1])+(l[2]?'<small>'+l[2]+'</small>':'')+'</li>'}).join("")+'</ul></div>';
