@@ -17,12 +17,14 @@
 <title>Steven Turns 40</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: six stacked blocks are the itinerary. One block per destination, block height = nights there.
+/* Palette: one sunset ombre, raspberry to gold, stepped across the six destinations in trip order.
+   Layout: six stacked blocks are the itinerary. One block per destination, block height = nights there.
    Everything else is ink on ticket stock, with each destination's two-tone colour reused wherever that place appears. */
 :root{
   --bg:#F4F3F9; --surface:#FFFFFF; --wash:#E9E7F3; --ink:#17123A; --muted:#58537C; --line:#D7D4E6; --link:#3A2BD1; --pop:#17123A;
-  --jp:#B5174B; --jp2:#D93A34; --kr:#0A5C63; --kr2:#128079; --cn:#E3A500; --cn2:#F2C94C;
-  --hk:#5A2A9B; --hk2:#B02A8F; --sg:#123E9C; --sg2:#1C6FC4; --th:#F0652A; --th2:#F59E1B;
+  --jp:#A8174F; --jp2:#C01F47; --kr:#C01F47; --kr2:#D2303B; --cn:#D2303B; --cn2:#DC462F;
+  --hk:#E0522D; --hk2:#EA6B27; --sg:#EA6B27; --sg2:#F18F1E; --th:#F18F1E; --th2:#F6B529;
+  --board:#15131C; --flap:#2A2733; --flap2:#211E29; --flap-ink:#F6ECCF; --flap-line:#09080D; --board-dim:#A9A3B5; --board-ok:#F6C445;
   --on-dark:#17123A; --on-light:#FFFFFF;
   --ok-bg:#DDF1E4; --ok-fg:#14663A; --est-bg:#FBEBCF; --est-fg:#7A4300;
   --font-display:'Dela Gothic One','Arial Black',Impact,sans-serif;
@@ -45,15 +47,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:var(--link)}
 :focus-visible{outline:3px solid var(--link);outline-offset:2px;border-radius:4px}
 .wrap{max-width:1120px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.l-jp{--c:var(--jp);--c2:var(--jp2);--on:var(--on-light)} .l-kr{--c:var(--kr);--c2:var(--kr2);--on:var(--on-light)} .l-cn{--c:var(--cn);--c2:var(--cn2);--on:var(--on-dark)}
-.l-hk{--c:var(--hk);--c2:var(--hk2);--on:var(--on-light)} .l-sg{--c:var(--sg);--c2:var(--sg2);--on:var(--on-light)} .l-th{--c:var(--th);--c2:var(--th2);--on:var(--on-dark)}
+.l-jp{--c:var(--jp);--c2:var(--jp2);--on:var(--on-light)} .l-kr{--c:var(--kr);--c2:var(--kr2);--on:var(--on-light)} .l-cn{--c:var(--cn);--c2:var(--cn2);--on:var(--on-light)}
+.l-hk{--c:var(--hk);--c2:var(--hk2);--on:var(--on-dark)} .l-sg{--c:var(--sg);--c2:var(--sg2);--on:var(--on-dark)} .l-th{--c:var(--th);--c2:var(--th2);--on:var(--on-dark)}
 .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
 .eyebrow{font:500 .78rem/1.4 var(--font-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0}
-.chip{display:inline-block;background:var(--c);color:var(--on);font:500 .72rem/1.5 var(--font-mono);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+.chip{display:inline-block;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);font:500 .72rem/1.5 var(--font-mono);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
 .badge{display:inline-block;font:500 .72rem/1.5 var(--font-mono);padding:1px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
 .badge.ok{background:var(--ok-bg);color:var(--ok-fg)} .badge.est{background:var(--est-bg);color:var(--est-fg)} .badge.bday{background:var(--ink);color:var(--bg)}
-.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem/1.2 var(--font-body);padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer}
-.btn.ghost{background:transparent;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem/1.2 var(--font-body);padding:11px 20px;border-radius:999px;border:2px solid transparent;background:linear-gradient(100deg,var(--jp),var(--cn2)) border-box;color:var(--on-light);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .btn:hover{transform:translateY(-1px)}
 h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.7rem,5vw,2.7rem);line-height:1.05;margin:0 0 10px;text-wrap:balance}
 h3{margin:0;font-size:1.1rem;line-height:1.3;text-wrap:balance}
@@ -65,11 +68,15 @@ h3{margin:0;font-size:1.1rem;line-height:1.3;text-wrap:balance}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-block:8px}
 .brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-size:.95rem;color:var(--ink);text-decoration:none;white-space:nowrap}
-.flagmark{flex:none;width:20px;height:20px;border-radius:50%;background:linear-gradient(140deg,var(--jp),var(--th2))}
+.mark{flex:none;width:24px;height:24px;display:block}
 .brand span{display:none}
 @media (min-width:620px){.brand span{display:inline}}
-.top nav{display:flex;gap:2px}
-.top nav a{font:600 .95rem/1 var(--font-body);padding:9px 12px;border-radius:999px;color:var(--ink);text-decoration:none}
+.top nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.top nav a{font:600 .9rem/1 var(--font-body);padding:9px 8px;border-radius:999px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.top nav a.go{background:linear-gradient(100deg,var(--jp),var(--cn2));color:var(--on-light);padding-inline:12px;margin-left:2px}
+.top nav a.go[aria-current="page"]{background:var(--ink);color:var(--bg)}
+@media (max-width:519px){.brand{display:none}.top nav{flex:1;justify-content:space-between}}
+@media (min-width:620px){.top nav a{font-size:.95rem;padding:9px 12px}.top nav a.go{padding-inline:16px}}
 .top nav a:hover{background:var(--wash)}
 .top nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
 
@@ -84,22 +91,49 @@ h1 span{display:block}
 .spiel{margin:22px 0 0;display:grid;gap:4px;max-width:34ch}
 .spiel b{font-size:1.35rem;line-height:1.25;font-weight:700;text-wrap:balance}
 .hero-sub{margin:14px 0 0;color:var(--muted);max-width:50ch;font-size:1.05rem}
-.count{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
-.count div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 6px 8px;min-width:74px;text-align:center}
-.count b{display:block;font:500 1.9rem/1 var(--font-mono);font-variant-numeric:tabular-nums}
-.count span{font:500 .68rem/1 var(--font-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.board{margin-top:22px;width:fit-content;max-width:100%;padding:10px 14px 12px;border-radius:12px;border:1px solid var(--line);border-top:4px solid transparent;background:linear-gradient(var(--board),var(--board)) padding-box,linear-gradient(100deg,var(--jp),var(--th2)) border-box;--fw:28px;--fh:42px;--fs:1.6rem}
+.board-top{display:flex;justify-content:space-between;gap:12px;font:500 .64rem/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--board-dim);margin-bottom:9px}
+.board-ok{color:var(--board-ok)}
+.board-row{display:flex;gap:10px}
+.grp{display:grid;gap:5px;justify-items:center}
+.grp > span{font:500 .6rem/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--board-dim)}
+.flaps{display:flex;gap:3px}
+.flap{position:relative;display:block;width:var(--fw);height:var(--fh);perspective:260px;font:500 var(--fs)/var(--fh) var(--font-mono);color:var(--flap-ink)}
+.flap .half{position:absolute;left:0;right:0;height:50%;overflow:hidden;backface-visibility:hidden}
+.flap .top{top:0;border-radius:5px 5px 0 0;background:var(--flap);box-shadow:inset 0 -1px 0 var(--flap-line)}
+.flap .bot{bottom:0;border-radius:0 0 5px 5px;background:var(--flap2);box-shadow:inset 0 1px 0 var(--flap-line)}
+.flap .half i{position:absolute;left:0;right:0;height:var(--fh);text-align:center;font-style:normal}
+.flap .top i{top:0}
+.flap .bot i{bottom:0}
+.flap .fold{z-index:2}
+.flap .top.fold{transform-origin:50% 100%;animation:flapTop .2s ease-in forwards}
+.flap .bot.fold{transform-origin:50% 0;transform:rotateX(90deg);animation:flapBot .2s ease-out .2s forwards}
+@keyframes flapTop{to{transform:rotateX(-90deg)}}
+@keyframes flapBot{to{transform:rotateX(0)}}
+@media (min-width:620px){.board{--fw:40px;--fh:58px;--fs:2.3rem;padding:12px 16px 14px}.board-row{gap:14px}.board-top{font-size:.68rem}}
 .count-note{margin:10px 0 0;font-size:.92rem;color:var(--muted);max-width:48ch}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .flag-cap{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap}
 .flag{display:grid;gap:5px}
-.stripe{display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:center;gap:1px 14px;min-height:calc(36px + var(--n) * 14px);padding:8px 16px;border-radius:9px;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);text-decoration:none}
+.stripe{display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:center;gap:1px 14px;min-height:calc(36px + var(--n) * 14px);padding:8px 16px;border-radius:12px;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);text-decoration:none}
 .stripe:hover .s-name::after{content:" \2192"}
 .stripe:focus-visible{outline-offset:-4px;outline-color:var(--on)}
 .s-name{font-family:var(--font-display);font-size:1.2rem;line-height:1.15}
 .s-dates{font:500 .9rem/1.3 var(--font-mono);text-align:right;align-self:center}
 .s-stops{font-size:.88rem;line-height:1.3;font-weight:500}
 .s-n{font:400 .78rem/1.3 var(--font-mono);text-align:right}
-.next{margin:14px 0 0;font-size:.95rem}
+.bookbar{display:grid;gap:10px;margin-top:16px;font-size:.95rem}
+.bookbar p{margin:0}
+.lab{display:inline-block;font:500 .7rem/1.6 var(--font-mono);text-transform:uppercase;letter-spacing:.07em;padding:1px 8px;border-radius:3px;margin-right:8px;white-space:nowrap}
+.lab.hot{background:linear-gradient(100deg,var(--jp),var(--cn2));color:var(--on-light)}
+.lab.cool{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.doors{display:grid;gap:14px}
+.door{display:grid;gap:6px;padding:22px 24px 24px;border-radius:14px;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);text-decoration:none;min-width:0}
+.door span{font:500 .78rem/1.4 var(--font-mono);letter-spacing:.09em;text-transform:uppercase}
+.door b{font:400 clamp(1.4rem,3.6vw,1.9rem)/1.1 var(--font-display);text-wrap:balance}
+.door em{font-style:normal;font-weight:600}
+.door:hover b::after{content:" \2192"}
+@media (min-width:760px){.doors{grid-template-columns:1fr 1fr}}
 @media (min-width:900px){
   .hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:start;padding-block:48px 28px}
 }
@@ -111,7 +145,7 @@ h1 span{display:block}
 .shot{flex:none;width:min(76vw,330px);margin:0;position:relative;border-radius:10px;overflow:hidden;background:var(--wash)}
 .shot img{display:block;width:100%;height:224px;object-fit:cover}
 .shot figcaption{position:absolute;left:10px;bottom:10px;right:10px;display:flex;flex-wrap:wrap;gap:6px}
-.shot figcaption b{background:var(--c);color:var(--on);font:400 .95rem/1.5 var(--font-display);padding:1px 9px;border-radius:3px}
+.shot figcaption b{background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);font:400 .95rem/1.5 var(--font-display);padding:1px 9px;border-radius:3px}
 .shot figcaption span{background:var(--on-dark);color:var(--on-light);font:500 .75rem/2 var(--font-mono);padding:0 8px;border-radius:3px}
 
 /* route */
@@ -142,35 +176,54 @@ h1 span{display:block}
 .clocks span{font-size:.8rem;color:var(--muted);line-height:1.3;display:block}
 @media (min-width:900px){.route{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:start}}
 
-/* join */
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;align-items:center}
-.tag{font:600 .9rem/1 var(--font-body);padding:9px 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
-.tag[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+/* rsvp */
+.rsvp{display:grid;gap:34px}
+.step{border:0;margin:0;padding:0;min-width:0}
+.step legend{display:flex;align-items:center;gap:10px;padding:0;margin-bottom:8px;font:400 1.25rem/1.2 var(--font-display)}
+.stepn{display:inline-grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(140deg,var(--jp),var(--cn2));color:var(--on-light);font:500 .85rem/1 var(--font-mono)}
+.hint{margin:0 0 12px;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.mini{font:600 .85rem/1 var(--font-body);padding:7px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.mini:hover{border-color:var(--ink)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{position:relative;font:600 .95rem/1 var(--font-body);padding:10px 16px;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink);cursor:pointer;user-select:none}
+.tag input,.leg input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.tag.on{background:var(--ink);color:var(--bg)}
+.tag.on::before{content:"\2713\00a0"}
+.tag:focus-within,.leg:focus-within{outline:3px solid var(--link);outline-offset:2px}
 .legs{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 @media (min-width:640px){.legs{grid-template-columns:repeat(2,minmax(0,1fr))}.leg[data-id="thai"]{grid-column:span 2}}
 @media (min-width:1000px){.legs{grid-template-columns:repeat(4,minmax(0,1fr))}.leg[data-id="thai"]{grid-column:auto}.leg[data-id="bday"]{grid-column:span 2}}
-.leg{display:grid;gap:8px;align-content:start;text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:14px 16px 16px;cursor:pointer;min-width:0}
-.leg[aria-pressed="true"]{border-color:var(--ink);box-shadow:4px 4px 0 var(--c2)}
-.leg.dim{opacity:.4}
+.leg{position:relative;display:grid;gap:8px;align-content:start;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:14px 16px 16px;cursor:pointer;min-width:0}
+.leg.on{background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on);border-color:transparent}
+.leg.on .chip{background:var(--on);color:var(--c)}
+.leg.dim{opacity:.38}
 .leg-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
-.leg-in{font:500 .75rem var(--font-mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
-.leg[aria-pressed="true"] .leg-in{color:var(--ink)}
+.leg-in{display:inline-flex;align-items:center;gap:8px;font:500 .75rem/1 var(--font-mono);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.leg .box{width:20px;height:20px;border:2px solid currentColor;border-radius:4px;display:inline-grid;place-items:center;font:700 .8rem/1 var(--font-body)}
+.leg.on .box::after{content:"\2713"}
 .leg b{font-family:var(--font-display);font-weight:400;font-size:1.15rem;line-height:1.15}
 .leg p{margin:0;font-size:.95rem;color:var(--muted)}
-.leg small{font:400 .78rem var(--font-mono);color:var(--muted)}
-.builder{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;display:grid;gap:12px}
+.leg small{font:400 .78rem/1.4 var(--font-mono);color:var(--muted)}
+.leg.on p,.leg.on small,.leg.on .leg-in{color:inherit}
+.builder{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:12px}
 .builder > *{min-width:0}
 .builder label{font:500 .78rem var(--font-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:block;margin-bottom:4px}
 .builder input,.builder textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:10px 12px}
-.builder textarea{resize:vertical;min-height:96px}
-.builder-row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
-.builder-row p{margin:0;font-size:.92rem;color:var(--muted);flex:1 1 220px;min-width:0}
-@media (min-width:760px){.builder{grid-template-columns:220px minmax(0,1fr)}.builder-row{grid-column:1 / -1}}
+.builder textarea{resize:vertical;min-height:104px}
+.builder-row{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center}
+.builder-row p{margin:0;font-size:.92rem;color:var(--muted);flex:1 1 240px;min-width:0}
+@media (min-width:760px){.builder{grid-template-columns:1fr 1fr}.builder .full{grid-column:1 / -1}}
 
-/* eat list */
-.eat{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:22px 28px}
-.eat ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px}
-.eat li{font-size:.97rem;line-height:1.35}
+/* eats */
+.eat{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:start}
+@media (min-width:640px){.eat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1040px){.eat{grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 24px}}
+.eat-head{margin:0;font:400 1.25rem/1.2 var(--font-display);padding:10px 14px;border-radius:10px;background:linear-gradient(100deg,var(--c),var(--c2));color:var(--on)}
+.eat ul{list-style:none;margin:4px 0 0;padding:0}
+.eat li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:9px 2px;border-bottom:1px solid var(--line);font-size:.97rem;line-height:1.35}
+.when{font:500 .75rem/1.4 var(--font-mono);color:var(--muted);white-space:nowrap;text-decoration:none}
+.when:hover{color:var(--ink);text-decoration:underline}
+.star{display:inline-block;font:500 .66rem/1.6 var(--font-mono);text-transform:uppercase;letter-spacing:.05em;background:var(--ink);color:var(--bg);padding:0 7px;border-radius:3px;margin-left:4px;white-space:nowrap}
 
 /* days */
 .cal-wrap{display:grid;gap:8px;max-width:780px}
@@ -273,9 +326,9 @@ footer p{margin:0 0 10px;max-width:80ch}
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#trip"><i class="flagmark" aria-hidden="true"></i><span>Steven Turns 40</span></a>
+    <a class="brand" href="#trip"><svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--jp)"/><stop offset="1" style="stop-color:var(--th2)"/></linearGradient></defs><path fill="url(#mk)" d="M12 1L13.03 9.51L17.09 6.91L14.49 10.97L23 12L14.49 13.03L17.09 17.09L13.03 14.49L12 23L10.97 14.49L6.91 17.09L9.51 13.03L1 12L9.51 10.97L6.91 6.91L10.97 9.51Z"/></svg><span>Steven Turns 40</span></a>
     <nav aria-label="Pages">
-      <a href="#trip">Trip</a><a href="#days">Days</a><a href="#stays">Stays</a><a href="#book">Book</a><a href="#faq">FAQ</a>
+      <a href="#trip">Trip</a><a href="#days">Days</a><a href="#stays">Stays</a><a href="#eats">Eats</a><a href="#book">Book</a><a href="#faq">FAQ</a><a class="go" href="#rsvp">RSVP</a>
     </nav>
   </div>
 </header>
@@ -289,15 +342,19 @@ footer p{margin:0 0 10px;max-width:80ch}
       <h1><span>Steven</span><span>Turns</span><span class="forty">40</span></h1>
       <p class="spiel"><span class="eyebrow">Attention, passengers</span><b>It's not a midlife crisis if there's an itinerary.</b></p>
       <p class="hero-sub">Four weeks. Six destinations. Four Disney parks, one brand-new Disney ship, three Prides, two nights in a hot spring. You're invited to as much of it as you can get away with.</p>
-      <div class="count" role="timer" aria-label="Countdown to Steven's 40th birthday">
-        <div><b id="cd-d">0</b><span>days</span></div>
-        <div><b id="cd-h">00</b><span>hours</span></div>
-        <div><b id="cd-m">00</b><span>min</span></div>
-        <div><b id="cd-s">00</b><span>sec</span></div>
+      <div class="board" role="timer" aria-label="Countdown to Steven's 40th birthday">
+        <div class="board-top"><span>Departures</span><span>ST40 to Forty</span><span class="board-ok">On time</span></div>
+        <div class="board-row" aria-hidden="true">
+          <div class="grp"><div class="flaps" id="fl-d"></div><span>Days</span></div>
+          <div class="grp"><div class="flaps" id="fl-h"></div><span>Hrs</span></div>
+          <div class="grp"><div class="flaps" id="fl-m"></div><span>Min</span></div>
+          <div class="grp"><div class="flaps" id="fl-s"></div><span>Sec</span></div>
+        </div>
+        <p class="sr" id="cd-sr"></p>
       </div>
       <p class="count-note" id="cd-note">Until midnight in Tokyo on June 8, 2027. Steven turns 40 there a full 16 hours before Los Angeles catches up.</p>
       <div class="cta">
-        <button class="btn" type="button" id="go-join">Pick your leg</button>
+        <a class="btn" href="#rsvp">RSVP</a>
         <a class="btn ghost" href="#days">See it day by day</a>
       </div>
     </div>
@@ -307,7 +364,10 @@ footer p{margin:0 0 10px;max-width:80ch}
         <p class="eyebrow">Taller block = more nights</p>
       </div>
       <div class="flag" id="flag"></div>
-      <p class="next" id="next"></p>
+      <div class="bookbar">
+        <p><span class="lab hot">Book now</span>The ship and the long-haul flights are on sale today. <a href="https://disneycruise.disney.go.com/" target="_blank" rel="noopener">Disney Cruise Line</a> · <a href="#book">Flight searches</a></p>
+        <p id="next"></p>
+      </div>
     </div>
   </div>
 
@@ -342,11 +402,11 @@ footer p{margin:0 0 10px;max-width:80ch}
             <path class="home" d="M47 338L90 298"/>
             <path class="rt" style="stroke:var(--jp2)" d="M576 66Q526 158 415 181"/>
             <path class="rt" style="stroke:var(--kr2)" d="M415 181Q442 106 405 43"/>
-            <path class="rt" style="stroke:var(--cn)" d="M405 43Q350 68 330 121"/>
+            <path class="rt" style="stroke:var(--cn2)" d="M405 43Q350 68 330 121"/>
             <path class="rt" style="stroke:var(--hk2)" d="M330 121Q300 198 232 232"/>
             <path class="rt" style="stroke:var(--sg2)" d="M232 232Q196 388 92 492"/>
             <path class="rt" style="stroke:var(--sg2);stroke-dasharray:2 8;stroke-width:3.5" d="M92 492C116 466 160 460 165 477C168 494 128 501 92 492"/>
-            <path class="rt" style="stroke:var(--th)" d="M92 492Q36 420 47 338"/>
+            <path class="rt" style="stroke:var(--th2)" d="M92 492Q36 420 47 338"/>
             <path id="flightpath" fill="none" d="M576 66Q526 158 415 181Q442 106 405 43Q350 68 330 121Q300 198 232 232Q196 388 92 492Q36 420 47 338"/>
             <path class="lead" d="M565 74L548 88M54 350L66 358"/>
             <g>
@@ -379,37 +439,11 @@ footer p{margin:0 0 10px;max-width:80ch}
     </div>
   </div>
 
-  <div class="wrap sec" id="join-sec">
-    <div class="sec-head">
-      <p class="eyebrow">You're invited</p>
-      <h2>Come for a leg. Or all seven.</h2>
-      <p class="lede">Nobody is expected to take four weeks off. Tap the legs that sound like you, add your name, and text Steven the message it writes.</p>
-    </div>
-    <div class="tags" id="tags"><span class="eyebrow">I'm here for</span></div>
-    <div class="legs" id="legs"></div>
-    <div class="builder">
-      <div>
-        <label for="guest-name">Your name</label>
-        <input id="guest-name" type="text" autocomplete="given-name" placeholder="So he knows who's coming">
-      </div>
-      <div>
-        <label for="join-msg">Your message to Steven</label>
-        <textarea id="join-msg" readonly rows="3"></textarea>
-      </div>
-      <div class="builder-row">
-        <button class="btn" type="button" id="copy-msg">Copy message</button>
-        <p id="copy-status" role="status">Starts with the birthday leg picked as an example. Tap legs above to change it.</p>
-      </div>
-    </div>
-  </div>
-
   <div class="wrap sec">
-    <div class="sec-head">
-      <p class="eyebrow">Worth the flight alone</p>
-      <h2>The eat list</h2>
-      <p class="lede">Food halls, hawker stalls, one street-food legend with a Michelin star, and a nine-course dinner in a bathrobe. Every name opens on a map.</p>
+    <div class="doors">
+      <a class="door l-jp" href="#rsvp"><span>You're invited</span><b>Come for a leg. Or all seven.</b><em>RSVP in under a minute</em></a>
+      <a class="door l-sg" href="#eats"><span>Worth the flight alone</span><b>The eat list</b><em>Thirty-one things we're crossing an ocean for</em></a>
     </div>
-    <div class="eat" id="eat"></div>
   </div>
 </section>
 
@@ -475,6 +509,63 @@ footer p{margin:0 0 10px;max-width:80ch}
   </div>
 </section>
 
+<!-- ================= EATS ================= -->
+<section id="v-eats" hidden>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">Worth the flight alone</p>
+      <h2>The eat list</h2>
+      <p class="lede">Food halls, hawker stalls, a two-Michelin-star dinner in Tokyo, a street-food legend with a star of her own, and nine courses in a bathrobe. Every dish opens on a map. Every date jumps to that day.</p>
+    </div>
+    <div class="eat" id="eat"></div>
+  </div>
+</section>
+
+<!-- ================= RSVP ================= -->
+<section id="v-rsvp" hidden>
+  <div class="wrap sec">
+    <div class="sec-head">
+      <p class="eyebrow">You're invited</p>
+      <h2>Come for a leg. Or all seven.</h2>
+      <p class="lede">Nobody is expected to take four weeks off. Say what you're into, tick the legs you'll join, and send Steven the message it writes.</p>
+    </div>
+    <div class="rsvp">
+      <fieldset class="step">
+        <legend><span class="stepn">1</span>I'm here for</legend>
+        <p class="hint">Pick as many as you like. The legs that match stay lit.</p>
+        <div class="tags" id="tags"></div>
+      </fieldset>
+      <fieldset class="step">
+        <legend><span class="stepn">2</span>The legs I'm joining</legend>
+        <p class="hint"><span id="leg-count">1 of 7 legs selected</span><button type="button" class="mini" id="legs-all">Select all</button><button type="button" class="mini" id="legs-none">Clear</button></p>
+        <div class="legs" id="legs"></div>
+      </fieldset>
+      <fieldset class="step">
+        <legend><span class="stepn">3</span>Your message to Steven</legend>
+        <div class="builder">
+          <div>
+            <label for="guest-name">Your name</label>
+            <input id="guest-name" type="text" autocomplete="given-name" placeholder="So he knows who's coming">
+          </div>
+          <div>
+            <label for="guest-note">Anything to add? Optional</label>
+            <input id="guest-note" type="text" placeholder="Plus-ones, dates, things you can't eat">
+          </div>
+          <div class="full">
+            <label for="join-msg">Your message</label>
+            <textarea id="join-msg" readonly rows="4"></textarea>
+          </div>
+          <div class="builder-row full">
+            <button class="btn" type="button" id="copy-msg">Copy message</button>
+            <a class="btn ghost" id="sms-link" href="sms:?&amp;body=">Text it</a>
+            <p id="copy-status" role="status">Starts with the birthday leg ticked as an example. On a phone, Text it opens your messages app with this filled in.</p>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</section>
+
 <!-- ================= FAQ ================= -->
 <section id="v-faq" hidden>
   <div class="wrap sec">
@@ -499,6 +590,7 @@ footer p{margin:0 0 10px;max-width:80ch}
 <script>
 (function(){
 "use strict";
+var reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
 var $=function(s,r){return (r||document).querySelector(s)};
 var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
 var maps=function(q){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q)};
@@ -552,14 +644,14 @@ var JOIN=[
  {id:"thai",leg:"th",name:"Bangkok + Pattaya Pride",dates:"Jun 24-28",tags:["Pride","Food","Beach"],pitch:"Gold temples, river sunsets, a beach-town Pride, a giant weekend market, and the farewell dinner.",fly:"Fly into and out of Bangkok"}
 ];
 var EAT=[
- ["jp","Tokyo",[["Isetan Shinjuku food hall, eaten on the roof","Isetan Shinjuku"],["Gyoza Sausage Bun at DisneySea","Nautilus Galley Tokyo DisneySea"]]],
- ["jp","Hakone",[["Kaiseki dinner at the ryokan","Hakone Ginyu"],["Soba at Hatsuhana","Hatsuhana Soba Honten Hakone"],["Black eggs at Owakudani","Owakudani Hakone"],["Tea at Amazake-chaya","Amazake-chaya Hakone"]]],
- ["jp","Okinawa",[["Okinawa soba at Kishimoto Shokudo","Kishimoto Shokudo Motobu Okinawa"],["Taco rice","King Tacos Kin Okinawa"],["Blue Seal ice cream","Blue Seal Okinawa"],["Lunch upstairs at Makishi Market","Makishi Public Market Naha"]]],
- ["kr","Seoul",[["Samgyetang at Tosokchon","Tosokchon Samgyetang Seoul"],["Gwangjang Market","Gwangjang Market Seoul"],["Cold noodles at Eulji Myeonok","Eulji Myeonok Seoul"],["Korean barbecue, then fried chicken and beer","Korean BBQ Itaewon Seoul"]]],
- ["cn","Shanghai",[["Soup dumplings at Jia Jia Tang Bao","Jia Jia Tang Bao 90 Huanghe Road Shanghai"],["Pan-fried buns at Yang's","Yang's Fry Dumpling Shanghai"],["Dinner at Old Jesse","Old Jesse Restaurant Shanghai"]]],
- ["hk","Hong Kong",[["Roast goose at Yat Lok","Yat Lok 34-38 Stanley Street Hong Kong"],["Wonton noodles at Mak's","Mak's Noodle 77 Wellington Street Hong Kong"],["Dim sum at Tim Ho Wan","Tim Ho Wan Hong Kong"],["Breakfast at Australia Dairy Company","Australia Dairy Company Jordan Hong Kong"]]],
- ["sg","Singapore",[["Tian Tian chicken rice, before noon","Tian Tian Hainanese Chicken Rice Maxwell Food Centre"],["Satay Street at Lau Pa Sat, from 7pm","Lau Pa Sat Satay Street Singapore"],["Chili crab at Jumbo","Jumbo Seafood Singapore"]]],
- ["th","Bangkok",[["Crab omelet at Jay Fai","Raan Jay Fai Bangkok"],["Pad thai at Thipsamai","Thipsamai Pad Thai Bangkok"],["Yaowarat street food","Yaowarat Road Bangkok"],["Or Tor Kor Market","Or Tor Kor Market Bangkok"]]]
+ ["jp","Tokyo",[["Isetan Shinjuku food hall, eaten on the roof","Isetan Shinjuku","Jun 2",2],["Dinner at Den","Den Jingumae Tokyo","Jun 5",5,"Michelin \u2605\u2605"],["Gyoza Sausage Bun at DisneySea","Nautilus Galley Tokyo DisneySea","Jun 8",8]]],
+ ["jp","Hakone",[["Kaiseki dinner at the ryokan","Hakone Ginyu","Jun 3",3],["Black eggs at Owakudani","Owakudani Hakone","Jun 4",4],["Tea at Amazake-chaya","Amazake-chaya Hakone","Jun 4",4],["Yam soba at Hatsuhana","Hatsuhana Soba Honten Hakone","Jun 5",5]]],
+ ["jp","Okinawa",[["Taco rice","King Tacos Kin Okinawa","Jun 9",9],["Blue Seal ice cream","Blue Seal Okinawa","Jun 9",9],["Okinawa soba at Kishimoto Shokudo","Kishimoto Shokudo Motobu Okinawa","Jun 10",10],["Lunch upstairs at Makishi Market","Makishi Public Market Naha","Jun 11",11]]],
+ ["kr","Seoul",[["Samgyetang at Tosokchon","Tosokchon Samgyetang Seoul","Jun 12",12],["Korean barbecue","Korean BBQ Itaewon Seoul","Jun 12",12],["Gwangjang Market","Gwangjang Market Seoul","Jun 13",13],["Cold noodles at Eulji Myeonok","Eulji Myeonok Seoul","Jun 13",13],["Fried chicken and beer","Korean fried chicken Seoul","Jun 13",13]]],
+ ["cn","Shanghai",[["Soup dumplings at Jia Jia Tang Bao","Jia Jia Tang Bao 90 Huanghe Road Shanghai","Jun 14",14],["Pan-fried buns at Yang's","Yang's Fry Dumpling Shanghai","Jun 14",14],["Dinner at Old Jesse","Old Jesse Restaurant Shanghai","Jun 14",14]]],
+ ["hk","Hong Kong",[["Roast goose at Yat Lok","Yat Lok 34-38 Stanley Street Hong Kong","Jun 17",17],["Wonton noodles at Mak's","Mak's Noodle 77 Wellington Street Hong Kong","Jun 17",17],["Dim sum at Tim Ho Wan","Tim Ho Wan Hong Kong","Jun 17",17],["Breakfast at Australia Dairy Company","Australia Dairy Company Jordan Hong Kong","Jun 19",19]]],
+ ["sg","Singapore",[["Satay Street at Lau Pa Sat, from 7pm","Lau Pa Sat Satay Street Singapore","Jun 19",19],["Tian Tian chicken rice, before noon","Tian Tian Hainanese Chicken Rice Maxwell Food Centre","Jun 20",20],["Chili crab at Jumbo","Jumbo Seafood Singapore","Jun 20",20]]],
+ ["th","Bangkok",[["Yaowarat street food","Yaowarat Road Bangkok","Jun 24",24],["Crab omelet at Jay Fai","Raan Jay Fai Bangkok","Jun 25",25,"Michelin \u2605"],["Pad thai at Thipsamai","Thipsamai Pad Thai Bangkok","Jun 25",25],["Dinner at Le Du, Nahm, or Nusara","Le Du Bangkok","Jun 25",25],["Or Tor Kor Market","Or Tor Kor Market Bangkok","Jun 27",27]]]
 ];
 var M=function(label,q){return [label,maps(q)]};
 var CHAPTERS=[
@@ -572,7 +664,7 @@ var CHAPTERS=[
   {d:4,t:"Do nothing, beautifully",p:"Ryokan day: bath, robe, nap, repeat. If you get restless, the Hakone Open-Air Museum (9 to 5) or the ropeway to Owakudani's steaming valley.",eat:"Black eggs at Owakudani. Sweet rice tea at Amazake-chaya, a thatched teahouse on the old highway.",links:[["Hakone Open-Air Museum","https://www.hakone-oam.or.jp/en/"],M("Owakudani","Owakudani Hakone"),M("Amazake-chaya","Amazake-chaya Hakone")]}
  ]},
  {leg:"jp",title:"Tokyo Pride weekend",dates:"Jun 5-6",pitch:"Confirmed dates, Yoyogi Park, and a parade through Shibuya. Then Ni-chome until someone says stop.",photos:["pride"],days:[
-  {d:5,t:"Tokyo Pride festival",b:"ok",p:"Soba at Hatsuhana, then about 85 minutes back to Shinjuku. Afternoon at the Tokyo Pride festival in Yoyogi Park. Night out in Shinjuku Ni-chome, a few hundred bars in a few small blocks.",eat:"Hatsuhana's yam soba before the train.",links:[["Tokyo Pride","https://pride.tokyo/","book"],M("Yoyogi Park","Yoyogi Park event plaza"),M("Shinjuku Ni-chome","Shinjuku Nichome")]},
+  {d:5,t:"Tokyo Pride festival",b:"ok",p:"Soba at Hatsuhana, then about 85 minutes back to Shinjuku. Afternoon at the Tokyo Pride festival in Yoyogi Park. A two-Michelin-star dinner, then Shinjuku Ni-chome, a few hundred bars in a few small blocks.",eat:"Hatsuhana's yam soba before the train. Dinner at Den in Jingumae: two Michelin stars and a famously playful menu, if we can land the table. Backup: Shinjuku Kappo Nakajima, starred in past guides and five minutes from Ni-chome.",links:[["Tokyo Pride","https://pride.tokyo/","book"],["Den in the Michelin Guide","https://guide.michelin.com/us/en/tokyo-region/tokyo/restaurant/den","book"],M("Yoyogi Park","Yoyogi Park event plaza"),M("Shinjuku Ni-chome","Shinjuku Nichome")]},
   {d:6,t:"Tokyo Pride Parade",b:"ok",p:"Parade day through Shibuya and Harajuku. Walk it or cheer it. Ni-chome again after, because of course.",links:[["Tokyo Pride","https://pride.tokyo/","book"]]}
  ]},
  {leg:"jp",title:"The birthday",dates:"Jun 7-8",pitch:"The reason for the season. Thirty-nine ends on Monday night at Tokyo Disneyland. Forty starts on Tuesday at the best theme park on Earth.",photos:["disneysea"],days:[
@@ -686,6 +778,7 @@ var CLOCK=[
  {when:"Sat, Apr 3, 2027 · 2:00am PT",at:Date.UTC(2027,3,3,9),short:"PokéPark Kanto tickets open",what:"PokéPark Kanto tickets for June 3",p:"Tickets for international guests open two months ahead at 6:00pm Japan time. That is 2:00am in Los Angeles. Set an alarm and aim for the earliest forest slot.",links:[["How to get tickets","https://en.japantravel.com/kanagawa/how-to-get-pokepark-kanto-tickets/72623","book"]]},
  {when:"Early April 2027",what:"Tokyo Disney park tickets",p:"Dated park tickets usually go on sale about two months ahead. Buy Tokyo Disneyland for June 7 and DisneySea for June 8.",links:[["Tokyo Disney reservations","https://reserve.tokyodisneyresort.jp/en/","book"]]},
  {when:"Mid-April 2027",what:"Seoul announces its Pride date",p:"The Seoul Queer Culture Festival usually posts dates in mid-April. Our plan assumes Saturday, June 12. Then lock or adjust the Seoul hotel.",links:[["Seoul Queer Culture Festival","https://www.sqcf.org/english",""]]},
+ {when:"Spring 2027",what:"The Michelin dinner: Den, Saturday June 5",p:"Two Michelin stars in Jingumae. Dinner only, closed Sundays. Den takes its own bookings by phone and fills fast, so call as soon as it opens June dates. Backup: Shinjuku Kappo Nakajima in Shinjuku.",links:[["Den in the Michelin Guide","https://guide.michelin.com/us/en/tokyo-region/tokyo/restaurant/den","book"],["Den's own site","https://www.jimbochoden.com/",""]]},
  {when:"By mid-May 2027",what:"Park tickets, timed entries, paperwork",p:"Shanghai Disneyland (two days) and Hong Kong Disneyland tickets. The Shuri Castle timed reservation for June 11. A K-ETA for Korea if 2027 requires it (KRW 10,000, allow 72 hours). An International Driving Permit from AAA if you'll drive in Okinawa. Check your passport has six months left after June 28. Not on a US passport? The FAQ lists what changes, including the visas a Guatemalan passport needs for Shanghai and Thailand.",links:[["Visa answers in the FAQ","#faq",""],["Shanghai Disney Resort","https://www.shanghaidisneyresort.com/en/","book"],["Hong Kong Disneyland","https://www.hongkongdisneyland.com/","book"],["Shuri Castle","https://visitokinawajapan.com/?p=18945","book"],["K-ETA","https://www.k-eta.go.kr/","book"]]},
  {when:"Jun 16 to 19, 2027",what:"SG Arrival Card",p:"Free, and filed within the three days before you land in Singapore on June 19.",links:[["SG Arrival Card","https://eservices.ica.gov.sg/sgarrivalcard/","book"]]},
  {when:"Jun 21 to 24, 2027",what:"Thailand Digital Arrival Card",p:"Filed within the three days before you land in Bangkok on June 24. That window opens on boarding day, so do it before the ship sails. Use only the official site; there are paid look-alikes.",links:[["Official TDAC site","https://tdac.immigration.go.th/","book"]]}
@@ -716,11 +809,11 @@ var R={
 };
 var FAQ=[
  ["Coming along",[
-  ["Do I have to come for all four weeks?","<p>No, and almost nobody will. The trip is cut into seven legs so you can drop in for one or two. Use Pick your leg on the Trip page and text Steven the message it writes.</p>"],
+  ["Do I have to come for all four weeks?","<p>No, and almost nobody will. The trip is cut into seven legs so you can drop in for one or two. Use the RSVP page and text Steven the message it writes.</p>"],
   ["If I can only do one leg, which one?","<p>Tokyo Pride plus the birthday, June 5 to 9. It has the confirmed Pride weekend, both Tokyo Disney parks, and the actual day. Runner-up: Singapore plus the ship, June 19 to 24, which includes Patrick's birthday.</p>"],
   ["Do I have to do the Disney days?","<p>No. Park days are easy to skip. Sleep in, see the city, meet us for dinner. The one exception is the ship. Once it sails, you're in.</p>"],
   ["How do I get on the same cruise?","<p>Book your own stateroom on the Disney Adventure sailing that leaves Singapore on Monday, June 21, 2027. It is three nights with no ports and returns Thursday morning, June 24. Send Steven your reservation number so the dining times can be linked.</p>",[R.dcl]],
-  ["How do I tell Steven I'm in?","<p>Go to the Trip page, tap the legs you want, add your name, and copy the message. Then text it to him. Earlier is better: some pieces sell out months ahead.</p>"]
+  ["How do I tell Steven I'm in?","<p>Go to the RSVP page, tick the legs you want, add your name, and copy the message. Then text it to him. Earlier is better: some pieces sell out months ahead.</p>"]
  ]],
  ["Dates and plans",[
   ["How locked are these dates?","<p>The plan stays tentative until the long-haul flights are booked. Tokyo Pride on June 5 and 6 is confirmed by the organizers. Seoul Queer Parade (June 12) and Pattaya Pride (June 26) are estimates from prior years, and this site marks them Estimated.</p>",[R.tp,R.sqcf,R.ptp]],
@@ -789,47 +882,58 @@ $("#hops").innerHTML=HOPS.map(function(h){
   return '<li><span class="d">'+h[0]+'</span><span>'+ext(h[1],fly(h[3]))+'<small>'+h[2]+'</small></span></li>';
 }).join("");
 $("#eat").innerHTML=EAT.map(function(g){
-  return '<div class="l-'+g[0]+'"><span class="chip">'+g[1]+'</span><ul>'+g[2].map(function(i){return '<li>'+ext(i[0],maps(i[1]))+'</li>'}).join("")+'</ul></div>';
+  return '<div class="l-'+g[0]+'"><h3 class="eat-head">'+g[1]+'</h3><ul>'+g[2].map(function(i){
+    return '<li><span>'+ext(i[0],maps(i[1]))+(i[4]?' <span class="star">'+i[4]+'</span>':'')+'</span><a class="when" href="#days" data-day="'+i[3]+'">'+i[2]+'</a></li>';
+  }).join("")+'</ul></div>';
 }).join("");
 
-/* join a leg */
-var picked={bday:true},interest=null,touched=false;
+/* rsvp */
 var TAGS=["Pride","Parks","Food","Beach","Slow"];
-$("#tags").insertAdjacentHTML("beforeend",TAGS.map(function(t){return '<button type="button" class="tag" aria-pressed="false" data-tag="'+t+'">'+(t==="Slow"?"Slowing down":t)+'</button>'}).join(""));
-function drawLegs(){
-  $("#legs").innerHTML=JOIN.map(function(j){
-    var on=!!picked[j.id],dim=interest&&j.tags.indexOf(interest)<0;
-    return '<button type="button" class="leg l-'+j.leg+(dim?' dim':'')+'" aria-pressed="'+on+'" data-id="'+j.id+'">'+
-      '<span class="leg-top"><span class="chip">'+j.dates+'</span><span class="leg-in">'+(on?"✓ I'm in":"Tap to add")+'</span></span>'+
-      '<b>'+j.name+'</b><p>'+j.pitch+'</p><small>'+j.tags.join(" · ")+' · '+j.fly+'</small></button>';
-  }).join("");
-}
+var TAGSAY={Pride:"Pride",Parks:"the parks",Food:"the food",Beach:"the beach",Slow:"slowing down"};
+var JOINBY={};JOIN.forEach(function(j){JOINBY[j.id]=j});
+$("#tags").innerHTML=TAGS.map(function(t){return '<label class="tag"><input type="checkbox" id="like-'+t.toLowerCase()+'" value="'+t+'"><span>'+(t==="Slow"?"Slowing down":t)+'</span></label>'}).join("");
+$("#legs").innerHTML=JOIN.map(function(j){
+  return '<label class="leg l-'+j.leg+'" data-id="'+j.id+'"><input type="checkbox" id="leg-'+j.id+'" value="'+j.id+'"'+(j.id==="bday"?" checked":"")+'>'+
+    '<span class="leg-top"><span class="chip">'+j.dates+'</span><span class="leg-in"><span class="leg-say"></span><span class="box" aria-hidden="true"></span></span></span>'+
+    '<b>'+j.name+'</b><p>'+j.pitch+'</p><small>'+j.tags.join(" \u00b7 ")+' \u00b7 '+j.fly+'</small></label>';
+}).join("");
+function andList(a){return a.length<3?a.join(" and "):a.slice(0,-1).join(", ")+" and "+a[a.length-1]}
 function drawMsg(){
-  var names=JOIN.filter(function(j){return picked[j.id]}).map(function(j){return j.name+" ("+j.dates+")"});
-  var who=$("#guest-name").value.trim();
-  $("#join-msg").value=names.length?("Steven! I'm in for the 40th. Put me down for: "+names.join("; ")+"."+(who?" From "+who+".":"")):"Tap at least one leg above and your message appears here.";
+  var names=JOIN.filter(function(j){return $("#leg-"+j.id).checked}).map(function(j){return j.name+" ("+j.dates+")"});
+  var into=TAGS.filter(function(t){return $("#like-"+t.toLowerCase()).checked}).map(function(t){return TAGSAY[t]});
+  var who=$("#guest-name").value.trim(),note=$("#guest-note").value.trim();
+  var msg=names.length?"Steven! I'm in for the 40th. Put me down for: "+names.join("; ")+"."+(into.length?" I'm mostly here for "+andList(into)+".":"")+(note?" "+note+(/[.!?]$/.test(note)?"":"."):"")+(who?" From "+who+".":""):"Tick at least one leg above and your message appears here.";
+  $("#join-msg").value=msg;
+  $("#sms-link").setAttribute("href","sms:?&body="+encodeURIComponent(names.length?msg:""));
 }
-$("#legs").addEventListener("click",function(e){
-  var b=e.target.closest(".leg");if(!b)return;
-  if(!touched){touched=true;$("#copy-status").textContent="Pick as many legs as you like."}
-  picked[b.dataset.id]=!picked[b.dataset.id];drawLegs();drawMsg();
-  var again=$('.leg[data-id="'+b.dataset.id+'"]');if(again)again.focus();
-});
-$("#tags").addEventListener("click",function(e){
-  var b=e.target.closest(".tag");if(!b)return;
-  interest=interest===b.dataset.tag?null:b.dataset.tag;
-  $$(".tag").forEach(function(t){t.setAttribute("aria-pressed",String(t.dataset.tag===interest))});
-  drawLegs();
-});
+function syncRsvp(){
+  var likes=TAGS.filter(function(t){return $("#like-"+t.toLowerCase()).checked});
+  $$(".tag").forEach(function(el){el.classList.toggle("on",$("input",el).checked)});
+  var n=0;
+  $$(".leg").forEach(function(el){
+    var j=JOINBY[el.dataset.id],on=$("input",el).checked;if(on)n++;
+    el.classList.toggle("on",on);
+    el.classList.toggle("dim",likes.length>0&&!on&&!j.tags.some(function(t){return likes.indexOf(t)>-1}));
+    $(".leg-say",el).textContent=on?"I'm in":"Add";
+  });
+  $("#leg-count").textContent=n+" of "+JOIN.length+" legs selected";
+  drawMsg();
+}
+var rsvpTouched=false;
+function touchRsvp(){if(!rsvpTouched){rsvpTouched=true;$("#copy-status").textContent="On a phone, Text it opens your messages app with this filled in."}}
+$("#legs").addEventListener("change",function(){touchRsvp();syncRsvp()});
+$("#tags").addEventListener("change",syncRsvp);
+$("#legs-all").addEventListener("click",function(){touchRsvp();$$(".leg input").forEach(function(i){i.checked=true});syncRsvp()});
+$("#legs-none").addEventListener("click",function(){touchRsvp();$$(".leg input").forEach(function(i){i.checked=false});syncRsvp()});
 $("#guest-name").addEventListener("input",drawMsg);
+$("#guest-note").addEventListener("input",drawMsg);
 $("#copy-msg").addEventListener("click",function(){
   var ta=$("#join-msg"),st=$("#copy-status");
   var ok=function(){st.textContent="Copied. Now paste it into a text to Steven."};
   var no=function(){ta.focus();ta.select();st.textContent="Couldn't copy automatically. The message is selected, so copy it by hand."};
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(ok,no)}else{no()}
 });
-$("#go-join").addEventListener("click",function(){$("#join-sec").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})});
-drawLegs();drawMsg();
+syncRsvp();
 
 /* ---------- render: days ---------- */
 var DOW=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
@@ -875,7 +979,8 @@ $("#cal").addEventListener("click",function(e){
   var t=document.getElementById("day-"+(b.dataset.day==="23"?"22":b.dataset.day));
   if(t)t.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 });
-var pendingLeg=null;
+var pendingLeg=null,pendingDay=null;
+$("#eat").addEventListener("click",function(e){var a=e.target.closest(".when");if(a)pendingDay=a.dataset.day});
 $("#flag").addEventListener("click",function(e){var a=e.target.closest(".stripe");if(a)pendingLeg=a.dataset.leg});
 
 /* ---------- render: stays ---------- */
@@ -897,7 +1002,7 @@ $("#linkgrid").innerHTML=LINKS.map(function(g){
   return '<div><h3>'+g[0]+'</h3><ul>'+g[1].map(function(l){return '<li>'+ext(l[0],l[1])+(l[2]?'<small>'+l[2]+'</small>':'')+'</li>'}).join("")+'</ul></div>';
 }).join("");
 var upcoming=CLOCK.filter(function(c){return c.at&&c.at>now})[0];
-$("#next").innerHTML=upcoming?'<strong>Next on the booking clock:</strong> '+upcoming.short+' in '+daysTo(upcoming.at)+' days. <a href="#book">See what to book and when</a>':'<a href="#book">See what to book and when</a>';
+$("#next").innerHTML='<span class="lab cool">Next on the booking clock</span>'+(upcoming?upcoming.short+' in '+daysTo(upcoming.at)+' days. ':'')+'<a href="#book">See what to book and when</a>';
 
 /* ---------- render: faq + credits ---------- */
 function refs(r){return r&&r.length?'<p class="refs"><span>References</span>'+r.map(function(x){return x[1].charAt(0)==="#"?'<a href="'+x[1]+'">'+x[0]+'</a>':ext(x[0],x[1])}).join("")+'</p>':""}
@@ -910,12 +1015,29 @@ $("#credits").innerHTML=CREDITS.map(function(c){
 
 /* ---------- countdown + clocks ---------- */
 var TARGET=Date.UTC(2027,5,7,15,0,0); /* midnight June 8, 2027 in Tokyo */
-var pad=function(n){return (n<10?"0":"")+n};
+var FL={d:3,h:2,m:2,s:2};
+Object.keys(FL).forEach(function(k){var h="";for(var n=0;n<FL[k];n++)h+='<span class="flap"><span class="half top"><i>0</i></span><span class="half bot"><i>0</i></span></span>';$("#fl-"+k).innerHTML=h});
+function setFlap(el,v){
+  var cur=el.getAttribute("data-v");if(cur===v)return;
+  el.setAttribute("data-v",v);
+  $$(".fold",el).forEach(function(n){n.remove()});
+  var top=$(".top i",el),bot=$(".bot i",el);
+  if(cur===null||reduceMotion||document.hidden){top.textContent=v;bot.textContent=v;return}
+  bot.textContent=cur;top.textContent=v;
+  var ft=document.createElement("span");ft.className="half top fold";ft.innerHTML="<i>"+cur+"</i>";
+  var fb=document.createElement("span");fb.className="half bot fold";fb.innerHTML="<i>"+v+"</i>";
+  el.appendChild(ft);el.appendChild(fb);
+  fb.addEventListener("animationend",function(){bot.textContent=v;ft.remove();fb.remove()});
+}
+function setFlaps(k,str){$$(".flap",$("#fl-"+k)).forEach(function(el,i){setFlap(el,str.charAt(i))})}
+var pad=function(n,w){n=String(n);while(n.length<w)n="0"+n;return n};
+var srMin=-1;
 function tick(){
-  var ms=TARGET-Date.now();
-  if(ms<=0){$("#cd-d").textContent="40";$("#cd-h").textContent=$("#cd-m").textContent=$("#cd-s").textContent="00";$("#cd-note").textContent="It's official. Steven is 40.";return}
-  var s=Math.floor(ms/1000);
-  $("#cd-d").textContent=Math.floor(s/86400);$("#cd-h").textContent=pad(Math.floor(s%86400/3600));$("#cd-m").textContent=pad(Math.floor(s%3600/60));$("#cd-s").textContent=pad(s%60);
+  var ms=Math.max(0,TARGET-Date.now()),s=Math.floor(ms/1000);
+  var d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
+  setFlaps("d",pad(Math.min(d,999),3));setFlaps("h",pad(h,2));setFlaps("m",pad(m,2));setFlaps("s",pad(s%60,2));
+  if(ms===0)$("#cd-note").textContent="It's official. Steven is 40.";
+  if(m!==srMin){srMin=m;$("#cd-sr").textContent=ms===0?"Steven is 40.":d+" days, "+h+" hours and "+m+" minutes to go."}
 }
 tick();setInterval(tick,1000);
 var ZONES=[["Los Angeles","America/Los_Angeles"],["Tokyo and Seoul","Asia/Tokyo"],["Shanghai, Hong Kong, Singapore","Asia/Singapore"],["Bangkok","Asia/Bangkok"]];
@@ -946,13 +1068,13 @@ else{
 }
 
 /* ---------- pages ---------- */
-var VIEWS=["trip","days","stays","book","faq"];
+var VIEWS=["trip","days","stays","eats","book","rsvp","faq"];
 function route(first){
   var h=(location.hash||"").replace("#","");if(VIEWS.indexOf(h)<0)h="trip";
   view=h;
   VIEWS.forEach(function(v){$("#v-"+v).hidden=v!==h});
   $$(".top nav a").forEach(function(a){if(a.getAttribute("href")==="#"+h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-  if(!first){var tgt=h==="days"&&pendingLeg?$('.chapter[data-leg="'+pendingLeg+'"]'):null;pendingLeg=null;if(tgt)tgt.scrollIntoView();else window.scrollTo(0,0)}
+  if(!first){var tgt=h!=="days"?null:pendingDay?document.getElementById("day-"+(pendingDay==="23"?"22":pendingDay)):pendingLeg?$('.chapter[data-leg="'+pendingLeg+'"]'):null;pendingLeg=pendingDay=null;if(tgt)tgt.scrollIntoView();else window.scrollTo(0,0)}
 }
 window.addEventListener("hashchange",function(){route(false)});
 route(true);
