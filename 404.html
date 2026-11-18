@@ -333,6 +333,10 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-block:28px 40px;
 footer p{margin:0 0 10px;max-width:80ch}
 .credits{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:6px 24px}
 .credits li{line-height:1.4}
+.creds{border-top:0}
+.creds summary{display:inline-flex;justify-content:flex-start;gap:8px;padding:0;font:inherit;font-weight:600;color:var(--muted);text-decoration:underline;text-underline-offset:2px}
+.creds summary::after{font-size:1rem}
+.creds[open] summary{margin-bottom:10px}
 @media (prefers-reduced-motion: reduce){.btn:hover{transform:none}}
 </style>
 </head>
@@ -614,8 +618,11 @@ footer p{margin:0 0 10px;max-width:80ch}
 <footer>
   <div class="wrap">
     <p>Last updated November 17, 2026. Dates, prices, and opening times will change between now and June 2027. This page gets updated when they do.</p>
-    <p><strong>Photo credits.</strong> All photos are from Wikimedia Commons, resized and cropped for this page, and used under the licenses shown. Map coastlines are from Natural Earth.</p>
-    <ul class="credits" id="credits"></ul>
+    <details class="creds">
+      <summary>Photo credits</summary>
+      <p>All photos are from Wikimedia Commons, resized and cropped for this page, and used under the licenses shown. Map coastlines are from Natural Earth.</p>
+      <ul class="credits" id="credits"></ul>
+    </details>
   </div>
 </footer>
 
