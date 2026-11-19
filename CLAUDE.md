@@ -6,7 +6,7 @@ This repository is the live site at https://steventurns40.com, served by GitHub 
 
 - `index.html` is the whole site: styles, markup and script in one file. `404.html` is a copy of it, so keep the two identical.
 - `img/` holds the photos, JPEG, 1280px wide (the Tokyo panorama is 2000px).
-- `img/share.jpg` is the link-preview card people see when the site is texted (the big 40 with confetti). It is a generated graphic, not a photo, so it needs no credit. The `og:image` tags in the page head point at it.
+- `img/share.jpg` is the link-preview card people see when the site is texted (the big 40 glowing on a dark background, with a neon halo and a few gold stars). Keep it after-dark and grown-up, not kids' party: no confetti. It is a generated graphic, not a photo, so it needs no credit. The `og:image` tags in the page head point at it with a `?v=` number; bump the number whenever the image changes so phones fetch the new one.
 - `CNAME` and `.nojekyll` are required by GitHub Pages. Leave them alone.
 
 ## Where things live in index.html
